@@ -63,7 +63,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="328dp"
-        android:layout_marginEnd="36dp"
+        android:layout_marginEnd="31dp"
+        android:onClick="addData1"
         android:text="Button"
         app:layout_constraintEnd_toStartOf="@+id/button3"
         app:layout_constraintTop_toTopOf="parent" />

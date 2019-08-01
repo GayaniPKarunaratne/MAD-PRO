@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">My Wallet</string>
+    <string name="msg">Catergories</string>
+    <string name="msg1">Income</string>
+    <string name="msg2">Expense</string>
+    <string name="btn">Add Category</string>
+    <string name="btn1">Delete Catergory</string>
+    <string name="btn2">OK</string>
 </resources>

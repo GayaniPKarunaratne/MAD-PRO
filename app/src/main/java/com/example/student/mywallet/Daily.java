@@ -17,4 +17,9 @@ public class Daily extends AppCompatActivity {
         Intent intent = new Intent(Daily.this,Add.class);
         startActivity(intent);
     }
+
+    public void addData1(View view){
+        Intent intent = new Intent(Daily.this,Categories.class);
+        startActivity(intent);
+    }
 }
