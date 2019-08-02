@@ -14,7 +14,7 @@ public class Daily extends AppCompatActivity {
     }
 
     public void addData1(View view){
-        Intent intent = new Intent(Daily.this,Add.class);
+        Intent intent = new Intent(Daily.this,Categories.class);
         startActivity(intent);
     }
 
@@ -28,18 +28,4 @@ public class Daily extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void addData4(View view){
-        Intent intent = new Intent(Daily.this,Categories.class);
-        startActivity(intent);
-    }
-
-    public void addData5(View view){
-        Intent intent = new Intent(Daily.this,Categories.class);
-        startActivity(intent);
-    }
-
-    public void addData6(View view){
-        Intent intent = new Intent(Daily.this,Categories.class);
-        startActivity(intent);
-    }
 }

@@ -18,7 +18,7 @@
         android:fontFamily="casual"
         android:text="@string/gtxtv1"
         android:textAlignment="center"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@android:color/background_dark"
         android:textSize="30sp"
         android:textStyle="bold"
         android:typeface="serif"
