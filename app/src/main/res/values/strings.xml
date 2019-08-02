@@ -5,5 +5,9 @@
     <string name="msg2">Expense</string>
     <string name="btn">Add Category</string>
     <string name="btn1">Delete Catergory</string>
+    <string name="btn2">Settings</string>
+
+    <string name="gtxtv1">DAILY EXPENSES</string>
+    <string name="gtxtv2">Display</string>
 
 </resources>
