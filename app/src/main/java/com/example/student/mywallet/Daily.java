@@ -24,7 +24,7 @@ public class Daily extends AppCompatActivity {
     }
 
     public void addData3(View view){
-        Intent intent = new Intent(Daily.this,Categories.class);
+        Intent intent = new Intent(Daily.this,My_Wallet_Repot.class);
         startActivity(intent);
     }
 

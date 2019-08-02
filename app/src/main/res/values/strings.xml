@@ -9,5 +9,7 @@
 
     <string name="gtxtv1">DAILY EXPENSES</string>
     <string name="gtxtv2">Display</string>
+    <string name="tbtn">Expensses details</string>
+    <string name="tbtn1">Income details</string>
 
 </resources>

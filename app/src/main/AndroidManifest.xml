@@ -9,6 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Income_details"></activity>
+        <activity android:name=".Expensses_details" />
+        <activity android:name=".My_Wallet_Repot" />
         <activity android:name=".Daily">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Add" />
-        <activity android:name=".Categories"></activity>
+        <activity android:name=".Categories" />
     </application>
 
 </manifest>
