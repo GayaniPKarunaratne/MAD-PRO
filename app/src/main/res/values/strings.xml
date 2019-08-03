@@ -7,6 +7,9 @@
     <string name="gtxtv2">Display</string>
     <string name="gtxtv3">ADD INCOME</string>
     <string name="gtxtv4">ADD EXPENSE</string>
+    <string name="gtxtv5">Enter Incom</string>
+    <string name="gtxtv6">Enter Expense</string>
+
     <string name="gbtn1">OK</string>
 
     <string name="tbtn">Expensses details</string>
