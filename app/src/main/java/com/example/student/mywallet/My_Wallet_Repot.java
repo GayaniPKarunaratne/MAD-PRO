@@ -22,4 +22,22 @@ public class My_Wallet_Repot extends AppCompatActivity {
         Intent intent = new Intent(My_Wallet_Repot.this,Income_details.class);
         startActivity(intent);
     }
+    public void addData1(View view){
+        Intent intent = new Intent(My_Wallet_Repot.this,Daily.class);
+        startActivity(intent);
+    }
+    public void addData2(View view){
+        Intent intent = new Intent(My_Wallet_Repot.this,Categories.class);
+        startActivity(intent);
+    }
+
+    public void addData3(View view){
+        Intent intent = new Intent(My_Wallet_Repot.this,Categories.class);
+        startActivity(intent);
+    }
+
+    public void addData4(View view){
+        Intent intent = new Intent(My_Wallet_Repot.this,My_Wallet_Repot.class);
+        startActivity(intent);
+    }
 }

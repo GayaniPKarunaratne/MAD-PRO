@@ -13,6 +13,25 @@ public class Categories extends AppCompatActivity {
         setContentView(R.layout.activity_categories);
     }
 
+    public void addData1(View view){
+        Intent intent = new Intent(Categories.this,Daily.class);
+        startActivity(intent);
+    }
+    public void addData2(View view){
+        Intent intent = new Intent(Categories.this,Categories.class);
+        startActivity(intent);
+    }
+
+    public void addData3(View view){
+        Intent intent = new Intent(Categories.this,Categories.class);
+        startActivity(intent);
+    }
+
+    public void addData4(View view){
+        Intent intent = new Intent(Categories.this,My_Wallet_Repot.class);
+        startActivity(intent);
+    }
+
     public void addData6(View view){
         Intent intent =new Intent(Categories.this,Add.class);
         startActivity(intent);
