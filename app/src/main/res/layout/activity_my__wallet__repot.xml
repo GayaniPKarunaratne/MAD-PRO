@@ -169,6 +169,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="$ 0.00"
+        android:textColor="@color/colorAccent"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView11"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.956"
@@ -191,7 +192,7 @@
         app:srcCompat="@drawable/home2" />
 
     <ImageButton
-        android:id="@+id/imageButton7"
+        android:id="@+id/imageButton6"
         android:layout_width="108dp"
         android:layout_height="54dp"
         android:layout_marginStart="16dp"

@@ -24,5 +24,11 @@
     <string name="tbtn4">INCOME</string>
     <string name="tbtn5">REPORT</string>
 
+    <string name="pmsg5">Category</string>
+    <string name="pbtn4">Income</string>
+    <string name="pbtn5">Expenses</string>
+    <string name="pbtn6">Expenses Categories</string>
+    <string name="pbtn7">Income Categories</string>
+
 
 </resources>

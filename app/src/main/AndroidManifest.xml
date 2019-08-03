@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".income_category"></activity>
+        <activity android:name=".expenses_category" />
         <activity android:name=".Income_details" />
         <activity android:name=".Expensses_details" />
         <activity android:name=".My_Wallet_Repot" />
@@ -21,7 +23,7 @@
         </activity>
         <activity android:name=".Add" />
         <activity android:name=".Categories" />
-        <activity android:name=".AddExpenses"></activity>
+        <activity android:name=".AddExpenses" />
     </application>
 
 </manifest>
