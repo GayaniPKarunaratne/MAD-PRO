@@ -1,14 +1,17 @@
 <resources>
     <string name="app_name">My Wallet</string>
 
-    <string name="msg">Catergories</string>
+    <string name="pmsg">Catergories</string>
 
     <string name="gtxtv1">DAILY EXPENSES</string>
     <string name="gtxtv2">Display</string>
     <string name="gtxtv3">ADD INCOME</string>
     <string name="gtxtv4">ADD EXPENSE</string>
-    <string name="gtxtv5">Enter Incom</string>
+    <string name="gtxtv5">Enter Income</string>
     <string name="gtxtv6">Enter Expense</string>
+    <string name="gtxtv7">Category</string>
+    <string name="gtxtv8">Category</string>
+
 
     <string name="gbtn1">OK</string>
 
