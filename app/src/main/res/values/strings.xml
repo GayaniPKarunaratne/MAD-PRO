@@ -19,6 +19,10 @@
 
     <string name="tbtn">Expensses details</string>
     <string name="tbtn1">Income details</string>
+    <string name="tbtn2">HOME</string>
+    <string name="tbtn3">EXPENSES</string>
+    <string name="tbtn4">INCOME</string>
+    <string name="tbtn5">REPORT</string>
 
 
 </resources>
