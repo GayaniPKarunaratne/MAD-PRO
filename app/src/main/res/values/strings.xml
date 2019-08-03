@@ -2,18 +2,15 @@
     <string name="app_name">My Wallet</string>
 
     <string name="msg">Catergories</string>
-    <string name="btn">Add Category</string>
-
 
     <string name="gtxtv1">DAILY EXPENSES</string>
     <string name="gtxtv2">Display</string>
-<<<<<<< HEAD
-    <string name="tbtn">Expensses details</string>
-    <string name="tbtn1">Income details</string>
-=======
     <string name="gtxtv3">ADD INCOME</string>
+    <string name="gtxtv4">ADD EXPENSE</string>
     <string name="gbtn1">OK</string>
 
->>>>>>> origin/master
+    <string name="tbtn">Expensses details</string>
+    <string name="tbtn1">Income details</string>
+
 
 </resources>
