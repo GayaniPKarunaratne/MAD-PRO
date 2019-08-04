@@ -18,12 +18,12 @@ public class Daily extends AppCompatActivity {
         startActivity(intent);
     }
     public void addData2(View view){
-        Intent intent = new Intent(Daily.this,Categories.class);
+        Intent intent = new Intent(Daily.this,expenses_category.class);
         startActivity(intent);
     }
 
     public void addData3(View view){
-        Intent intent = new Intent(Daily.this,Categories.class);
+        Intent intent = new Intent(Daily.this,income_category.class);
         startActivity(intent);
     }
 
@@ -32,5 +32,9 @@ public class Daily extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void addData5(View view){
+        Intent intent = new Intent(Daily.this,Categories.class);
+        startActivity(intent);
+    }
 
 }

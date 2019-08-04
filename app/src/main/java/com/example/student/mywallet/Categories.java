@@ -18,12 +18,12 @@ public class Categories extends AppCompatActivity {
         startActivity(intent);
     }
     public void addData2(View view){
-        Intent intent = new Intent(Categories.this,Categories.class);
+        Intent intent = new Intent(Categories.this,expenses_category.class);
         startActivity(intent);
     }
 
     public void addData3(View view){
-        Intent intent = new Intent(Categories.this,Categories.class);
+        Intent intent = new Intent(Categories.this,income_category.class);
         startActivity(intent);
     }
 
@@ -33,12 +33,12 @@ public class Categories extends AppCompatActivity {
     }
 
     public void addData6(View view){
-        Intent intent =new Intent(Categories.this,Add.class);
+        Intent intent =new Intent(Categories.this,add_expenses.class);
         startActivity(intent);
     }
 
     public void addData7(View view){
-        Intent intent =new Intent(Categories.this,AddExpenses.class);
+        Intent intent =new Intent(Categories.this,add.class);
         startActivity(intent);
     }
 }
