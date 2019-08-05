@@ -36,4 +36,8 @@ public class expenses_category extends AppCompatActivity {
         Intent intent = new Intent(expenses_category.this,AddExpenses.class);
         startActivity(intent);
     }
+    public void addData6(View view){
+        Intent intent = new Intent(expenses_category.this,expenses_category.class);
+        startActivity(intent);
+    }
 }

@@ -66,9 +66,9 @@
         app:srcCompat="@drawable/mom" />
 
     <ImageButton
-        android:id="@+id/imageButton6"
-        android:layout_width="69dp"
-        android:layout_height="72dp"
+        android:id="@+id/imageButton7"
+        android:layout_width="67dp"
+        android:layout_height="57dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -84,9 +84,9 @@
         app:srcCompat="@drawable/sale" />
 
     <ImageButton
-        android:id="@+id/imageButton6"
-        android:layout_width="73dp"
-        android:layout_height="59dp"
+        android:id="@+id/imageButton8"
+        android:layout_width="51dp"
+        android:layout_height="50dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -95,7 +95,7 @@
         android:onClick="addData5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.166"
+        app:layout_constraintHorizontal_bias="0.191"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.383"
@@ -137,24 +137,7 @@
         app:srcCompat="@drawable/viewm" />
 
     <ImageButton
-        android:id="@+id/imageButton29"
-        android:layout_width="88dp"
-        android:layout_height="83dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.781"
-        app:srcCompat="@drawable/plus" />
-
-    <ImageButton
-        android:id="@+id/imageButton6"
+        android:id="@+id/imageButton28"
         android:layout_width="99dp"
         android:layout_height="54dp"
         android:layout_marginTop="8dp"
@@ -170,7 +153,7 @@
         app:srcCompat="@drawable/home2" />
 
     <ImageButton
-        android:id="@+id/imageButton6"
+        android:id="@+id/imageButton29"
         android:layout_width="108dp"
         android:layout_height="54dp"
         android:layout_marginStart="16dp"
