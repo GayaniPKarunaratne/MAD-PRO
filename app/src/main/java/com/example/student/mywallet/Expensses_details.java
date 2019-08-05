@@ -31,4 +31,14 @@ public class Expensses_details extends AppCompatActivity {
         Intent intent = new Intent(Expensses_details.this,My_Wallet_Repot.class);
         startActivity(intent);
     }
+
+    public void addData5(View view){
+        Intent intent = new Intent(Expensses_details.this,AddExpenses.class);
+        startActivity(intent);
+    }
+
+    public void addData6(View view){
+        Intent intent = new Intent(Expensses_details.this,Daily.class);
+        startActivity(intent);
+    }
 }
