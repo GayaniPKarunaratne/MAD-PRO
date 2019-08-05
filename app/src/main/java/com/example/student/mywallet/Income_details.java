@@ -32,7 +32,7 @@ public class Income_details extends AppCompatActivity {
         startActivity(intent);
     }
     public void addData5(View view){
-        Intent intent = new Intent(Income_details.this, income_category.class);
+        Intent intent = new Intent(Income_details.this, Add.class);
         startActivity(intent);
         }
 

@@ -118,7 +118,7 @@
         app:srcCompat="@drawable/home2" />
 
     <ImageButton
-        android:id="@+id/imageButton6"
+        android:id="@+id/imageButton7"
         android:layout_width="108dp"
         android:layout_height="54dp"
         android:layout_marginStart="16dp"
@@ -245,7 +245,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/imageButton1"
         android:layout_width="68dp"
         android:layout_height="65dp"
         android:layout_marginStart="8dp"

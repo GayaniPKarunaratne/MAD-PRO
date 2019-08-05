@@ -37,7 +37,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="7dp"
         android:layout_marginBottom="8dp"
-        android:background="@android:color/holo_green_dark"
+        android:background="@drawable/curved_button"
         android:onClick="addData5"
         android:text="@string/pbtn8"
         android:textSize="18sp"
@@ -118,7 +118,7 @@
         app:srcCompat="@drawable/home2" />
 
     <ImageButton
-        android:id="@+id/imageButton6"
+        android:id="@+id/imageButton11"
         android:layout_width="108dp"
         android:layout_height="54dp"
         android:layout_marginStart="16dp"
