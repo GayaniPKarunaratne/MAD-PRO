@@ -15,7 +15,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:fontFamily="casual"
+        android:fontFamily="serif"
         android:text="@string/pbtn7"
         android:textAlignment="center"
         android:textColor="@android:color/background_light"
@@ -24,10 +24,10 @@
         android:typeface="serif"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.018" />
+        app:layout_constraintVertical_bias="0.012" />
 
     <ImageButton
         android:id="@+id/imageButton3"
@@ -41,10 +41,10 @@
         android:onClick="addData5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.168"
+        app:layout_constraintHorizontal_bias="0.161"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.21"
+        app:layout_constraintVertical_bias="0.213"
         app:srcCompat="@drawable/wallet" />
 
     <ImageButton
@@ -77,10 +77,10 @@
         android:onClick="addData5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.886"
+        app:layout_constraintHorizontal_bias="0.887"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.211"
+        app:layout_constraintVertical_bias="0.229"
         app:srcCompat="@drawable/sale" />
 
     <ImageButton
@@ -95,10 +95,10 @@
         android:onClick="addData5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.191"
+        app:layout_constraintHorizontal_bias="0.197"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.383"
+        app:layout_constraintVertical_bias="0.419"
         app:srcCompat="@drawable/rental" />
 
     <ImageButton
@@ -116,7 +116,7 @@
         app:layout_constraintHorizontal_bias="0.532"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.381"
+        app:layout_constraintVertical_bias="0.398"
         app:srcCompat="@drawable/refund" />
 
     <ImageButton
@@ -130,10 +130,10 @@
         android:onClick="addData6"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.894"
+        app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.381"
+        app:layout_constraintVertical_bias="0.393"
         app:srcCompat="@drawable/viewm" />
 
     <ImageButton
@@ -176,7 +176,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:background="@color/colorPrimary"
+        android:background="#2245D1"
         android:onClick="addData3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -208,7 +208,7 @@
         android:layout_height="17dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:background="#5B94E1"
+        android:background="#2245D1"
         android:onClick="addData3"
         android:text="@string/tbtn4"
         android:textColor="@android:color/black"
