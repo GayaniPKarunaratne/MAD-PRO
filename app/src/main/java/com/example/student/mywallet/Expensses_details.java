@@ -38,7 +38,7 @@ public class Expensses_details extends AppCompatActivity {
     }
 
     public void addData6(View view){
-        Intent intent = new Intent(Expensses_details.this,Daily.class);
+        Intent intent = new Intent(Expensses_details.this,Expensses_details.class);
         startActivity(intent);
     }
 }

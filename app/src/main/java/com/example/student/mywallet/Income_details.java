@@ -27,8 +27,19 @@ public class Income_details extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void addData4(View view){
-        Intent intent = new Intent(Income_details.this,My_Wallet_Repot.class);
+    public void addData4(View view) {
+        Intent intent = new Intent(Income_details.this, My_Wallet_Repot.class);
         startActivity(intent);
     }
-}
+    public void addData5(View view){
+        Intent intent = new Intent(Income_details.this, income_category.class);
+        startActivity(intent);
+        }
+
+    public void addData6(View view){
+        Intent intent = new Intent(Income_details.this, Income_details.class);
+        startActivity(intent);
+    }
+
+    }
+
