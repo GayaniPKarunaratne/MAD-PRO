@@ -98,7 +98,6 @@
         android:layout_marginBottom="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="$ 0.00"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="14sp"
