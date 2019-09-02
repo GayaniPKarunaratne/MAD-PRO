@@ -268,13 +268,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
-    <TextView
-        android:id="@+id/textView20"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textColor="@color/colorPrimaryDark"
-        tools:layout_editor_absoluteX="259dp"
-        tools:layout_editor_absoluteY="192dp" />
-
 </android.support.constraint.ConstraintLayout>
