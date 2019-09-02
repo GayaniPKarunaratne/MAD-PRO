@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:background="@drawable/wall1"
+    android:background="@drawable/wood"
     tools:context=".Add">
 
     <EditText
@@ -37,7 +37,7 @@
         android:layout_marginBottom="8dp"
         android:text="@string/gtxtv8"
         android:textAlignment="viewStart"
-        android:textColor="#b2cdff"
+        android:textColor="#FF000000"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -58,7 +58,7 @@
         android:fontFamily="serif"
         android:text="@string/gtxtv3"
         android:textAlignment="center"
-        android:textColor="@android:color/background_light"
+        android:textColor="#55473d"
         android:textSize="30sp"
         android:textStyle="bold"
         android:typeface="serif"
@@ -78,7 +78,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="@string/gtxtv5"
-        android:textColor="#b2cdff"
+        android:textColor="#FF000000"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -164,7 +164,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:background="#2245D1"
+        android:background="#FF3B2403"
         android:onClick="addData3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -211,7 +211,7 @@
         android:layout_height="17dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:background="#2245D1"
+        android:background="#FF3B2403"
         android:text="@string/tbtn4"
         android:textColor="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -227,7 +227,7 @@
         android:layout_height="17dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:background="#5B94E1"
+        android:background="#FF614722"
         android:text="@string/tbtn3"
         android:textColor="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -242,7 +242,7 @@
         android:layout_width="102dp"
         android:layout_height="17dp"
         android:layout_marginTop="8dp"
-        android:background="#5B94E1"
+        android:background="#FF614722"
         android:text="@string/tbtn5"
         android:textColor="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -258,7 +258,7 @@
         android:layout_height="17dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:background="#5B94E1"
+        android:background="#FF614722"
         android:text="@string/tbtn2"
         android:textColor="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -267,5 +267,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="@color/colorPrimaryDark"
+        tools:layout_editor_absoluteX="259dp"
+        tools:layout_editor_absoluteY="192dp" />
 
 </android.support.constraint.ConstraintLayout>
