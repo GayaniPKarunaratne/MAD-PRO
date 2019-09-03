@@ -27,9 +27,28 @@
     <string name="pbtn5">Expenses</string>
     <string name="pbtn6">Expenses Categories</string>
     <string name="pbtn7">Income Categories</string>
-    <string name="pmsg6">Add More</string>
+    <string name="pmsg6">Add Category</string>
     <string name="pbtn8">ADD</string>
     <string name="pmsg7">Category</string>
+    <string name="pmsg9">Enter Category Name</string>
+    <string name="pbtn9">Delete</string>
+    <string name="pbtn10">Update</string>
+    <string name="pmsg10">Delete Category</string>
+    <string name="pmsg11">Select a Category</string>
+    <string name="btn11">Delete</string>
+    <string name="pmsg12">Update Category</string>
+    <string name="pmsg13">Select Category to Update</string>
+    <string name="btn12">Update</string>
+
+    <string-array name="UpdateCat">
+        <item>Fav category</item>
+        <item>Daily category</item>
+        <item>monthly category</item>
+
+    </string-array>
+
+
+
 
 
 </resources>

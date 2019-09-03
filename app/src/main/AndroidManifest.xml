@@ -24,11 +24,15 @@
         <activity android:name=".Add" />
         <activity android:name=".Categories" />
         <activity android:name=".AddExpenses" />
-        <activity android:name=".AddMore"></activity>
+        <activity android:name=".AddMore" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <activity android:name=".Delete_Update" />
+        <activity android:name=".DeleteCategory" />
+        <activity android:name=".UpdateCategory"></activity>
     </application>
 
 </manifest>
