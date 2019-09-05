@@ -29,4 +29,23 @@ public class UpdateCategory extends AppCompatActivity {
         startActivity(myHome);
 
     }
+
+    public void addData1(View view){
+        Intent intent = new Intent(UpdateCategory.this,Daily.class);
+        startActivity(intent);
+    }
+    public void addData2(View view){
+        Intent intent = new Intent(UpdateCategory.this,expenses_category.class);
+        startActivity(intent);
+    }
+
+    public void addData3(View view){
+        Intent intent = new Intent(UpdateCategory.this,income_category.class);
+        startActivity(intent);
+    }
+
+    public void addData4(View view){
+        Intent intent = new Intent(UpdateCategory.this,My_Wallet_Repot.class);
+        startActivity(intent);
+    }
 }

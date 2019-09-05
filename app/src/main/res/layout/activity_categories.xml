@@ -108,13 +108,16 @@
 
     <Button
         android:id="@+id/button8"
-        android:layout_width="102dp"
+        android:layout_width="105dp"
         android:layout_height="17dp"
+        android:layout_marginStart="8dp"
         android:background="#FF614722"
         android:text="@string/tbtn5"
         android:textColor="@android:color/black"
-        tools:layout_editor_absoluteX="282dp"
-        tools:layout_editor_absoluteY="494dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button7"

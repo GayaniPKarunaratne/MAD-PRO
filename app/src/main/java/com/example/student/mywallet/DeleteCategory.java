@@ -18,4 +18,23 @@ public class DeleteCategory extends AppCompatActivity {
         startActivity(myHome);
 
     }
+
+    public void addData1(View view){
+        Intent intent = new Intent(DeleteCategory.this,Daily.class);
+        startActivity(intent);
+    }
+    public void addData2(View view){
+        Intent intent = new Intent(DeleteCategory.this,expenses_category.class);
+        startActivity(intent);
+    }
+
+    public void addData3(View view){
+        Intent intent = new Intent(DeleteCategory.this,income_category.class);
+        startActivity(intent);
+    }
+
+    public void addData4(View view){
+        Intent intent = new Intent(DeleteCategory.this,My_Wallet_Repot.class);
+        startActivity(intent);
+    }
 }
