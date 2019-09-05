@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Categories"
-    android:background="@drawable/wall1">
+    android:background="@drawable/wood">
 
 
     <ImageButton
@@ -145,7 +145,7 @@
         android:fontFamily="serif"
         android:text="@string/pmsg5"
         android:textAlignment="center"
-        android:textColor="@android:color/background_light"
+        android:textColor="#55473d"
         android:textColorHint="#00331E1E"
         android:textSize="30sp"
         android:textStyle="bold"

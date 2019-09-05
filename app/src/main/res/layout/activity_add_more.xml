@@ -18,7 +18,7 @@
         android:fontFamily="serif"
         android:text="@string/pmsg6"
         android:textAlignment="center"
-        android:textColor="@android:color/background_light"
+        android:textColor="#55473d"
         android:textSize="30sp"
         android:textStyle="bold"
         android:typeface="serif"

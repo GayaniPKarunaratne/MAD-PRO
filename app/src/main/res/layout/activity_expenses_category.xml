@@ -17,7 +17,7 @@
         android:fontFamily="serif"
         android:text="@string/pbtn6"
         android:textAlignment="center"
-        android:textColor="@android:color/background_light"
+        android:textColor="#55473d"
         android:textDirection="firstStrongRtl"
         android:textSize="20sp"
         android:textStyle="bold"
