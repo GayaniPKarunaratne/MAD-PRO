@@ -37,7 +37,7 @@
     <string name="pmsg11">Select a Category</string>
     <string name="btn11">Delete</string>
     <string name="pmsg12">Update Category</string>
-    <string name="pmsg13">Select Category to Update</string>
+    <string name="pmsg13">Select  Expencess Category to Update</string>
     <string name="btn12">Update</string>
 
     <string-array name="UpdateCat">
