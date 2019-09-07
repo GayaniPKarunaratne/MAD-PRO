@@ -48,6 +48,8 @@
     <string name="btn14">Update</string>
     <string name="ishuAdd">ADD</string>
     <string name="ishuUpdate">UPDATE</string>
+    <string name="ishubtnlabel">Add Income Category</string>
+    <string name="ishulabel22">Add Expenses Category</string>
     <string-array name="UpdateCat">
         <item>Fav category</item>
         <item>Daily category</item>

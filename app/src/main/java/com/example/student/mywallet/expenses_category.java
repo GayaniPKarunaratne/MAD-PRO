@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 public class expenses_category extends AppCompatActivity {
 
@@ -38,8 +39,9 @@ public class expenses_category extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void addData6(View view) {
-        Intent intent = new Intent(expenses_category.this, AddMore.class);
+    public void goExpensesIshu(View view) {
+        Toast.makeText(view.getContext() , "this is okay" , Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this, addmore2.class);
         startActivity(intent);
     }
 

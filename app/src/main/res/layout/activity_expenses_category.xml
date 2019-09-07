@@ -7,6 +7,23 @@
     android:background="@drawable/wood"
     tools:context=".expenses_category">
 
+    <ImageButton
+        android:id="@+id/imageButton41"
+        android:layout_width="72dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@android:color/transparent"
+        android:onClick="goExpensesIshu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.858"
+        app:srcCompat="@drawable/viewm" />
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="250dp"
@@ -280,24 +297,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.182"
         app:srcCompat="@drawable/loan" />
-
-    <ImageButton
-        android:id="@+id/imageButton22"
-        android:layout_width="63dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="6dp"
-        android:background="@android:color/transparent"
-        android:onClick="addData6"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.986"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.84"
-        app:srcCompat="@drawable/viewm" />
 
     <ImageButton
         android:id="@+id/imageButton23"

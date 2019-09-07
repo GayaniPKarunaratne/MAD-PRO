@@ -8,7 +8,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 import Database.WalletDBhelper;
+import Model.Users;
 
 public class AddMore extends AppCompatActivity {
 
@@ -26,6 +29,14 @@ public class AddMore extends AppCompatActivity {
         data = findViewById(R.id.data);
         db = new WalletDBhelper(this);
 
+        data.setText("");
+        int count = 1;
+
+        ArrayList<Users> u = db.readAllInfor();
+        for(Users users : u){
+            data.append( count + " " + users.getUname() + "\n");
+            count++;
+        }
     }
 
     public  void addIncomeCat(View view){
@@ -38,6 +49,30 @@ public class AddMore extends AppCompatActivity {
         else{
             Toast.makeText(getApplicationContext(),"Data failed",Toast.LENGTH_LONG).show();
         }
+        displayIncomeInfro(view);
+    }
+
+    public void displayIncomeInfro(View view){
+        data.setText("");
+        int count = 1;
+
+        ArrayList<Users> u = db.readAllInfor();
+        for(Users users : u){
+            data.append( count + " " + users.getUname() + "\n");
+            count++;
+        }
+    }
+
+    public void deleteIncomeCat(View view){
+        name = txt_name.getText().toString();
+        db.incomecatDelete(name);
+        displayIncomeInfro(view);
+    }
+
+    public void updateCatIncome(View view){
+        name = txt_name.getText().toString();
+        db.incomeCatUpdate(name);
+        displayIncomeInfro(view);
     }
 
 

@@ -8,15 +8,15 @@
     tools:context=".AddMore">
 
     <TextView
-        android:id="@+id/textView18"
-        android:layout_width="312dp"
-        android:layout_height="53dp"
+        android:id="@+id/textView18ishu"
+        android:layout_width="303dp"
+        android:layout_height="109dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="2dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="serif"
-        android:text="@string/pmsg6"
+        android:text="@string/ishubtnlabel"
         android:textAlignment="center"
         android:textColor="#55473d"
         android:textSize="30sp"
@@ -191,7 +191,7 @@
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.42"
+        app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.4" />
@@ -208,25 +208,24 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.43"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.544" />
+        app:layout_constraintVertical_bias="0.535" />
 
     <TextView
         android:id="@+id/data"
         android:layout_width="276dp"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.573"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.244" />
+        app:layout_constraintVertical_bias="0.283" />
 
     <Button
         android:id="@+id/ishuDele"
@@ -237,6 +236,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/curved_button"
+        android:onClick="deleteIncomeCat"
         android:text="@string/pbtn13"
         android:textSize="18sp"
         android:typeface="serif"
@@ -256,6 +256,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/curved_button"
+        android:onClick="updateCatIncome"
         android:text="@string/ishuUpdate"
         android:textSize="18sp"
         android:typeface="serif"
