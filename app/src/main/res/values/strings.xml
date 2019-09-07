@@ -21,6 +21,10 @@
     <string name="tbtn3">EXPENSES</string>
     <string name="tbtn4">INCOME</string>
     <string name="tbtn5">REPORT</string>
+    <string name="tbtn6">ADD ACCOUNT</string>
+    <string name="ttxt7">Account Type: </string>
+    <string name="ttxt8">Account Ammount: </string>
+
 
     <string name="pmsg5">Category</string>
     <string name="pbtn4">Income</string>
@@ -46,9 +50,6 @@
         <item>monthly category</item>
 
     </string-array>
-
-
-
 
 
 </resources>
