@@ -13,8 +13,28 @@ public class Income_accounteditdelete extends AppCompatActivity {
         setContentView(R.layout.activity_income_accounteditdelete);
     }
 
-    public void account(View view){
-        Intent intent = new Intent(Income_accounteditdelete.this,Add.class);
+    public void account(View view) {
+        Intent intent = new Intent(Income_accounteditdelete.this, Add.class);
+        startActivity(intent);
+    }
+
+    public void addData1(View view) {
+        Intent intent = new Intent(Income_accounteditdelete.this, Daily.class);
+        startActivity(intent);
+    }
+
+    public void addData2(View view) {
+        Intent intent = new Intent(Income_accounteditdelete.this, expenses_category.class);
+        startActivity(intent);
+    }
+
+    public void addData3(View view) {
+        Intent intent = new Intent(Income_accounteditdelete.this, income_category.class);
+        startActivity(intent);
+    }
+
+    public void addData4(View view) {
+        Intent intent = new Intent(Income_accounteditdelete.this, My_Wallet_Repot.class);
         startActivity(intent);
     }
 }

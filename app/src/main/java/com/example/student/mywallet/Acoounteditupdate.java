@@ -13,8 +13,28 @@ public class Acoounteditupdate extends AppCompatActivity {
         setContentView(R.layout.activity_acoounteditupdate);
     }
 
-    public void account(View view){
-        Intent intent = new Intent(Acoounteditupdate.this,AddExpenses.class);
+    public void account(View view) {
+        Intent intent = new Intent(Acoounteditupdate.this, AddExpenses.class);
+        startActivity(intent);
+    }
+
+    public void addData1(View view) {
+        Intent intent = new Intent(Acoounteditupdate.this, Daily.class);
+        startActivity(intent);
+    }
+
+    public void addData2(View view) {
+        Intent intent = new Intent(Acoounteditupdate.this, expenses_category.class);
+        startActivity(intent);
+    }
+
+    public void addData3(View view) {
+        Intent intent = new Intent(Acoounteditupdate.this, income_category.class);
+        startActivity(intent);
+    }
+
+    public void addData4(View view) {
+        Intent intent = new Intent(Acoounteditupdate.this, My_Wallet_Repot.class);
         startActivity(intent);
     }
 }
