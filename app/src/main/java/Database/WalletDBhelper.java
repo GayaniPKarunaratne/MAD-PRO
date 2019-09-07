@@ -21,6 +21,16 @@ public class WalletDBhelper extends SQLiteOpenHelper {
 
         db.execSQL(crete_table_income);
 
+        /*-----------------------------------------Gayani-------------------------------------------------------------*/
+
+        String create_table_addexpences = "CREATE TABLE " + WalletUserMaster.Addexpences.TABLE_NAME_ADDEXPENCES + " ("+
+                WalletUserMaster.Addexpences._ID + " INTEGER PRIMARY KEY, " +
+                WalletUserMaster.Addexpences.COLUMN_NAME_EXPENCE + " TEXT," +
+                WalletUserMaster.Addexpences.COLUMN_NAME_CATEGORI + " TEXT," +
+                WalletUserMaster.Addexpences.COLUMN_NAME_NOTE + " TEXT);";
+
+        db.execSQL(create_table_addexpences);
+
     }
 
     @Override
@@ -44,7 +54,9 @@ public class WalletDBhelper extends SQLiteOpenHelper {
         }
     }
 
+    /*-------------------------------------------------Gayani------------------------------------------------------------*/
 
 
+    //public boolean addIncome(String )
 
 }
