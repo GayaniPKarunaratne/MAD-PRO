@@ -31,7 +31,7 @@ public class AddMore extends AppCompatActivity {
     public  void addIncomeCat(View view){
         name = txt_name.getText().toString();
 
-        boolean result = db.addIncome(name);
+        boolean result = db.addIncomeCategory(name);
         if(result == true){
             Toast.makeText(getApplicationContext(),"Data Added ",Toast.LENGTH_LONG).show();
         }

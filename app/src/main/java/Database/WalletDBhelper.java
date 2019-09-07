@@ -30,7 +30,7 @@ public class WalletDBhelper extends SQLiteOpenHelper {
 
     //prabhashi's methods=========================================================================
 
-    public boolean addIncome(String name){
+    public boolean addIncomeCategory(String name){
         SQLiteDatabase db = getWritableDatabase();
         ContentValues  contentValues = new ContentValues();
         contentValues.put(WalletUserMaster.IncomeCategory.COLUMN_NAME_INCOMENAME,name);
