@@ -9,6 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Income_accounteditdelete"></activity>
+        <activity android:name=".Income_add_account" />
+        <activity android:name=".Income_account" />
         <activity android:name=".Acoounteditupdate" />
         <activity android:name=".AddAccount" />
         <activity android:name=".Account" />
@@ -28,15 +31,14 @@
         <activity android:name=".Categories" />
         <activity android:name=".AddExpenses" />
         <activity android:name=".AddMore" />
+        <activity android:name=".Delete_Update" />
+        <activity android:name=".DeleteCategory" />
+        <activity android:name=".UpdateCategory" />
+        <activity android:name=".YourCategories" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-
-        <activity android:name=".Delete_Update" />
-        <activity android:name=".DeleteCategory" />
-        <activity android:name=".UpdateCategory" />
-        <activity android:name=".YourCategories"></activity>
     </application>
 
 </manifest>

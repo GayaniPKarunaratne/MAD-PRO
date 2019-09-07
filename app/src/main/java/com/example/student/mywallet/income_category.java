@@ -34,7 +34,7 @@ public class income_category extends AppCompatActivity {
     }
 
     public void addData5(View view) {
-        Intent intent = new Intent(income_category.this, Add.class);
+        Intent intent = new Intent(income_category.this, Income_account.class);
         startActivity(intent);
     }
 
