@@ -44,16 +44,16 @@
     <string name="pmsg13">Select  Expencess Category to Update</string>
     <string name="btn12">Update</string>
 
+    <string name="pbtn13">Delete</string>
+    <string name="btn14">Update</string>
+    <string name="ishuAdd">ADD</string>
+    <string name="ishuUpdate">UPDATE</string>
     <string-array name="UpdateCat">
         <item>Fav category</item>
         <item>Daily category</item>
         <item>monthly category</item>
 
     </string-array>
-    <string name="pbtn13">Delete</string>
-    <string name="btn14">Update</string>
-    <string name="ishuAdd">ADD</string>
-    <string name="ishuUpdate">UPDATE</string>
 
 
 </resources>
