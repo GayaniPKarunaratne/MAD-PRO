@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Acoounteditupdate"></activity>
+        <activity android:name=".Acoounteditupdate" />
         <activity android:name=".AddAccount" />
         <activity android:name=".Account" />
         <activity android:name=".income_category" />
@@ -36,6 +36,7 @@
         <activity android:name=".Delete_Update" />
         <activity android:name=".DeleteCategory" />
         <activity android:name=".UpdateCategory" />
+        <activity android:name=".YourCategories"></activity>
     </application>
 
 </manifest>

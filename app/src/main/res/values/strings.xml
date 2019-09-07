@@ -50,6 +50,10 @@
         <item>monthly category</item>
 
     </string-array>
+    <string name="pbtn13">Delete</string>
+    <string name="btn14">Update</string>
+    <string name="ishuAdd">ADD</string>
+    <string name="ishuUpdate">UPDATE</string>
 
 
 </resources>
