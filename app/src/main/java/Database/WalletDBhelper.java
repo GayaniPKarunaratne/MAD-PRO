@@ -20,7 +20,6 @@ public class WalletDBhelper extends SQLiteOpenHelper {
                 WalletUserMaster.IncomeCategory.COLUMN_NAME_INCOMENAME + " TEXT);";
 
         db.execSQL(crete_table_income);
-
         /*-----------------------------------------Gayani-------------------------------------------------------------*/
 
         String create_table_addexpences = "CREATE TABLE " + WalletUserMaster.Addexpences.TABLE_NAME_ADDEXPENCES + " ("+
@@ -36,6 +35,37 @@ public class WalletDBhelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
+    }
+
+    /*-------------------------------------------------Gayani------------------------------------------------------------*/
+
+
+    public boolean addExpences(String expences,String note){
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(WalletUserMaster.Addexpences.COLUMN_NAME_EXPENCE,expences);
+        contentValues.put(WalletUserMaster.Addexpences.COLUMN_NAME_NOTE,note);
+        long result = db.insert(WalletUserMaster.Addexpences.TABLE_NAME_ADDEXPENCES,null,contentValues);
+        if(result > 0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public boolean addInvoice(String invoice,String note){
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(WalletUserMaster.Addinvoice.COLUMN_NAME_INVOICE,invoice);
+        contentValues.put(WalletUserMaster.Addinvoice.COLUMN_NAME_NOTE,note);
+        long result = db.insert(WalletUserMaster.Addinvoice.TABLE_NAME_ADDINVOICE,null,contentValues);
+        if(result > 0){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     //prabhashi's methods=========================================================================
@@ -54,9 +84,6 @@ public class WalletDBhelper extends SQLiteOpenHelper {
         }
     }
 
-    /*-------------------------------------------------Gayani------------------------------------------------------------*/
 
-
-    //public boolean addIncome(String )
 
 }
