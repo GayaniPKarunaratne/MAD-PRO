@@ -3,14 +3,33 @@ package com.example.student.mywallet;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
+
+import java.util.ArrayList;
+
+import Adapters.IncomeAdapter;
+import Database.WalletDBhelper;
+import Model.AddIncome;
 
 public class Income_details extends AppCompatActivity {
 
+    WalletDBhelper db;
+    RecyclerView rv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_income_details);
+
+        db = new WalletDBhelper(this);
+
+        rv = findViewById(R.id.recycleV);
+        rv.setLayoutManager( new LinearLayoutManager(this));
+        ArrayList<AddIncome> array = db.readAllIncome();
+
+        IncomeAdapter adapter = new IncomeAdapter(array);
+        rv.setAdapter(adapter);
     }
 
     public void addData1(View view){

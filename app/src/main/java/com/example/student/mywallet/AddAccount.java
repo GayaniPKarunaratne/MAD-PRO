@@ -3,6 +3,7 @@ package com.example.student.mywallet;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -34,12 +35,12 @@ public class AddAccount extends AppCompatActivity {
         int count = 1;
 
         ArrayList<Users> u = db.readAllInforAcount();
-        for(Users users : u){
-            data_acount.append( count + " " + users.getUname() + "\n");
+        for (Users users : u) {
+            data_acount.append(count + " " + users.getUname() + "\n");
             count++;
         }
-
-        /*public void AddAcountCategorye(View view){
+    }
+        public void AddAcountCategorye(View view){
             acount_type = txt_name_acount.getText().toString();
             amount = txt_name_amount.getText().toString();
 
@@ -55,7 +56,7 @@ public class AddAccount extends AppCompatActivity {
 
 
 
-        public void displayAddAcountCategorye(View view){
+        public void displayAddAcountCategorye(View view ){
             data_acount.setText("");
             int counte = 1;
 
@@ -80,8 +81,8 @@ public class AddAccount extends AppCompatActivity {
             db.ExpensesCatUpdate(acount_type);
             db.ExpensesCatUpdate(amount);
             //displayAddAcountCategorye(view);
-        }*/
-    }
+        }
+
 
 
 

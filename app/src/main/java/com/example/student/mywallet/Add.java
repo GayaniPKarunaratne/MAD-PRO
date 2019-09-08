@@ -27,12 +27,10 @@ public class Add extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
 
-        addincome =findViewById(R.id.editText8);
-        note =findViewById(R.id.editText12);
-        category = findViewById( R.id.textView70);
-
         db = new WalletDBhelper(this);
-
+        addincome = findViewById( R.id.editText8);
+        note = findViewById( R.id.editText12);
+        category = findViewById( R.id.textView70);
 
 
         cost = (EditText)findViewById(R.id.editText8);

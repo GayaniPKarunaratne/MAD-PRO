@@ -11,6 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+import Model.AddIncome;
 import Model.Users;
 
 import static android.content.ContentValues.TAG;
@@ -38,10 +39,11 @@ public class WalletDBhelper extends SQLiteOpenHelper {
 
         /*-----------------------------------------Gayani-------------------------------------------------------------*/
 
-        String create_table_addexpences = "CREATE TABLE " + WalletUserMaster.Addexpences.TABLE_NAME_ADDEXPENCES + " ("+
-                WalletUserMaster.Addexpences._ID + " INTEGER PRIMARY KEY, " +
+        String create_table_addexpences = "CREATE TABLE " + WalletUserMaster.Addexpences.TABLE_NAME_ADDEXPENCES + " ( "+
+                WalletUserMaster.Addexpences._ID + " INTEGER PRIMARY KEY AUTOINCREMENT , " +
                 WalletUserMaster.Addexpences.COLUMN_NAME_EXPENCE + " TEXT," +
                 WalletUserMaster.Addexpences.COLUMN_NAME_CATEGORI + " TEXT," +
+                WalletUserMaster.Addexpences.COLUMN_NAME_DATE + " TEXT," +
                 WalletUserMaster.Addexpences.COLUMN_NAME_NOTE + " TEXT);";
 
         db.execSQL(create_table_addexpences);
@@ -65,11 +67,18 @@ public class WalletDBhelper extends SQLiteOpenHelper {
     /*-------------------------------------------------Gayani------------------------------------------------------------*/
 
 
-    public boolean addExpences(String expences,String note){
+    public boolean addExpences(String expences,String note ,String category){
         SQLiteDatabase db = getWritableDatabase();
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+        Date today = new Date();
+
         ContentValues contentValues = new ContentValues();
+
         contentValues.put(WalletUserMaster.Addexpences.COLUMN_NAME_EXPENCE,expences);
         contentValues.put(WalletUserMaster.Addexpences.COLUMN_NAME_NOTE,note);
+        contentValues.put(WalletUserMaster.Addexpences.COLUMN_NAME_CATEGORI , category );
+        contentValues.put(WalletUserMaster.Addexpences.COLUMN_NAME_DATE , formatter.format(today) );
+
         long result = db.insert(WalletUserMaster.Addexpences.TABLE_NAME_ADDEXPENCES,null,contentValues);
         if(result > 0){
             return true;
@@ -103,6 +112,24 @@ public class WalletDBhelper extends SQLiteOpenHelper {
         else{
             return false;
         }
+    }
+
+    public ArrayList<AddIncome>  readAllIncome() {
+        SQLiteDatabase db = getReadableDatabase();
+        String[] projection = {WalletUserMaster.Addincome.COLUMN_NAME_INCOME , WalletUserMaster.Addincome.COLUMN_NAME_CATEGORI , WalletUserMaster.Addincome.COLUMN_NAME_DATE};
+
+        String sortOrder = WalletUserMaster.Addincome.COLUMN_NAME_DATE;
+        Cursor values = db.query(WalletUserMaster.Addincome.TABLE_NAME_ADDINCOME , projection, null, null, null, null, sortOrder);
+
+        ArrayList<AddIncome> arrayList = new ArrayList<>();
+
+        while(values.moveToNext()){
+            String  Amount = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.Addincome.COLUMN_NAME_INCOME ));
+            String  Category = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.Addincome.COLUMN_NAME_CATEGORI ));
+            String  Date = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.Addincome.COLUMN_NAME_DATE));
+            arrayList.add( new AddIncome( Amount, Date, Category ));
+        }
+        return arrayList;
     }
 
 
@@ -139,6 +166,8 @@ public class WalletDBhelper extends SQLiteOpenHelper {
         }
         return users;
     }
+
+
 
     public  void incomecatDelete(String userName){
         SQLiteDatabase db = getReadableDatabase();

@@ -4,8 +4,17 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import Database.WalletDBhelper;
 
 public class AddExpenses extends AppCompatActivity {
+
+    WalletDBhelper db;
+    EditText addexpences ,note ;
+    TextView category ;
+    private String AddExpenses ,Note , Category ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
