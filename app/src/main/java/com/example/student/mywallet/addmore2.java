@@ -17,31 +17,31 @@ public class addmore2 extends AppCompatActivity {
     WalletDBhelper db;
     EditText editText6ishu;
     TextView data2;
-    private String name;
+    private String name2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addmore2);
 
-        editText6ishu = findViewById(R.id.editText10);
+        editText6ishu = findViewById(R.id.editText6ishu);
         data2 = findViewById(R.id.data2);
         db = new WalletDBhelper(this);
 
         data2.setText("");
-        int count = 1;
+        int count2 = 1;
 
-        ArrayList<Users> u = db.readAllInfor2();
-        for(Users users : u){
-            data2.append( count + " " + users.getUname() + "\n");
-            count++;
+        ArrayList<Users> u2 = db.readAllInfor2();
+        for(Users users : u2){
+            data2.append( count2 + " " + users.getUname() + "\n");
+            count2++;
         }
     }
 
     public void addExpensesCat(View view){
-        name = editText6ishu.getText().toString();
+        name2 = editText6ishu.getText().toString();
 
-        boolean result = db.addeXPENSESCategory(name);
+        boolean result = db.addeXPENSESCategory(name2);
         if(result == true){
             Toast.makeText(getApplicationContext(),"Data Added ",Toast.LENGTH_LONG).show();
         }
@@ -63,14 +63,14 @@ public class addmore2 extends AppCompatActivity {
     }
 
     public void deleteexpensesCat(View view){
-        name = editText6ishu.getText().toString();
-        db.ExpensescatDelete(name);
+        name2 = editText6ishu.getText().toString();
+        db.ExpensescatDelete(name2);
         displayExpensesInfro(view);
     }
 
     public void updateCexpensesncome(View view){
-        name = editText6ishu.getText().toString();
-        db.ExpensesCatUpdate(name);
+        name2 = editText6ishu.getText().toString();
+        db.ExpensesCatUpdate(name2);
         displayExpensesInfro(view);
     }
 
