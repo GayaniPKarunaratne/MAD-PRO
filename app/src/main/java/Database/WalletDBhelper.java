@@ -13,6 +13,7 @@ import java.util.Date;
 
 import Model.AddExpense;
 import Model.AddIncome;
+import Model.ExpensesCategory;
 import Model.Users;
 
 import static android.content.ContentValues.TAG;
@@ -154,6 +155,79 @@ public class WalletDBhelper extends SQLiteOpenHelper {
 
 
     //prabhashi's methods=========================================================================
+
+    public boolean addCategoryOsu(String name){
+
+        SQLiteDatabase db = getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put(WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME,name);
+
+
+        long result = db.insert(WalletUserMaster.ExpensesCategory.TABLE_NAME_Expenses,null,contentValues);
+
+        if (result > 0){
+            return true;
+        }else {
+            return false;
+        }
+
+    }
+
+    public ArrayList<ExpensesCategory> readAllCategoriesOsa() {
+        SQLiteDatabase db = getReadableDatabase();
+        String[] projection = {WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME , WalletUserMaster.ExpensesCategory._ID };
+
+        String sortOrder = WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME;
+
+        Cursor values = db.query(WalletUserMaster.ExpensesCategory.TABLE_NAME_Expenses ,projection,null,null,null,null,sortOrder);
+
+        ArrayList<ExpensesCategory> CATEGORIES = new ArrayList<ExpensesCategory>();
+
+        while (values.moveToNext()){
+            ExpensesCategory category = new ExpensesCategory();
+            String categoryname = values.getString( values.getColumnIndexOrThrow( WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME ));
+            category.setUname( categoryname);
+            category.setID( values.getInt( values.getColumnIndexOrThrow(WalletUserMaster.ExpensesCategory._ID) )  );
+            CATEGORIES.add( category );
+
+
+        }
+        return CATEGORIES;
+    }
+    public boolean deleteuser(String username){
+        SQLiteDatabase db = getReadableDatabase();
+        String Selection = WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME + " LIKE ?";
+        String[] SelectionArgs = { username };
+
+        long result  = db.delete(WalletUserMaster.ExpensesCategory.TABLE_NAME_Expenses , Selection , SelectionArgs );
+        if(result > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public boolean userUpdate(String username ){
+        SQLiteDatabase db  = getReadableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME , username );
+
+        String Selection = WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME + " Like ? ";
+        Log.i("DB" , Selection  );
+        String[] SelectionArgs = { username };
+
+        long result  =db.update(WalletUserMaster.ExpensesCategory.TABLE_NAME_Expenses ,contentValues , Selection , SelectionArgs);
+
+        if(result > 0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 
     public boolean addIncomeCategory(String name){
         SQLiteDatabase db = getWritableDatabase();

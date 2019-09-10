@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".IncomeCatSetting"></activity>
+        <activity android:name=".ExpensesCatSetings" />
+        <activity android:name=".DasboardIncomeCate" />
+        <activity android:name=".DashboardExpensesCate" />
         <activity android:name=".addmore2" />
         <activity android:name=".Income_accounteditdelete" />
         <activity android:name=".Income_add_account" />

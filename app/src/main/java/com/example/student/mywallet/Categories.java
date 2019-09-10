@@ -33,12 +33,12 @@ public class Categories extends AppCompatActivity {
     }
 
     public void addData6(View view){
-        Intent intent =new Intent(Categories.this,income_category.class);
+        Intent intent =new Intent(Categories.this,DasboardIncomeCate.class);
         startActivity(intent);
     }
 
     public void addData7(View view){
-        Intent intent =new Intent(Categories.this,expenses_category.class);
+        Intent intent =new Intent(Categories.this,DashboardExpensesCate.class);
         startActivity(intent);
     }
 }
