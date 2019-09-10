@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".addmore2"></activity>
+        <activity android:name=".BashboardIncomeCat"></activity>
+        <activity android:name=".addmore2" />
         <activity android:name=".Income_accounteditdelete" />
         <activity android:name=".Income_add_account" />
         <activity android:name=".Income_account" />
