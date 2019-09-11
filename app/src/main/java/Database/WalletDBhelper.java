@@ -41,7 +41,7 @@ public class WalletDBhelper extends SQLiteOpenHelper {
 
         /*----------------------------end prabhashi-----------------------*/
 
-        /*-----------------------------------------Gayani-------------------------------------------------------------*/
+        /***********************************************************   Gayani   *******************************************************************/
 
         String create_table_addexpences = "CREATE TABLE " + WalletUserMaster.Addexpences.TABLE_NAME_ADDEXPENCES + " ( "+
                 WalletUserMaster.Addexpences._ID + " INTEGER PRIMARY KEY AUTOINCREMENT , " +
@@ -86,8 +86,7 @@ public class WalletDBhelper extends SQLiteOpenHelper {
 
     }
 
-    /*-------------------------------------------------Gayani------------------------------------------------------------*/
-
+    /***********************************************************  Gayani   *******************************************************************/
 
     public boolean addExpences(String expences,String note ,String category){
         SQLiteDatabase db = getWritableDatabase();
@@ -181,6 +180,17 @@ public class WalletDBhelper extends SQLiteOpenHelper {
         return arrayList;
     }
 
+    public void deleteIncome(int id){
+        SQLiteDatabase db = getReadableDatabase();
+
+        String Selection = WalletUserMaster.Addincome._ID + " = ?";
+        String[] SelectionArgs = { String.valueOf(id)};
+
+        db.delete(WalletUserMaster.Addincome.TABLE_NAME_ADDINCOME,Selection,SelectionArgs);
+        Log.i("DB","Delete :" + id);
+    }
+
+    /***********************************************************  End Of Gayani  *******************************************************************/
 
 
 

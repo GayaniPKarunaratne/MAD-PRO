@@ -24,6 +24,11 @@ public class IncomeAdapter extends RecyclerView.Adapter<IncomeAdapter.IncomeAdap
         Log.i("Adapter" , "Called");
     }
 
+    public void setArrayList(ArrayList<AddIncome> arrayList) {
+        this.arrayList = arrayList;
+        notifyDataSetChanged();
+    }
+
     @NonNull
     @Override
     public IncomeAdapter.IncomeAdapterViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -55,5 +60,9 @@ public class IncomeAdapter extends RecyclerView.Adapter<IncomeAdapter.IncomeAdap
             amount = itemView.findViewById(R.id.amount);
             category = itemView.findViewById(R.id.category);
         }
+    }
+
+    public interface onIncomeListner{
+        void OnIncomeClick(int position);
     }
 }
