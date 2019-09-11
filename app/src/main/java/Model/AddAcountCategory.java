@@ -16,14 +16,14 @@ public class AddAcountCategory {
         this.amount = amount;
     }
 
-    public AddAcountCategory() {
-
-    }
 
     public AddAcountCategory(String acounttype) {
     }
 
+
+
     public AddAcountCategory() {
+
     }
 
     public int getID() {
