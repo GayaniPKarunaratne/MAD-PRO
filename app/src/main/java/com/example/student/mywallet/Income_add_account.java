@@ -24,12 +24,12 @@ public class Income_add_account extends AppCompatActivity {
     }
 
     public void addData2(View view) {
-        Intent intent = new Intent(Income_add_account.this, expenses_category.class);
+        Intent intent = new Intent(Income_add_account.this, DashboardExpensesCate.class);
         startActivity(intent);
     }
 
     public void addData3(View view) {
-        Intent intent = new Intent(Income_add_account.this, income_category.class);
+        Intent intent = new Intent(Income_add_account.this, DasboardIncomeCate.class);
         startActivity(intent);
     }
 

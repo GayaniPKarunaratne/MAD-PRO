@@ -86,23 +86,27 @@
                     app:cardCornerRadius="12dp"
                     android:layout_margin="12dp"
                     >
+
                     <LinearLayout
-                        android:orientation="vertical"
-                        android:padding="16dp"
-                        android:gravity="center"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:onClick="addData5"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
                         <ImageView
-                            android:src="@drawable/wallet"
                             android:layout_width="80dp"
-                            android:layout_height="80dp" />
+                            android:layout_height="80dp"
+                            android:src="@drawable/wallet" />
+
                         <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:layout_marginTop="12dp"
-                            android:textColor="#6f6f6f"
-                            android:textSize="18sp"
                             android:text="Wallet"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:textColor="#6f6f6f"
+                            android:textSize="18sp" />
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
                 <android.support.v7.widget.CardView
@@ -114,23 +118,27 @@
                     app:cardCornerRadius="12dp"
                     android:layout_margin="12dp"
                     >
+
                     <LinearLayout
-                        android:orientation="vertical"
-                        android:padding="16dp"
-                        android:gravity="center"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:onClick="addData5"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
                         <ImageView
-                            android:src="@drawable/mom"
                             android:layout_width="80dp"
-                            android:layout_height="80dp" />
+                            android:layout_height="80dp"
+                            android:src="@drawable/mom" />
+
                         <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:layout_marginTop="12dp"
-                            android:textColor="#6f6f6f"
-                            android:textSize="18sp"
                             android:text="By Parent"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:textColor="#6f6f6f"
+                            android:textSize="18sp" />
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
 
@@ -147,23 +155,27 @@
                     app:cardCornerRadius="12dp"
                     android:layout_margin="12dp"
                     >
+
                     <LinearLayout
-                        android:orientation="vertical"
-                        android:padding="16dp"
-                        android:gravity="center"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:onClick="addData5"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
                         <ImageView
-                            android:src="@drawable/sale"
                             android:layout_width="80dp"
-                            android:layout_height="80dp" />
+                            android:layout_height="80dp"
+                            android:src="@drawable/sale" />
+
                         <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:layout_marginTop="12dp"
-                            android:textColor="#6f6f6f"
-                            android:textSize="18sp"
                             android:text="Sales"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:textColor="#6f6f6f"
+                            android:textSize="18sp" />
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
                 <android.support.v7.widget.CardView
@@ -175,23 +187,27 @@
                     app:cardCornerRadius="12dp"
                     android:layout_margin="12dp"
                     >
+
                     <LinearLayout
-                        android:orientation="vertical"
-                        android:padding="16dp"
-                        android:gravity="center"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:onClick="addData5"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
                         <ImageView
-                            android:src="@drawable/rental"
                             android:layout_width="80dp"
-                            android:layout_height="80dp" />
+                            android:layout_height="80dp"
+                            android:src="@drawable/rental" />
+
                         <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:layout_marginTop="12dp"
-                            android:textColor="#6f6f6f"
-                            android:textSize="18sp"
                             android:text="Rental"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:textColor="#6f6f6f"
+                            android:textSize="18sp" />
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
 
@@ -209,23 +225,27 @@
                     app:cardCornerRadius="12dp"
                     android:layout_margin="12dp"
                     >
+
                     <LinearLayout
-                        android:orientation="vertical"
-                        android:padding="16dp"
-                        android:gravity="center"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:onClick="addData5"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
                         <ImageView
-                            android:src="@drawable/refund"
                             android:layout_width="80dp"
-                            android:layout_height="80dp" />
+                            android:layout_height="80dp"
+                            android:src="@drawable/refund" />
+
                         <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:layout_marginTop="12dp"
-                            android:textColor="#6f6f6f"
-                            android:textSize="18sp"
                             android:text="Refund"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:textColor="#6f6f6f"
+                            android:textSize="18sp" />
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
                 <android.support.v7.widget.CardView
@@ -237,24 +257,27 @@
                     app:cardCornerRadius="12dp"
                     android:layout_margin="12dp"
                     >
+
                     <LinearLayout
-                        android:orientation="vertical"
-                        android:padding="16dp"
-                        android:gravity="center"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:onClick="addData5"
+                        android:orientation="vertical"
+                        android:padding="16dp">
 
                         <ImageView
-                            android:src="@drawable/wallet"
                             android:layout_width="80dp"
-                            android:layout_height="80dp" />
+                            android:layout_height="80dp"
+                            android:src="@drawable/wallet" />
+
                         <TextView
-                            android:layout_marginTop="12dp"
-                            android:textColor="#6f6f6f"
-                            android:textSize="18sp"
-                            android:text="Savings"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="Savings"
+                            android:textColor="#6f6f6f"
+                            android:textSize="18sp" />
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
 

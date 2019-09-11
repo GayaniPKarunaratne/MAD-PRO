@@ -52,12 +52,12 @@ public class AddExpenses extends AppCompatActivity {
         startActivity(intent);
     }
     public void addData2(View view){
-        Intent intent = new Intent(AddExpenses.this,expenses_category.class);
+        Intent intent = new Intent(AddExpenses.this,DashboardExpensesCate.class);
         startActivity(intent);
     }
 
     public void addData3(View view){
-        Intent intent = new Intent(AddExpenses.this,income_category.class);
+        Intent intent = new Intent(AddExpenses.this,DasboardIncomeCate.class);
         startActivity(intent);
     }
 

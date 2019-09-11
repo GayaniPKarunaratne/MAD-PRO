@@ -58,4 +58,8 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ExpenseA
             category = itemView.findViewById(R.id.category);
         }
     }
+
+    public interface onExpenceListner{
+        void OnExpenseClick(int position);
+    }
 }

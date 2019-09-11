@@ -13,15 +13,12 @@
         <activity android:name=".ExpensesCatSetings" />
         <activity android:name=".DasboardIncomeCate" />
         <activity android:name=".DashboardExpensesCate" />
-        <activity android:name=".addmore2" />
         <activity android:name=".Income_accounteditdelete" />
         <activity android:name=".Income_add_account" />
         <activity android:name=".Income_account" />
         <activity android:name=".Acoounteditupdate" />
         <activity android:name=".AddAccount" />
         <activity android:name=".Account" />
-        <activity android:name=".income_category" />
-        <activity android:name=".expenses_category" />
         <activity android:name=".Income_details" />
         <activity android:name=".Expensses_details" />
         <activity android:name=".My_Wallet_Repot" />
@@ -35,11 +32,6 @@
         <activity android:name=".Add" />
         <activity android:name=".Categories" />
         <activity android:name=".AddExpenses" />
-        <activity android:name=".AddMore" />
-        <activity android:name=".Delete_Update" />
-        <activity android:name=".DeleteCategory" />
-        <activity android:name=".UpdateCategory" />
-        <activity android:name=".YourCategories" />
 
         <meta-data
             android:name="preloaded_fonts"

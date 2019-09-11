@@ -24,30 +24,6 @@ public class Acoounteditupdate extends AppCompatActivity {
 
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public void account(View view) {
         Intent intent = new Intent(Acoounteditupdate.this, AddExpenses.class);
         startActivity(intent);
@@ -59,12 +35,12 @@ public class Acoounteditupdate extends AppCompatActivity {
     }
 
     public void addData2(View view) {
-        Intent intent = new Intent(Acoounteditupdate.this, expenses_category.class);
+        Intent intent = new Intent(Acoounteditupdate.this, DashboardExpensesCate.class);
         startActivity(intent);
     }
 
     public void addData3(View view) {
-        Intent intent = new Intent(Acoounteditupdate.this, income_category.class);
+        Intent intent = new Intent(Acoounteditupdate.this, DasboardIncomeCate.class);
         startActivity(intent);
     }
 

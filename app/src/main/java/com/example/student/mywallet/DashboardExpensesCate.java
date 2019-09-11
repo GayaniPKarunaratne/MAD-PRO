@@ -42,4 +42,8 @@ public class DashboardExpensesCate extends AppCompatActivity {
         Intent intent =new Intent(DashboardExpensesCate.this,Categories.class);
         startActivity(intent);
     }
+    public void addData5(View view) {
+        Intent intent = new Intent(DashboardExpensesCate.this, Account.class);
+        startActivity(intent);
+    }
 }

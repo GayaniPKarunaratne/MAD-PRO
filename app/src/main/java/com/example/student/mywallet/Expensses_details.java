@@ -17,7 +17,7 @@ import Database.WalletDBhelper;
 import Model.AddExpense;
 import Model.AddIncome;
 
-public class Expensses_details extends AppCompatActivity {
+public class Expensses_details extends AppCompatActivity implements ExpenseAdapter.onExpenceListner{
 
     WalletDBhelper db;
     RecyclerView rv;
@@ -48,7 +48,7 @@ public class Expensses_details extends AppCompatActivity {
         startActivity(intent);
     }
     public void addData2(View view){
-        Intent intent = new Intent(Expensses_details.this,expenses_category.class);
+        Intent intent = new Intent(Expensses_details.this,DashboardExpensesCate.class);
         startActivity(intent);
     }
 
@@ -60,18 +60,18 @@ public class Expensses_details extends AppCompatActivity {
 
         @Override
         public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
-           int deleteid = arrayList.get(viewHolder.getAdapterPosition()).getID();
-          // db.deleteExpense(deleteid);
+            int deleteid = arrayList.get(viewHolder.getAdapterPosition()).getID();
+            db.deleteExpense(deleteid);
             arrayList.remove(deleteid);
-            adapter.notifyDataSetChanged();
-           // adapter.setArrayList(arrayList);
+            //adapter.notifyDataSetChanged();
+            adapter.setArrayList(arrayList);
             Toast.makeText(getApplicationContext(),"DELETED!" +  deleteid  ,Toast.LENGTH_LONG).show();
 
         }
     };
 
     public void addData3(View view){
-        Intent intent = new Intent(Expensses_details.this,income_category.class);
+        Intent intent = new Intent(Expensses_details.this,DasboardIncomeCate.class);
         startActivity(intent);
     }
 
@@ -88,5 +88,10 @@ public class Expensses_details extends AppCompatActivity {
     public void addData6(View view){
         Intent intent = new Intent(Expensses_details.this,Expensses_details.class);
         startActivity(intent);
+    }
+
+    @Override
+    public void OnExpenseClick(int position) {
+
     }
 }

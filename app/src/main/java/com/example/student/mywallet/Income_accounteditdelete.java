@@ -24,12 +24,12 @@ public class Income_accounteditdelete extends AppCompatActivity {
     }
 
     public void addData2(View view) {
-        Intent intent = new Intent(Income_accounteditdelete.this, expenses_category.class);
+        Intent intent = new Intent(Income_accounteditdelete.this, DashboardExpensesCate.class);
         startActivity(intent);
     }
 
     public void addData3(View view) {
-        Intent intent = new Intent(Income_accounteditdelete.this, income_category.class);
+        Intent intent = new Intent(Income_accounteditdelete.this, DasboardIncomeCate.class);
         startActivity(intent);
     }
 

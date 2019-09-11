@@ -20,4 +20,8 @@ public class DasboardIncomeCate extends AppCompatActivity {
         Intent intent =new Intent(DasboardIncomeCate.this,Categories.class);
         startActivity(intent);
     }
+    public void addData5(View view) {
+        Intent intent = new Intent(DasboardIncomeCate.this, Income_account.class);
+        startActivity(intent);
+    }
 }
