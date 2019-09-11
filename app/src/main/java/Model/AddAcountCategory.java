@@ -19,6 +19,9 @@ public class AddAcountCategory {
     public AddAcountCategory(String acounttype) {
     }
 
+    public AddAcountCategory() {
+    }
+
     public int getID() {
         return ID;
     }
