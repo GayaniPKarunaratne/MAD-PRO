@@ -110,6 +110,16 @@ public class WalletDBhelper extends SQLiteOpenHelper {
         return arrayList;
     }
 
+    public void deleteExpense(int id){
+        SQLiteDatabase db = getReadableDatabase();
+
+        String Selection = WalletUserMaster.Addexpences._ID + " = ?";
+        String[] SelectionArgs = { String.valueOf(id)};
+
+        db.delete(WalletUserMaster.Addexpences.TABLE_NAME_ADDEXPENCES,Selection,SelectionArgs);
+        Log.i("DB","Delete :" + id);
+    }
+
     public boolean addIncome(String income,String note , String category){
 
         SQLiteDatabase db = getWritableDatabase();
