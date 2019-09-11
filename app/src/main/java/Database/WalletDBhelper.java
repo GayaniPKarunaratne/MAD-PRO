@@ -23,17 +23,16 @@ public class WalletDBhelper extends SQLiteOpenHelper {
 
     public static final String DB_NAME = "wallet.db";
 
-    public WalletDBhelper(Context context) {
-        super(context, DB_NAME, null, 1);
+    public WalletDBhelper(Context context){
+        super(context,DB_NAME,null,1 );
 
     }
-
     @Override
     public void onCreate(SQLiteDatabase db) {
 
         /*----------------------------prabhashi-----------------------*/
 
-        String crete_table_income = "CREATE TABLE " + WalletUserMaster.IncomeCategory.TABLE_NAME_INCOME + " (" +
+        String crete_table_income = "CREATE TABLE " + WalletUserMaster.IncomeCategory.TABLE_NAME_INCOME + " ("+
                 WalletUserMaster.IncomeCategory._ID + " INTEGER PRIMARY KEY, " +
                 WalletUserMaster.IncomeCategory.COLUMN_NAME_INCOMENAME + " TEXT);";
 
@@ -43,7 +42,7 @@ public class WalletDBhelper extends SQLiteOpenHelper {
 
         /*-----------------------------------------Gayani-------------------------------------------------------------*/
 
-        String create_table_addexpences = "CREATE TABLE " + WalletUserMaster.Addexpences.TABLE_NAME_ADDEXPENCES + " ( " +
+        String create_table_addexpences = "CREATE TABLE " + WalletUserMaster.Addexpences.TABLE_NAME_ADDEXPENCES + " ( "+
                 WalletUserMaster.Addexpences._ID + " INTEGER PRIMARY KEY AUTOINCREMENT , " +
                 WalletUserMaster.Addexpences.COLUMN_NAME_EXPENCE + " TEXT," +
                 WalletUserMaster.Addexpences.COLUMN_NAME_CATEGORI + " TEXT," +
@@ -59,7 +58,7 @@ public class WalletDBhelper extends SQLiteOpenHelper {
                 WalletUserMaster.Addincome.COLUMN_NAME_DATE + " TEXT," +
                 WalletUserMaster.Addincome.COLUMN_NAME_NOTE + " TEXT);";
 
-        db.execSQL(create_table_addincome);
+        db.execSQL(create_table_addincome );
 
     }
 
@@ -71,46 +70,47 @@ public class WalletDBhelper extends SQLiteOpenHelper {
     /*-------------------------------------------------Gayani------------------------------------------------------------*/
 
 
-    public boolean addExpences(String expences, String note, String category) {
+    public boolean addExpences(String expences,String note ,String category){
         SQLiteDatabase db = getWritableDatabase();
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
         Date today = new Date();
 
         ContentValues contentValues = new ContentValues();
 
-        contentValues.put(WalletUserMaster.Addexpences.COLUMN_NAME_EXPENCE, expences);
-        contentValues.put(WalletUserMaster.Addexpences.COLUMN_NAME_NOTE, note);
-        contentValues.put(WalletUserMaster.Addexpences.COLUMN_NAME_CATEGORI, category);
-        contentValues.put(WalletUserMaster.Addexpences.COLUMN_NAME_DATE, formatter.format(today));
+        contentValues.put(WalletUserMaster.Addexpences.COLUMN_NAME_EXPENCE,expences);
+        contentValues.put(WalletUserMaster.Addexpences.COLUMN_NAME_NOTE,note);
+        contentValues.put(WalletUserMaster.Addexpences.COLUMN_NAME_CATEGORI , category );
+        contentValues.put(WalletUserMaster.Addexpences.COLUMN_NAME_DATE , formatter.format(today) );
 
-        long result = db.insert(WalletUserMaster.Addexpences.TABLE_NAME_ADDEXPENCES, null, contentValues);
-        if (result > 0) {
+        long result = db.insert(WalletUserMaster.Addexpences.TABLE_NAME_ADDEXPENCES,null,contentValues);
+        if(result > 0){
             return true;
-        } else {
+        }
+        else{
             return false;
         }
     }
 
 
-    public ArrayList<AddExpense> readAllExpense() {
+    public ArrayList<AddExpense>  readAllExpense() {
         SQLiteDatabase db = getReadableDatabase();
-        String[] projection = {WalletUserMaster.Addexpences.COLUMN_NAME_EXPENCE, WalletUserMaster.Addexpences.COLUMN_NAME_CATEGORI, WalletUserMaster.Addexpences.COLUMN_NAME_DATE};
+        String[] projection = {WalletUserMaster.Addexpences.COLUMN_NAME_EXPENCE , WalletUserMaster.Addexpences.COLUMN_NAME_CATEGORI , WalletUserMaster.Addexpences.COLUMN_NAME_DATE};
 
         String sortOrder = WalletUserMaster.Addexpences.COLUMN_NAME_DATE;
-        Cursor values = db.query(WalletUserMaster.Addexpences.TABLE_NAME_ADDEXPENCES, projection, null, null, null, null, sortOrder);
+        Cursor values = db.query(WalletUserMaster.Addexpences.TABLE_NAME_ADDEXPENCES , projection, null, null, null, null, sortOrder);
 
         ArrayList<AddExpense> arrayList = new ArrayList<>();
 
-        while (values.moveToNext()) {
-            String Amount = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.Addexpences.COLUMN_NAME_EXPENCE));
-            String Category = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.Addexpences.COLUMN_NAME_CATEGORI));
-            String Date = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.Addexpences.COLUMN_NAME_DATE));
-            arrayList.add(new AddExpense(Amount, Date, Category));
+        while(values.moveToNext()){
+            String  Amount = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.Addexpences.COLUMN_NAME_EXPENCE ));
+            String  Category = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.Addexpences.COLUMN_NAME_CATEGORI ));
+            String  Date = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.Addexpences.COLUMN_NAME_DATE));
+            arrayList.add( new AddExpense( Amount, Date, Category ));
         }
         return arrayList;
     }
 
-    public boolean addIncome(String income, String note, String category) {
+    public boolean addIncome(String income,String note , String category){
 
         SQLiteDatabase db = getWritableDatabase();
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
@@ -118,56 +118,59 @@ public class WalletDBhelper extends SQLiteOpenHelper {
 
         ContentValues contentValues = new ContentValues();
 
-        contentValues.put(WalletUserMaster.Addincome.COLUMN_NAME_INCOME, income);
-        contentValues.put(WalletUserMaster.Addincome.COLUMN_NAME_NOTE, note);
-        contentValues.put(WalletUserMaster.Addincome.COLUMN_NAME_CATEGORI, category);
-        contentValues.put(WalletUserMaster.Addincome.COLUMN_NAME_DATE, formatter.format(today));
+        contentValues.put(WalletUserMaster.Addincome.COLUMN_NAME_INCOME ,income);
+        contentValues.put(WalletUserMaster.Addincome.COLUMN_NAME_NOTE ,note);
+        contentValues.put(WalletUserMaster.Addincome.COLUMN_NAME_CATEGORI , category );
+        contentValues.put(WalletUserMaster.Addincome.COLUMN_NAME_DATE , formatter.format(today) );
 
 
-        long result = db.insert(WalletUserMaster.Addincome.TABLE_NAME_ADDINCOME, null, contentValues);
+        long result = db.insert(WalletUserMaster.Addincome.TABLE_NAME_ADDINCOME ,null,contentValues);
 
-        if (result > 0) {
+        if(result > 0){
             return true;
-        } else {
+        }
+        else{
             return false;
         }
     }
 
-    public ArrayList<AddIncome> readAllIncome() {
+    public ArrayList<AddIncome>  readAllIncome() {
         SQLiteDatabase db = getReadableDatabase();
-        String[] projection = {WalletUserMaster.Addincome.COLUMN_NAME_INCOME, WalletUserMaster.Addincome.COLUMN_NAME_CATEGORI, WalletUserMaster.Addincome.COLUMN_NAME_DATE};
+        String[] projection = {WalletUserMaster.Addincome.COLUMN_NAME_INCOME , WalletUserMaster.Addincome.COLUMN_NAME_CATEGORI , WalletUserMaster.Addincome.COLUMN_NAME_DATE};
 
         String sortOrder = WalletUserMaster.Addincome.COLUMN_NAME_DATE;
-        Cursor values = db.query(WalletUserMaster.Addincome.TABLE_NAME_ADDINCOME, projection, null, null, null, null, sortOrder);
+        Cursor values = db.query(WalletUserMaster.Addincome.TABLE_NAME_ADDINCOME , projection, null, null, null, null, sortOrder);
 
         ArrayList<AddIncome> arrayList = new ArrayList<>();
 
-        while (values.moveToNext()) {
-            String Amount = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.Addincome.COLUMN_NAME_INCOME));
-            String Category = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.Addincome.COLUMN_NAME_CATEGORI));
-            String Date = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.Addincome.COLUMN_NAME_DATE));
-            arrayList.add(new AddIncome(Amount, Date, Category));
+        while(values.moveToNext()){
+            String  Amount = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.Addincome.COLUMN_NAME_INCOME ));
+            String  Category = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.Addincome.COLUMN_NAME_CATEGORI ));
+            String  Date = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.Addincome.COLUMN_NAME_DATE));
+            arrayList.add( new AddIncome( Amount, Date, Category ));
         }
         return arrayList;
     }
+
+
 
 
     //prabhashi's methods=========================================================================
 
-    public boolean addCategoryOsu(String name) {
+    public boolean addCategoryOsu(String name){
 
         SQLiteDatabase db = getWritableDatabase();
 
         ContentValues contentValues = new ContentValues();
 
-        contentValues.put(WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME, name);
+        contentValues.put(WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME,name);
 
 
-        long result = db.insert(WalletUserMaster.ExpensesCategory.TABLE_NAME_Expenses, null, contentValues);
+        long result = db.insert(WalletUserMaster.ExpensesCategory.TABLE_NAME_Expenses,null,contentValues);
 
-        if (result > 0) {
+        if (result > 0){
             return true;
-        } else {
+        }else {
             return false;
         }
 
@@ -175,68 +178,69 @@ public class WalletDBhelper extends SQLiteOpenHelper {
 
     public ArrayList<ExpensesCategory> readAllCategoriesOsa() {
         SQLiteDatabase db = getReadableDatabase();
-        String[] projection = {WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME, WalletUserMaster.ExpensesCategory._ID};
+        String[] projection = {WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME , WalletUserMaster.ExpensesCategory._ID };
 
         String sortOrder = WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME;
 
-        Cursor values = db.query(WalletUserMaster.ExpensesCategory.TABLE_NAME_Expenses, projection, null, null, null, null, sortOrder);
+        Cursor values = db.query(WalletUserMaster.ExpensesCategory.TABLE_NAME_Expenses ,projection,null,null,null,null,sortOrder);
 
         ArrayList<ExpensesCategory> CATEGORIES = new ArrayList<ExpensesCategory>();
 
-        while (values.moveToNext()) {
+        while (values.moveToNext()){
             ExpensesCategory category = new ExpensesCategory();
-            String categoryname = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME));
-            category.setUname(categoryname);
-            category.setID(values.getInt(values.getColumnIndexOrThrow(WalletUserMaster.ExpensesCategory._ID)));
-            CATEGORIES.add(category);
+            String categoryname = values.getString( values.getColumnIndexOrThrow( WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME ));
+            category.setUname( categoryname);
+            category.setID( values.getInt( values.getColumnIndexOrThrow(WalletUserMaster.ExpensesCategory._ID) )  );
+            CATEGORIES.add( category );
 
 
         }
         return CATEGORIES;
     }
-
-    public boolean deleteuser(String username) {
+    public boolean deleteuser(String username){
         SQLiteDatabase db = getReadableDatabase();
         String Selection = WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME + " LIKE ?";
-        String[] SelectionArgs = {username};
+        String[] SelectionArgs = { username };
 
-        long result = db.delete(WalletUserMaster.ExpensesCategory.TABLE_NAME_Expenses, Selection, SelectionArgs);
-        if (result > 0) {
+        long result  = db.delete(WalletUserMaster.ExpensesCategory.TABLE_NAME_Expenses , Selection , SelectionArgs );
+        if(result > 0){
             return true;
-        } else {
+        }else{
             return false;
         }
     }
 
-    public boolean userUpdate(String username) {
-        SQLiteDatabase db = getReadableDatabase();
+    public boolean userUpdate(String username ){
+        SQLiteDatabase db  = getReadableDatabase();
 
         ContentValues contentValues = new ContentValues();
-        contentValues.put(WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME, username);
+        contentValues.put(WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME , username );
 
         String Selection = WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME + " Like ? ";
-        Log.i("DB", Selection);
-        String[] SelectionArgs = {username};
+        Log.i("DB" , Selection  );
+        String[] SelectionArgs = { username };
 
-        long result = db.update(WalletUserMaster.ExpensesCategory.TABLE_NAME_Expenses, contentValues, Selection, SelectionArgs);
+        long result  =db.update(WalletUserMaster.ExpensesCategory.TABLE_NAME_Expenses ,contentValues , Selection , SelectionArgs);
 
-        if (result > 0) {
+        if(result > 0){
             return true;
-        } else {
+        }
+        else{
             return false;
         }
     }
 
-    public boolean addIncomeCategory(String name) {
+    public boolean addIncomeCategory(String name){
         SQLiteDatabase db = getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(WalletUserMaster.IncomeCategory.COLUMN_NAME_INCOMENAME, name);
-        long result = db.insert(WalletUserMaster.IncomeCategory.TABLE_NAME_INCOME, null, contentValues);
-        if (result > 0) {
+        ContentValues  contentValues = new ContentValues();
+        contentValues.put(WalletUserMaster.IncomeCategory.COLUMN_NAME_INCOMENAME,name);
+        long result = db.insert(WalletUserMaster.IncomeCategory.TABLE_NAME_INCOME,null,contentValues);
+        if(result > 0){
             return true;
 
-        } else {
-            return false;
+        }
+        else{
+            return  false;
         }
     }
 
@@ -249,7 +253,7 @@ public class WalletDBhelper extends SQLiteOpenHelper {
 
         ArrayList<Users> users = new ArrayList<>();
 
-        while (values.moveToNext()) {
+        while(values.moveToNext()){
             String userName = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.IncomeCategory.COLUMN_NAME_INCOMENAME));
             users.add(new Users(userName));
         }
@@ -257,41 +261,43 @@ public class WalletDBhelper extends SQLiteOpenHelper {
     }
 
 
-    public void incomecatDelete(String userName) {
+
+    public  void incomecatDelete(String userName){
         SQLiteDatabase db = getReadableDatabase();
         String selection = WalletUserMaster.IncomeCategory.COLUMN_NAME_INCOMENAME + " LIKE ?";
         String[] SelectionArgs = {userName};
 
-        db.delete(WalletUserMaster.IncomeCategory.TABLE_NAME_INCOME, selection, SelectionArgs);
+        db.delete(WalletUserMaster.IncomeCategory.TABLE_NAME_INCOME , selection , SelectionArgs);
     }
 
-    public void incomeCatUpdate(String username) {
+    public void incomeCatUpdate(String username){
         SQLiteDatabase db = getReadableDatabase();
 
         ContentValues contentValues = new ContentValues();
-        contentValues.put(WalletUserMaster.IncomeCategory.COLUMN_NAME_INCOMENAME, username);
+        contentValues.put(WalletUserMaster.IncomeCategory.COLUMN_NAME_INCOMENAME , username);
 
         String Selection = WalletUserMaster.IncomeCategory.COLUMN_NAME_INCOMENAME + " LIKE ? ";
-        Log.i("DB", Selection);
+        Log.i("DB" , Selection);
 
         String[] SelectionArgs = {username};
 
-        db.update(WalletUserMaster.IncomeCategory.TABLE_NAME_INCOME, contentValues, Selection, SelectionArgs);
+        db.update(WalletUserMaster.IncomeCategory.TABLE_NAME_INCOME , contentValues , Selection , SelectionArgs);
 
 
     }
 
 
-    public boolean addeXPENSESCategory(String name) {
+    public boolean addeXPENSESCategory(String name){
         SQLiteDatabase db = getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME, name);
-        long result = db.insert(WalletUserMaster.ExpensesCategory.TABLE_NAME_Expenses, null, contentValues);
-        if (result > 0) {
+        ContentValues  contentValues = new ContentValues();
+        contentValues.put(WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME,name);
+        long result = db.insert(WalletUserMaster.ExpensesCategory.TABLE_NAME_Expenses,null,contentValues);
+        if(result > 0){
             return true;
 
-        } else {
-            return false;
+        }
+        else{
+            return  false;
         }
     }
 
@@ -304,33 +310,33 @@ public class WalletDBhelper extends SQLiteOpenHelper {
 
         ArrayList<Users> users2 = new ArrayList<>();
 
-        while (values.moveToNext()) {
+        while(values.moveToNext()){
             String userName = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME));
             users2.add(new Users(userName));
         }
         return users2;
     }
 
-    public void ExpensescatDelete(String userName) {
+    public  void ExpensescatDelete(String userName){
         SQLiteDatabase db = getReadableDatabase();
         String selection = WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME + " LIKE ?";
         String[] SelectionArgs = {userName};
 
-        db.delete(WalletUserMaster.ExpensesCategory.TABLE_NAME_Expenses, selection, SelectionArgs);
+        db.delete(WalletUserMaster.ExpensesCategory.TABLE_NAME_Expenses , selection , SelectionArgs);
     }
 
-    public void ExpensesCatUpdate(String username) {
+    public void ExpensesCatUpdate(String username){
         SQLiteDatabase db = getReadableDatabase();
 
         ContentValues contentValues = new ContentValues();
-        contentValues.put(WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME, username);
+        contentValues.put(WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME , username);
 
         String Selection = WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME + " LIKE ? ";
-        Log.i("DB", Selection);
+        Log.i("DB" , Selection);
 
         String[] SelectionArgs = {username};
 
-        db.update(WalletUserMaster.ExpensesCategory.TABLE_NAME_Expenses, contentValues, Selection, SelectionArgs);
+        db.update(WalletUserMaster.ExpensesCategory.TABLE_NAME_Expenses , contentValues , Selection , SelectionArgs);
 
 
     }
@@ -340,41 +346,38 @@ public class WalletDBhelper extends SQLiteOpenHelper {
 
     /*---------------------------thenuka------------------------------------------*/
 
-    public boolean addAccountCategory(String acounttype, String amount) {
+    public boolean addAccountCategory(String acounttype,String amount){
         SQLiteDatabase db = getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(WalletUserMaster.AddAcountCategory.COLUME_NAME_ACOUNT_TYPE, acounttype);
-        contentValues.put(WalletUserMaster.AddAcountCategory.COLUME_NAME_AMOUNT, amount);
-        long result = db.insert(WalletUserMaster.AddAcountCategory.TABLE_NAME_ACCOUNT, null, contentValues);
-        if (result > 0) {
-            return true;
-        } else {
+        contentValues.put(WalletUserMaster.AddAcountCategory.COLUME_NAME_ACOUNT_TYPE,acounttype);
+        contentValues.put(WalletUserMaster.AddAcountCategory.COLUME_NAME_AMOUNT,amount);
+        long result = db.insert(WalletUserMaster.AddAcountCategory.TABLE_NAME_ACCOUNT,null,contentValues);
+        if(result > 0){
+            return  true;
+        }
+        else {
             return false;
         }
     }
 
-    public ArrayList<AddAcountCategory> readAllInforAcount() {
+    public ArrayList<AddAcountCategory> readAllInforAcount(){
         SQLiteDatabase db = getReadableDatabase();
-        String[] projection = {WalletUserMaster.AddAcountCategory.COLUME_NAME_ACOUNT_TYPE, WalletUserMaster.AddAcountCategory.COLUME_NAME_AMOUNT};
+        String[] projection = {WalletUserMaster.AddAcountCategory.COLUME_NAME_ACOUNT_TYPE,WalletUserMaster.AddAcountCategory.COLUME_NAME_AMOUNT};
 
         String sortOrder1 = WalletUserMaster.AddAcountCategory.COLUME_NAME_ACOUNT_TYPE;
         String sortOrder2 = WalletUserMaster.AddAcountCategory.COLUME_NAME_AMOUNT;
-        Cursor values = db.query(WalletUserMaster.AddAcountCategory.TABLE_NAME_ACCOUNT, projection, null, null, null, null, null);
+        Cursor values = db.query(WalletUserMaster.AddAcountCategory.TABLE_NAME_ACCOUNT,projection, null,null,null,null,sortOrder1,sortOrder2);
 
         ArrayList<AddAcountCategory> acount = new ArrayList<>();
 
-        while (values.moveToNext()) {
+        while (values.moveToNext()){
             String acounttype = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.AddAcountCategory.COLUME_NAME_ACOUNT_TYPE));
             String amount = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.AddAcountCategory.COLUME_NAME_AMOUNT));
-            AddAcountCategory ac  = new AddAcountCategory();
-
-            ac.setAcount(acounttype);
-            ac.setAmount(amount);
-            acount.add(ac);
+            acount.add(new AddAcountCategory(acounttype));
+            acount.add(new AddAcountCategory(amount));
         }
         return acount;
     }
-
 
 
 
