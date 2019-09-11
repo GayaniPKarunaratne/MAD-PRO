@@ -276,6 +276,7 @@
             app:srcCompat="@drawable/report5" />
 
         <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerview"
             android:layout_width="331dp"
             android:layout_height="201dp"
             app:layout_constraintBottom_toBottomOf="parent"

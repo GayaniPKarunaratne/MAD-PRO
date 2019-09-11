@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,6 +16,9 @@ import Database.WalletDBhelper;
 import Model.Users;
 
 public class AddAccount extends AppCompatActivity {
+
+    EditText cost,cost2;
+    ImageButton imaBtn;
 
     WalletDBhelper db;
     EditText txt_name_acount,txt_name_amount;
@@ -31,38 +35,44 @@ public class AddAccount extends AppCompatActivity {
         data_acount = findViewById(R.id.textView10);
         db = new WalletDBhelper(this);
 
-        data_acount.setText("");
+        cost = (EditText) findViewById(R.id.editText7);
+        cost2 = (EditText) findViewById(R.id.editText7);
+        imaBtn = (ImageButton)findViewById(R.id.imageButton4);
+
+        /*data_acount.setText("");
         int count = 1;
 
-        ArrayList<Users> u = db.readAllInforAcount();
-        for (Users users : u) {
-            data_acount.append(count + " " + users.getUname() + "\n");
-            count++;
-        }
+
+
+        ArrayList<AddAcountCategory> u = db.readAllInforAcount();
+        for (AddAcountCategory users : u) {
+            txt_name_amount.append(txt_name_amount + " " + users.getAmount() + "\n");
+            EditText editText = txt_name_amount++;
+        }*/
     }
-        public void AddAcountCategorye(View view){
-            acount_type = txt_name_acount.getText().toString();
-            amount = txt_name_amount.getText().toString();
+    public void AddAcountCategorye(View view){
+        acount_type = txt_name_acount.getText().toString().trim();
+        amount = txt_name_amount.getText().toString().trim();
 
-            boolean result = db.addAccountCategory(acount_type,amount);
-            if(result == true){
-                Toast.makeText(getApplicationContext(),"Data Added ",Toast.LENGTH_LONG).show();
-            }
-            else{
-                Toast.makeText(getApplicationContext(),"Data failed",Toast.LENGTH_LONG).show();
-            }
-           // displayAddAcountCategorye(view);
+        boolean result = db.addAccountCategory(acount_type,amount);
+        if(result == true){
+            Toast.makeText(getApplicationContext(),"Data Added ",Toast.LENGTH_LONG).show();
+        }
+        else{
+            Toast.makeText(getApplicationContext(),"Data failed",Toast.LENGTH_LONG).show();
         }
 
+    }
 
 
-        public void displayAddAcountCategorye(View view ){
+
+       /* public void displayAddAcountCategorye(View view ){
             data_acount.setText("");
             int counte = 1;
 
-            ArrayList<Users> ac = db.readAllInfor2();
-            for(Users users : ac){
-                data_acount.append( counte + " " + users.getUname() + "\n");
+            ArrayList<Users> ac = db.readAllInforAcount();
+            for(AddAcountCategory  : ac){
+                data_acount.append( counte + " " + AddAcountCategory.getAmount() + "\n");
                 counte++;
             }
         }
@@ -80,23 +90,8 @@ public class AddAccount extends AppCompatActivity {
             amount = txt_name_amount.getText().toString();
             db.ExpensesCatUpdate(acount_type);
             db.ExpensesCatUpdate(amount);
-            //displayAddAcountCategorye(view);
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            displayAddAcountCategorye(view);
+        }*/
 
 
     public void addaccount(View view) {

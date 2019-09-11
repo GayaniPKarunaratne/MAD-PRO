@@ -11,6 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+import Model.AddAcountCategory;
 import Model.AddExpense;
 import Model.AddIncome;
 import Model.ExpensesCategory;
@@ -346,20 +347,20 @@ public class WalletDBhelper extends SQLiteOpenHelper {
     /*---------------------------thenuka------------------------------------------*/
 
     public boolean addAccountCategory(String acounttype,String amount){
-      SQLiteDatabase db = getWritableDatabase();
-      ContentValues contentValues = new ContentValues();
-      contentValues.put(WalletUserMaster.AddAcountCategory.COLUME_NAME_ACOUNT_TYPE,acounttype);
-      contentValues.put(WalletUserMaster.AddAcountCategory.COLUME_NAME_AMOUNT,amount);
-      long result = db.insert(WalletUserMaster.AddAcountCategory.TABLE_NAME_ACCOUNT,null,contentValues);
-     if(result > 0){
-         return  true;
-     }
-     else {
-         return false;
-     }
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(WalletUserMaster.AddAcountCategory.COLUME_NAME_ACOUNT_TYPE,acounttype);
+        contentValues.put(WalletUserMaster.AddAcountCategory.COLUME_NAME_AMOUNT,amount);
+        long result = db.insert(WalletUserMaster.AddAcountCategory.TABLE_NAME_ACCOUNT,null,contentValues);
+        if(result > 0){
+            return  true;
+        }
+        else {
+            return false;
+        }
     }
 
-    public ArrayList<Users> readAllInforAcount(){
+    public ArrayList<AddAcountCategory> readAllInforAcount(){
         SQLiteDatabase db = getReadableDatabase();
         String[] projection = {WalletUserMaster.AddAcountCategory.COLUME_NAME_ACOUNT_TYPE,WalletUserMaster.AddAcountCategory.COLUME_NAME_AMOUNT};
 
@@ -367,42 +368,42 @@ public class WalletDBhelper extends SQLiteOpenHelper {
         String sortOrder2 = WalletUserMaster.AddAcountCategory.COLUME_NAME_AMOUNT;
         Cursor values = db.query(WalletUserMaster.AddAcountCategory.TABLE_NAME_ACCOUNT,projection, null,null,null,null,sortOrder1,sortOrder2);
 
-        ArrayList<Users> users = new ArrayList<>();
+        ArrayList<AddAcountCategory> acount = new ArrayList<>();
 
         while (values.moveToNext()){
-            String userName1 = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.AddAcountCategory.COLUME_NAME_ACOUNT_TYPE));
-            String userName2 = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.AddAcountCategory.COLUME_NAME_AMOUNT));
-            users.add(new Users(userName1));
-            users.add(new Users(userName2));
+            String acounttype = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.AddAcountCategory.COLUME_NAME_ACOUNT_TYPE));
+            String amount = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.AddAcountCategory.COLUME_NAME_AMOUNT));
+            acount.add(new AddAcountCategory(acounttype));
+            acount.add(new AddAcountCategory(amount));
         }
-    return users;
+        return acount;
     }
 
 
 
-    public void AddAcountCategoryDelete(String userName){
+    public void AddAcountCategoryDelete(String acount){
         SQLiteDatabase db = getReadableDatabase();
         String selection = WalletUserMaster.AddAcountCategory.COLUME_NAME_ACOUNT_TYPE + "LIKE ?" + WalletUserMaster.AddAcountCategory.COLUME_NAME_AMOUNT + "LIKE ?";
 
-        String[] SelectionArgs = {userName};
+        String[] SelectionArgs = {acount};
 
-         db.delete(WalletUserMaster.AddAcountCategory.TABLE_NAME_ACCOUNT, selection,  SelectionArgs);
+        db.delete(WalletUserMaster.AddAcountCategory.TABLE_NAME_ACCOUNT, selection,  SelectionArgs);
     }
 
 
 
-    public void AddAcountCateroyUpdate(String userName1,String userName2){
+    public void AddAcountCateroyUpdate(String acounttype,String amount){
         SQLiteDatabase db = getReadableDatabase();
 
         ContentValues contentValues = new ContentValues();
-        contentValues.put(WalletUserMaster.AddAcountCategory.COLUME_NAME_ACOUNT_TYPE, userName1);
-        contentValues.put(WalletUserMaster.AddAcountCategory.COLUME_NAME_AMOUNT, userName2);
+        contentValues.put(WalletUserMaster.AddAcountCategory.COLUME_NAME_ACOUNT_TYPE, acounttype);
+        contentValues.put(WalletUserMaster.AddAcountCategory.COLUME_NAME_AMOUNT, amount);
 
 
         String Selection = WalletUserMaster.AddAcountCategory.COLUME_NAME_ACOUNT_TYPE + "LIKE ?" + WalletUserMaster.AddAcountCategory.COLUME_NAME_AMOUNT + "LIKE ?";
         Log.i("DB", Selection);
 
-        String[] SelectionArg = {userName1, userName2};
+        String[] SelectionArg = {acounttype, amount};
 
         db.update(WalletUserMaster.AddAcountCategory.TABLE_NAME_ACCOUNT, contentValues, Selection , SelectionArg);
 

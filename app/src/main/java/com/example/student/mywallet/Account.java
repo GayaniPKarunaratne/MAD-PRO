@@ -3,14 +3,33 @@ package com.example.student.mywallet;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
+
+import java.util.ArrayList;
+
+import Adapters.AddAcountCategoryAdapter;
+import Database.WalletDBhelper;
+import Model.AddAcountCategory;
 
 public class Account extends AppCompatActivity {
 
+    WalletDBhelper db;
+    RecyclerView rv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
+
+        db = new WalletDBhelper(this);
+
+        rv = findViewById(R.id.recyclerview);
+        rv.setLayoutManager(new LinearLayoutManager(this));
+        ArrayList<AddAcountCategory> array = db.readAllInforAcount();
+
+        AddAcountCategoryAdapter adapter = new AddAcountCategoryAdapter(array);
+        rv.setAdapter(adapter);
     }
 
     public void account(View view) {
