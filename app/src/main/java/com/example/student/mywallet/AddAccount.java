@@ -22,7 +22,7 @@ public class AddAccount extends AppCompatActivity {
 
     WalletDBhelper db;
     EditText txt_name_acount,txt_name_amount;
-    TextView data_acount;
+    //TextView data_acount;
     private String acount_type, amount;
 
     @Override
@@ -32,7 +32,7 @@ public class AddAccount extends AppCompatActivity {
 
         txt_name_acount = findViewById(R.id.editText7);
         txt_name_amount = findViewById(R.id.editText11);
-        data_acount = findViewById(R.id.textView10);
+        //data_acount = findViewById(R.id.textView10);
         db = new WalletDBhelper(this);
 
         cost = (EditText) findViewById(R.id.editText7);

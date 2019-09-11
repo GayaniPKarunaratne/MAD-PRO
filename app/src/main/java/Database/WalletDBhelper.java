@@ -14,6 +14,7 @@ import java.util.Date;
 import Model.AddAcountCategory;
 import Model.AddExpense;
 import Model.AddIncome;
+import Model.AddIncomeAcountCategory;
 import Model.ExpensesCategory;
 import Model.Users;
 
@@ -59,6 +60,24 @@ public class WalletDBhelper extends SQLiteOpenHelper {
                 WalletUserMaster.Addincome.COLUMN_NAME_NOTE + " TEXT);";
 
         db.execSQL(create_table_addincome );
+
+        /*------------------------------Thenuka -----------------------------------------------------------------------*/
+
+        String create_table_addAcount = "CREATE TABLE " + WalletUserMaster.AddAcountCategory.TABLE_NAME_ACCOUNT + " ( "+
+                WalletUserMaster.AddAcountCategory._ID + " INTEGER PRIMARY KEY AUTOINCREMENT , " +
+                WalletUserMaster.AddAcountCategory.COLUME_NAME_ACOUNT_TYPE + "TEXT," +
+                WalletUserMaster.AddAcountCategory.COLUME_NAME_AMOUNT + "TEXT);";
+
+        db.execSQL(create_table_addAcount);
+
+        String create_table_addIncomeAcount = "CREATE TABLE " + WalletUserMaster.AddIncomeAcountCategory.TABLE_NAME_INCOME_ACCOUNT + " ( "+
+                WalletUserMaster.AddIncomeAcountCategory._ID + " INTEGER PRIMARY KEY AUTOINCREMENT , " +
+                WalletUserMaster.AddIncomeAcountCategory.COLUME_NAME_INCOME_ACOUNT_TYPE + "TEXT," +
+                WalletUserMaster.AddIncomeAcountCategory.COLUME_NAME_INCOME_AMOUNT + "TEXT);";
+
+        db.execSQL(create_table_addIncomeAcount);
+
+        /*------------------------------end Thenuka -----------------------------------------------------------------------*/
 
     }
 
@@ -370,6 +389,20 @@ public class WalletDBhelper extends SQLiteOpenHelper {
         }
     }
 
+    public boolean addIncomeAcountCategory(String incomeacounttype,String incomeamount){
+        SQLiteDatabase db = getReadableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(WalletUserMaster.AddIncomeAcountCategory.COLUME_NAME_INCOME_ACOUNT_TYPE,incomeacounttype);
+        contentValues.put(WalletUserMaster.AddIncomeAcountCategory.COLUME_NAME_INCOME_AMOUNT,incomeamount);
+        long result = db.insert(WalletUserMaster.AddIncomeAcountCategory.TABLE_NAME_INCOME_ACCOUNT,null,contentValues);
+        if(result > 0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
     public ArrayList<AddAcountCategory> readAllInforAcount() {
         SQLiteDatabase db = getReadableDatabase();
         String[] projection = {WalletUserMaster.AddAcountCategory.COLUME_NAME_ACOUNT_TYPE, WalletUserMaster.AddAcountCategory.COLUME_NAME_AMOUNT};
@@ -390,6 +423,28 @@ public class WalletDBhelper extends SQLiteOpenHelper {
             acount.add(ac);
         }
         return acount;
+    }
+
+    public ArrayList<AddIncomeAcountCategory> readAllIncomeAcount(){
+        SQLiteDatabase db = getReadableDatabase();
+        String[] projection = {WalletUserMaster.AddIncomeAcountCategory.COLUME_NAME_INCOME_ACOUNT_TYPE,WalletUserMaster.AddIncomeAcountCategory.COLUME_NAME_INCOME_AMOUNT};
+        String sortOrder1 = WalletUserMaster.AddIncomeAcountCategory.COLUME_NAME_INCOME_ACOUNT_TYPE;
+        String sortOrder2 = WalletUserMaster.AddIncomeAcountCategory.COLUME_NAME_INCOME_AMOUNT;
+        Cursor values = db.query(WalletUserMaster.AddIncomeAcountCategory.TABLE_NAME_INCOME_ACCOUNT,projection,null,null,null,null,null);
+
+        ArrayList<AddIncomeAcountCategory> Incomeacount = new ArrayList<>();
+
+        while (values.moveToNext()) {
+            String incomeacounttype = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.AddIncomeAcountCategory.COLUME_NAME_INCOME_ACOUNT_TYPE));
+            String incomeamount = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.AddIncomeAcountCategory.COLUME_NAME_INCOME_AMOUNT));
+            AddIncomeAcountCategory iac = new AddIncomeAcountCategory();
+
+            iac.setIncomeacount(incomeacounttype);
+            iac.setIncomeamount(incomeamount);
+            Incomeacount.add(iac);
+
+        }
+        return Incomeacount;
     }
 
 

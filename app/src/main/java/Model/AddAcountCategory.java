@@ -11,19 +11,7 @@ public class AddAcountCategory {
         this.amount = amount;
     }
 
-    public AddAcountCategory(String acount, String amount) {
-        this.acount = acount;
-        this.amount = amount;
-    }
-
-
-    public AddAcountCategory(String acounttype) {
-    }
-
-
-
     public AddAcountCategory() {
-
     }
 
     public int getID() {

@@ -44,10 +44,18 @@ public final class WalletUserMaster {
 
     /*----------------------------Thenuak-----------------------*/
 
-    protected static class AddAcountCategory implements BaseColumns{
+    protected static class AddAcountCategory implements BaseColumns {
         protected static final String TABLE_NAME_ACCOUNT = "account";
         protected static final String COLUME_NAME_ACOUNT_TYPE = "acounttype";
         protected static final String COLUME_NAME_AMOUNT = "amount";
+    }
+
+    protected static class AddIncomeAcountCategory implements BaseColumns{
+        protected static final String TABLE_NAME_INCOME_ACCOUNT = "incomeacount";
+        protected static final String COLUME_NAME_INCOME_ACOUNT_TYPE = "incomeacount";
+        protected static final String COLUME_NAME_INCOME_AMOUNT = "incomeamount";
+
+
 
     }
 
