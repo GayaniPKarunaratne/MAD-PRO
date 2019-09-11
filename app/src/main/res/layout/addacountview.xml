@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/acount"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginBottom="4dp"
+        android:background="#E8D9C5"
+        android:paddingBottom="3dp">
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="107dp"
+        android:layout_height="28dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="146dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="158dp"
+        android:layout_marginBottom="13dp"
+        android:text="TextView"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="64dp"
+        android:layout_height="24dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="318dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="5dp"
+        android:text="TextView"
+        android:textColor="@android:color/black" />
+
+    </RelativeLayout>
+
+</LinearLayout>
