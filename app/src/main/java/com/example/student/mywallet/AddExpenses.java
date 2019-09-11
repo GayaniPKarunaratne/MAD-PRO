@@ -28,6 +28,8 @@ public class AddExpenses extends AppCompatActivity {
         addexpences = findViewById( R.id.editText3);
         note = findViewById( R.id.editText13);
         category = findViewById( R.id.textView71);
+
+
     }
 
     public  void addExpense(View view){

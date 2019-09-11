@@ -22,12 +22,11 @@ public class Account extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
 
-        db = new WalletDBhelper(this);
+   db = new WalletDBhelper(this);
 
-        rv = findViewById(R.id.recyclerview);
+      rv = findViewById(R.id.recyclerview);
         rv.setLayoutManager(new LinearLayoutManager(this));
-        ArrayList<AddAcountCategory> array = db.readAllInforAcount();
-
+        ArrayList<AddAcountCategory> array = new ArrayList<>();//db.readAllInforAcount();
         AddAcountCategoryAdapter adapter = new AddAcountCategoryAdapter(array);
         rv.setAdapter(adapter);
     }

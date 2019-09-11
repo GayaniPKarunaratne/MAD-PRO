@@ -24,6 +24,11 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ExpenseA
         Log.i("Adapter" , "Called");
     }
 
+    public void setArrayList(ArrayList<AddExpense> arrayList) {
+        this.arrayList = arrayList;
+        notifyDataSetChanged();
+    }
+
     @Override
     public ExpenseAdapter.ExpenseAdapterViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         View view = LayoutInflater.from( viewGroup.getContext() ).inflate(R.layout.expenseview , viewGroup , false);

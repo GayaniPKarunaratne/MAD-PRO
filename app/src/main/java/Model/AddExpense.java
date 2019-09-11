@@ -22,6 +22,13 @@ public class AddExpense {
         this.category = category;
     }
 
+    public AddExpense(int ID, String expenseAmount, String date, String category) {
+        this.ID = ID;
+        ExpenseAmount = expenseAmount;
+        Date = date;
+        this.category = category;
+    }
+
     public AddExpense(){
 
     }

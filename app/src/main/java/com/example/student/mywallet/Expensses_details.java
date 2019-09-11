@@ -5,7 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -19,6 +21,8 @@ public class Expensses_details extends AppCompatActivity {
 
     WalletDBhelper db;
     RecyclerView rv;
+    private ArrayList<AddExpense> arrayList;
+    ExpenseAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +33,14 @@ public class Expensses_details extends AppCompatActivity {
 
         rv = findViewById(R.id.recycleV2);
         rv.setLayoutManager( new LinearLayoutManager(this));
-        ArrayList<AddExpense> array = db.readAllExpense();
+        arrayList = db.readAllExpense();
 
-        ExpenseAdapter adapter = new ExpenseAdapter(array);
+        adapter = new ExpenseAdapter(arrayList);
         rv.setAdapter(adapter);
+
+        new ItemTouchHelper(itemTouchHelpercallback).attachToRecyclerView(rv);
+
+
     }
 
     public void addData1(View view){
@@ -43,6 +51,24 @@ public class Expensses_details extends AppCompatActivity {
         Intent intent = new Intent(Expensses_details.this,expenses_category.class);
         startActivity(intent);
     }
+
+    ItemTouchHelper.SimpleCallback itemTouchHelpercallback = new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+        @Override
+        public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+            return false;
+        }
+
+        @Override
+        public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+           int deleteid = arrayList.get(viewHolder.getAdapterPosition()).getID();
+          // db.deleteExpense(deleteid);
+            arrayList.remove(deleteid);
+            adapter.notifyDataSetChanged();
+           // adapter.setArrayList(arrayList);
+            Toast.makeText(getApplicationContext(),"DELETED!" +  deleteid  ,Toast.LENGTH_LONG).show();
+
+        }
+    };
 
     public void addData3(View view){
         Intent intent = new Intent(Expensses_details.this,income_category.class);
