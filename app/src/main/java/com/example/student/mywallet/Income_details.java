@@ -89,7 +89,12 @@ public class Income_details extends AppCompatActivity implements IncomeAdapter.o
 
     @Override
     public void OnIncomeClick(int position) {
-                Toast.makeText( this , "OK" ,Toast.LENGTH_LONG ).show();
+              AddIncome income = arrayList.get(position );
+              Intent intent = new Intent( Income_details.this , EditIncome.class);
+              intent.putExtra( "ID" , income.getID() );
+              intent.putExtra( "Amount" , income.getIncomeAmount() );
+              intent.putExtra( "Note" , income.getNote()   );
+              startActivity(intent);
     }
 }
 

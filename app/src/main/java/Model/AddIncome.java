@@ -16,6 +16,7 @@ public class AddIncome {
         this.note = note;
     }
 
+
     public AddIncome(String incomeAmount, String date, String category) {
         IncomeAmount = incomeAmount;
         Date = date;

@@ -164,7 +164,7 @@ public class WalletDBhelper extends SQLiteOpenHelper {
 
     public ArrayList<AddIncome>  readAllIncome() {
         SQLiteDatabase db = getReadableDatabase();
-        String[] projection = {WalletUserMaster.Addincome.COLUMN_NAME_INCOME , WalletUserMaster.Addincome.COLUMN_NAME_CATEGORI , WalletUserMaster.Addincome.COLUMN_NAME_DATE};
+        String[] projection = { WalletUserMaster.Addincome.COLUMN_NAME_ID ,  WalletUserMaster.Addincome.COLUMN_NAME_INCOME , WalletUserMaster.Addincome.COLUMN_NAME_CATEGORI , WalletUserMaster.Addincome.COLUMN_NAME_DATE , WalletUserMaster.Addincome.COLUMN_NAME_NOTE};
 
         String sortOrder = WalletUserMaster.Addincome.COLUMN_NAME_DATE;
         Cursor values = db.query(WalletUserMaster.Addincome.TABLE_NAME_ADDINCOME , projection, null, null, null, null, sortOrder);
@@ -172,10 +172,13 @@ public class WalletDBhelper extends SQLiteOpenHelper {
         ArrayList<AddIncome> arrayList = new ArrayList<>();
 
         while(values.moveToNext()){
+            int ID = values.getInt( values.getColumnIndexOrThrow( WalletUserMaster.Addincome.COLUMN_NAME_ID ));
             String  Amount = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.Addincome.COLUMN_NAME_INCOME ));
             String  Category = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.Addincome.COLUMN_NAME_CATEGORI ));
             String  Date = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.Addincome.COLUMN_NAME_DATE));
-            arrayList.add( new AddIncome( Amount, Date, Category ));
+            String  Note = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.Addincome.COLUMN_NAME_NOTE));
+
+            arrayList.add( new AddIncome( ID ,  Amount, Date, Category  , Note ));
         }
         return arrayList;
     }
@@ -189,6 +192,24 @@ public class WalletDBhelper extends SQLiteOpenHelper {
         db.delete(WalletUserMaster.Addincome.TABLE_NAME_ADDINCOME,Selection,SelectionArgs);
         Log.i("DB","Delete :" + id);
     }
+
+
+    public void editIncome( String id , String income,String note ){
+
+        SQLiteDatabase db = getReadableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(WalletUserMaster.Addincome.COLUMN_NAME_INCOME ,income);
+        contentValues.put(WalletUserMaster.Addincome.COLUMN_NAME_NOTE ,note);
+
+        String Selection = WalletUserMaster.Addincome.COLUMN_NAME_ID + " = ? ";
+        String SelectionArgs[] = { id };
+
+        db.update( WalletUserMaster.Addincome.TABLE_NAME_ADDINCOME , contentValues , Selection , SelectionArgs );
+
+
+    }
+
 
     /***********************************************************  End Of Gayani  *******************************************************************/
 

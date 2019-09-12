@@ -36,7 +36,7 @@ public class Add extends AppCompatActivity {
         cost = (EditText)findViewById(R.id.editText8);
         imaBtn = (ImageButton)findViewById(R.id.imageButton4);
 
-//        imaBtn.setOnClickListener(new View.OnClickListener() {
+ //     imaBtn.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
 //                if(!cost.getText().toString().isEmpty()){
