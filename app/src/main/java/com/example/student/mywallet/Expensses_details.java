@@ -12,15 +12,14 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import Adapters.ExpenseAdapter;
-import Adapters.IncomeAdapter;
 import Database.WalletDBhelper;
 import Model.AddExpense;
-import Model.AddIncome;
 
 public class Expensses_details extends AppCompatActivity implements ExpenseAdapter.onExpenceListner{
 
     WalletDBhelper db;
     RecyclerView rv;
+
     private ArrayList<AddExpense> arrayList;
     ExpenseAdapter adapter;
 
@@ -35,7 +34,7 @@ public class Expensses_details extends AppCompatActivity implements ExpenseAdapt
         rv.setLayoutManager( new LinearLayoutManager(this));
         arrayList = db.readAllExpense();
 
-        adapter = new ExpenseAdapter(arrayList);
+        adapter = new ExpenseAdapter(arrayList,this);
         rv.setAdapter(adapter);
 
         new ItemTouchHelper(itemTouchHelpercallback).attachToRecyclerView(rv);
@@ -92,6 +91,7 @@ public class Expensses_details extends AppCompatActivity implements ExpenseAdapt
 
     @Override
     public void OnExpenseClick(int position) {
+        Toast.makeText( this , "OK" ,Toast.LENGTH_LONG ).show();
 
     }
 }

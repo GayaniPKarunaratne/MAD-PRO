@@ -34,7 +34,7 @@ public class Income_details extends AppCompatActivity implements IncomeAdapter.o
         rv.setLayoutManager( new LinearLayoutManager(this));
        arrayList = db.readAllIncome();
 
-        adapter = new IncomeAdapter(arrayList);
+        adapter = new IncomeAdapter(arrayList , this );
         rv.setAdapter(adapter);
 
         new ItemTouchHelper(itemTouchHelpercallback).attachToRecyclerView(rv);
@@ -53,7 +53,7 @@ public class Income_details extends AppCompatActivity implements IncomeAdapter.o
             //db.deleteIncome(deleteid);
             arrayList.remove(deleteid);
             //adapter.notifyDataSetChanged();
-            adapter.setArrayList(arrayList);
+           // adapter.setArrayList(arrayList);
             Toast.makeText(getApplicationContext(),"DELETED!" +  deleteid  ,Toast.LENGTH_LONG).show();
 
         }
@@ -89,7 +89,7 @@ public class Income_details extends AppCompatActivity implements IncomeAdapter.o
 
     @Override
     public void OnIncomeClick(int position) {
-
+                Toast.makeText( this , "OK" ,Toast.LENGTH_LONG ).show();
     }
 }
 

@@ -18,9 +18,12 @@ import Model.AddExpense;
 
 public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ExpenseAdapterViewHolder>{
     private ArrayList<AddExpense> arrayList;
+    private onExpenceListner onExpenceListner;
 
-    public ExpenseAdapter(ArrayList<AddExpense> arrayList) {
+
+    public ExpenseAdapter(ArrayList<AddExpense> arrayList , onExpenceListner onExpense) {
         this.arrayList = arrayList;
+        this.onExpenceListner = onExpense;
         Log.i("Adapter" , "Called");
     }
 
@@ -32,7 +35,7 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ExpenseA
     @Override
     public ExpenseAdapter.ExpenseAdapterViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         View view = LayoutInflater.from( viewGroup.getContext() ).inflate(R.layout.expenseview , viewGroup , false);
-        return new ExpenseAdapter.ExpenseAdapterViewHolder(view);
+        return new ExpenseAdapter.ExpenseAdapterViewHolder(view,onExpenceListner);
     }
 
     @Override
@@ -48,14 +51,24 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ExpenseA
     @Override
     public int getItemCount() { return arrayList.size(); }
 
-    public class ExpenseAdapterViewHolder extends RecyclerView.ViewHolder {
+    public class ExpenseAdapterViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         TextView date , amount , category;
-        public ExpenseAdapterViewHolder(@NonNull View itemView) {
+        onExpenceListner onExpense;
+
+        public ExpenseAdapterViewHolder(@NonNull View itemView , onExpenceListner onExpense) {
             super(itemView);
+            this.onExpense = onExpense;
             date = itemView.findViewById(R.id.date);
             amount = itemView.findViewById(R.id.amount);
             category = itemView.findViewById(R.id.category);
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+
+            onExpense.OnExpenseClick(getAdapterPosition());
         }
     }
 
