@@ -41,7 +41,7 @@ public class Account extends AppCompatActivity implements AddAcountCategoryAdapt
         rv.setLayoutManager(new LinearLayoutManager(this));
         rv.setAdapter(adapter);
 
-
+        new ItemTouchHelper(itemTouchHelpercallback).attachToRecyclerView(rv);
     }
 
     @Override
@@ -60,15 +60,18 @@ public class Account extends AppCompatActivity implements AddAcountCategoryAdapt
         @Override
         public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder,int i) {
             int deleteId = arrayList.get(viewHolder.getAdapterPosition()).getID();
+            db.deleteExpensesAcount(deleteId);
+            arrayList.remove(viewHolder.getAdapterPosition());
+            adapter.notifyDataSetChanged();
             //db.deleteExpensesAcount(deleteId);
 
             //arrayList.remove(viewHolder.getAdapterPosition());
 
-            //arrayList.remove(deleteID);
+           // arrayList.remove(deleteId);
             //adapter.notifyDataSetChanged();
             //adapter.setArrayList(arrayList);
             //adapter.setArrayList(arrayList);
-            Toast.makeText(getApplicationContext(),deleteId+"",Toast.LENGTH_LONG).show();
+           Toast.makeText(getApplicationContext(),deleteId+"",Toast.LENGTH_LONG).show();
 
 
         }
