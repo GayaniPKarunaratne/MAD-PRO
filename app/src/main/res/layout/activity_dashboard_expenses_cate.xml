@@ -466,11 +466,38 @@
 
 
             </GridLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp">
+
+                <TextView
+                    android:id="@+id/txtdashbord1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="Your Categories"
+                    android:layout_marginRight="50dp"
+                    android:textColor="#55473d"
+                    android:textSize="24sp" />
+                <TextView
+                    android:layout_below="@+id/txtdashbord1"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="Your favourite categories"
+                    android:textColor="#55473d"
+                    android:textSize="14sp" />
+            </RelativeLayout>
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rviewIshu"
-                android:layout_width="375dp"
-                android:layout_height="482dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
