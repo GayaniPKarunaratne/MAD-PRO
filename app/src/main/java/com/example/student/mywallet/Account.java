@@ -1,11 +1,14 @@
 package com.example.student.mywallet;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -13,23 +16,63 @@ import Adapters.AddAcountCategoryAdapter;
 import Database.WalletDBhelper;
 import Model.AddAcountCategory;
 
-public class Account extends AppCompatActivity {
+
+
+public class Account extends AppCompatActivity implements AddAcountCategoryAdapter.OnAcountListener {
 
     WalletDBhelper db;
     RecyclerView rv;
+
+    private ArrayList<AddAcountCategory> arrayList;
+    AddAcountCategoryAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
 
-   db = new WalletDBhelper(this);
-
-      rv = findViewById(R.id.recyclerview);
+        db = new WalletDBhelper(this);
+//
+        arrayList =db.readAllInforAcount();
+//
+        rv = findViewById(R.id.recyclerview);
+//
+        adapter = new AddAcountCategoryAdapter(arrayList,this);
         rv.setLayoutManager(new LinearLayoutManager(this));
-        ArrayList<AddAcountCategory> array = new ArrayList<>();//db.readAllInforAcount();
-        AddAcountCategoryAdapter adapter = new AddAcountCategoryAdapter(array);
         rv.setAdapter(adapter);
+
+
     }
+
+    @Override
+    public void onAcountClick(int position){
+        arrayList.get(position);
+        Intent intent = new Intent(this,Acoounteditupdate.class);
+        startActivity(intent);
+    }
+
+    ItemTouchHelper.SimpleCallback itemTouchHelpercallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+        @Override
+        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder viewHolder1) {
+            return false;
+        }
+
+        @Override
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder,int i) {
+            int deleteId = arrayList.get(viewHolder.getAdapterPosition()).getID();
+            //db.deleteExpensesAcount(deleteId);
+
+            //arrayList.remove(viewHolder.getAdapterPosition());
+
+            //arrayList.remove(deleteID);
+            //adapter.notifyDataSetChanged();
+            //adapter.setArrayList(arrayList);
+            //adapter.setArrayList(arrayList);
+            Toast.makeText(getApplicationContext(),deleteId+"",Toast.LENGTH_LONG).show();
+
+
+        }
+    };
 
     public void account(View view) {
         Intent intent = new Intent(Account.this, AddAccount.class);

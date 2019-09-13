@@ -7,13 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-
 import Database.WalletDBhelper;
-import Model.Users;
 
 public class AddAccount extends AppCompatActivity {
 
@@ -30,13 +26,15 @@ public class AddAccount extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_account);
 
-        txt_name_acount = findViewById(R.id.editText7);
-        txt_name_amount = findViewById(R.id.editText11);
+        txt_name_acount = findViewById(R.id.editText19);
+        txt_name_amount = findViewById(R.id.editText20);
         //data_acount = findViewById(R.id.textView10);
         db = new WalletDBhelper(this);
 
-        cost = (EditText) findViewById(R.id.editText7);
-        cost2 = (EditText) findViewById(R.id.editText7);
+
+
+        cost = (EditText) findViewById(R.id.editText19);
+        cost2 = (EditText) findViewById(R.id.editText20);
         imaBtn = (ImageButton)findViewById(R.id.imageButton4);
 
         /*data_acount.setText("");

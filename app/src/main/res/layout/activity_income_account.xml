@@ -12,7 +12,7 @@
         android:background="@drawable/wood"
         tools:context=".Account"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="37dp">
+        tools:layout_editor_absoluteY="0dp">
 
         <Button
             android:id="@+id/button221"
@@ -67,19 +67,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.4" />
 
-        <TextView
-            android:id="@+id/textView59"
-            android:layout_width="48dp"
-            android:layout_height="63dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:text="                  $ 2000"
-            android:textColor="@android:color/background_dark"
-            app:layout_constraintBaseline_toBaselineOf="@+id/button24"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.976"
-            app:layout_constraintStart_toStartOf="parent" />
-
         <Button
             android:id="@+id/button18"
             android:layout_width="227dp"
@@ -92,39 +79,6 @@
             app:layout_constraintBaseline_toBaselineOf="@+id/button24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.613"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/textView63"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:fontFamily="serif"
-            android:text="ACCOUNT"
-            android:textAlignment="center"
-            android:textColor="#55473d"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.442"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.099" />
-
-        <TextView
-            android:id="@+id/textView61"
-            android:layout_width="51dp"
-            android:layout_height="47dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:text="                   $ 350"
-            android:textColor="@android:color/black"
-            app:layout_constraintBaseline_toBaselineOf="@+id/button221"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.985"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
@@ -167,7 +121,7 @@
             android:layout_height="17dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:background="#FF614722"
+            android:background="@color/colorPrimary"
             android:text="@string/tbtn3"
             android:textColor="@android:color/black"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -182,7 +136,7 @@
             android:layout_width="102dp"
             android:layout_height="17dp"
             android:layout_marginTop="8dp"
-            android:background="#FF614722"
+            android:background="@color/colorPrimary"
             android:text="@string/tbtn5"
             android:textColor="@android:color/black"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -198,7 +152,7 @@
             android:layout_height="17dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:background="#FF614722"
+            android:background="@color/colorPrimary"
             android:text="@string/tbtn2"
             android:textColor="@android:color/black"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -273,6 +227,63 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.989"
             app:srcCompat="@drawable/report5" />
+
+        <TextView
+            android:id="@+id/textView59"
+            android:layout_width="48dp"
+            android:layout_height="63dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="                  $ 2000"
+            android:textColor="@android:color/background_dark"
+            app:layout_constraintBaseline_toBaselineOf="@+id/button24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.976"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView63"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="serif"
+            android:text="ACCOUNT"
+            android:textAlignment="center"
+            android:textColor="#55473d"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.442"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.099" />
+
+        <TextView
+            android:id="@+id/textView61"
+            android:layout_width="51dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="                   $ 350"
+            android:textColor="@android:color/black"
+            app:layout_constraintBaseline_toBaselineOf="@+id/button221"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.985"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="371dp"
+            android:layout_height="176dp"
+            android:layout_marginTop="340dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.097" />
 
     </android.support.constraint.ConstraintLayout>
 

@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.ArrayList;
+
 public class AddAcountCategory {
     int ID;
     String acount;
@@ -37,4 +39,7 @@ public class AddAcountCategory {
     public void setAmount(String amount) {
         this.amount = amount;
     }
+
+    //public void setArrayList(ArrayList<AddIncome> arrayList) {
+    //}
 }

@@ -8,12 +8,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.student.mywallet.AddExpenses;
 import com.example.student.mywallet.R;
 
 import java.util.ArrayList;
 
 import Model.AddExpense;
-
+import Model.AddIncome;
 
 
 public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ExpenseAdapterViewHolder>{
@@ -31,6 +32,8 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ExpenseA
         this.arrayList = arrayList;
         notifyDataSetChanged();
     }
+
+
 
     @Override
     public ExpenseAdapter.ExpenseAdapterViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
@@ -50,6 +53,9 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ExpenseA
 
     @Override
     public int getItemCount() { return arrayList.size(); }
+
+
+
 
     public class ExpenseAdapterViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 

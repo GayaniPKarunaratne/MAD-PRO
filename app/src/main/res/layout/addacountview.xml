@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -9,38 +10,53 @@
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:layout_marginBottom="4dp"
-        android:background="#E8D9C5"
+        android:background="@android:color/background_light"
         android:paddingBottom="3dp">
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="107dp"
-        android:layout_height="28dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="146dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="158dp"
-        android:layout_marginBottom="13dp"
-        android:text="TextView"
-        android:textColor="@android:color/black" />
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="116dp"
+            android:layout_height="24dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="174dp"
+            android:layout_marginBottom="30dp"
+            android:text="TextView"
+            android:textColor="@android:color/black" />
 
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="64dp"
-        android:layout_height="24dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="318dp"
-        android:layout_marginTop="33dp"
-        android:layout_marginEnd="29dp"
-        android:layout_marginBottom="5dp"
-        android:text="TextView"
-        android:textColor="@android:color/black" />
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="278dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="12dp"
+            android:text="TextView"
+            android:textColor="@android:color/black" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="wrap_content"
+            android:layout_height="59dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="306dp"
+            android:layout_marginBottom="0dp"
+            android:background="@android:color/background_light"
+            app:srcCompat="@drawable/bankaccount" />
 
     </RelativeLayout>
 

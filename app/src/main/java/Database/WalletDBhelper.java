@@ -6,10 +6,13 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.widget.EditText;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+
+import javax.sql.StatementEvent;
 
 import Model.AddAcountCategory;
 import Model.AddExpense;
@@ -63,10 +66,10 @@ public class WalletDBhelper extends SQLiteOpenHelper {
 
         /*------------------------------Thenuka -----------------------------------------------------------------------*/
 
-        String create_table_addAcount = "CREATE TABLE " + WalletUserMaster.AddAcountCategory.TABLE_NAME_ACCOUNT + " ( "+
+        String create_table_addAcount = "CREATE TABLE " + WalletUserMaster.AddAcountCategory.TABLE_NAME_ACCOUNT + " ("+
                 WalletUserMaster.AddAcountCategory._ID + " INTEGER PRIMARY KEY AUTOINCREMENT , " +
-                WalletUserMaster.AddAcountCategory.COLUME_NAME_ACOUNT_TYPE + "TEXT," +
-                WalletUserMaster.AddAcountCategory.COLUME_NAME_AMOUNT + "TEXT);";
+                WalletUserMaster.AddAcountCategory.COLUME_NAME_ACOUNT_TYPE + " TEXT," +
+                WalletUserMaster.AddAcountCategory.COLUME_NAME_AMOUNT + " TEXT);";
 
         db.execSQL(create_table_addAcount);
 
@@ -420,7 +423,42 @@ public class WalletDBhelper extends SQLiteOpenHelper {
         }
     }
 
-    public boolean addIncomeAcountCategory(String incomeacounttype,String incomeamount){
+    public ArrayList<AddAcountCategory> readAllInforAcount(){
+        SQLiteDatabase db = getReadableDatabase();
+
+        String[] projection = {WalletUserMaster.AddAcountCategory.COLUME_NAME_ACOUNT_TYPE, WalletUserMaster.AddAcountCategory.COLUME_NAME_AMOUNT, WalletUserMaster.AddAcountCategory._ID};
+        String sortOrder = WalletUserMaster.AddAcountCategory.COLUME_NAME_ACOUNT_TYPE;
+        Cursor values = db.query(WalletUserMaster.AddAcountCategory.TABLE_NAME_ACCOUNT,projection,null,null,null,null,sortOrder);
+
+        ArrayList<AddAcountCategory> acount = new ArrayList<>();
+
+
+        while (values.moveToNext()){
+            AddAcountCategory ac = new AddAcountCategory();
+
+            String acounttype = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.AddAcountCategory.COLUME_NAME_ACOUNT_TYPE));
+            String amount = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.AddAcountCategory.COLUME_NAME_AMOUNT));
+
+            ac.setAcount(acounttype);
+            ac.setAmount(amount);
+            ac.setID(values.getInt(values.getColumnIndexOrThrow(WalletUserMaster.AddAcountCategory._ID)));
+            acount.add(ac);
+        }
+        return acount;
+    }
+
+    public void deleteExpensesAcount(int id){
+        SQLiteDatabase db = getReadableDatabase();
+        //String Selection = WalletUserMaster.AddAcountCategory._ID + " = ?";
+        String selection = WalletUserMaster.AddAcountCategory.COLUME_NAME_ACOUNT_TYPE + " LIKE ?";
+        String[] SelectionArgs = {String.valueOf(id)};
+
+        db.delete(WalletUserMaster.AddAcountCategory.TABLE_NAME_ACCOUNT,selection,SelectionArgs);
+        Log.i("DB", "Delete :" + id);
+    }
+
+    
+    public boolean addIncomeAcountCategory(String incomeacounttype, String incomeamount){
         SQLiteDatabase db = getReadableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(WalletUserMaster.AddIncomeAcountCategory.COLUME_NAME_INCOME_ACOUNT_TYPE,incomeacounttype);
@@ -434,27 +472,7 @@ public class WalletDBhelper extends SQLiteOpenHelper {
         }
     }
 
-    public ArrayList<AddAcountCategory> readAllInforAcount() {
-        SQLiteDatabase db = getReadableDatabase();
-        String[] projection = {WalletUserMaster.AddAcountCategory.COLUME_NAME_ACOUNT_TYPE, WalletUserMaster.AddAcountCategory.COLUME_NAME_AMOUNT};
 
-        String sortOrder1 = WalletUserMaster.AddAcountCategory.COLUME_NAME_ACOUNT_TYPE;
-        String sortOrder2 = WalletUserMaster.AddAcountCategory.COLUME_NAME_AMOUNT;
-        Cursor values = db.query(WalletUserMaster.AddAcountCategory.TABLE_NAME_ACCOUNT, projection, null, null, null, null, null);
-
-        ArrayList<AddAcountCategory> acount = new ArrayList<>();
-
-        while (values.moveToNext()) {
-            String acounttype = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.AddAcountCategory.COLUME_NAME_ACOUNT_TYPE));
-            String amount = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.AddAcountCategory.COLUME_NAME_AMOUNT));
-            AddAcountCategory ac  = new AddAcountCategory();
-
-            ac.setAcount(acounttype);
-            ac.setAmount(amount);
-            acount.add(ac);
-        }
-        return acount;
-    }
 
     public ArrayList<AddIncomeAcountCategory> readAllIncomeAcount(){
         SQLiteDatabase db = getReadableDatabase();
@@ -480,14 +498,14 @@ public class WalletDBhelper extends SQLiteOpenHelper {
 
 
 
-    public void AddAcountCategoryDelete(String acount){
+   /* public void AddAcountCategoryDelete(String acount){
         SQLiteDatabase db = getReadableDatabase();
         String selection = WalletUserMaster.AddAcountCategory.COLUME_NAME_ACOUNT_TYPE + "LIKE ?" + WalletUserMaster.AddAcountCategory.COLUME_NAME_AMOUNT + "LIKE ?";
 
         String[] SelectionArgs = {acount};
 
         db.delete(WalletUserMaster.AddAcountCategory.TABLE_NAME_ACCOUNT, selection,  SelectionArgs);
-    }
+    }*/
 
 
 
