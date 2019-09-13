@@ -19,7 +19,7 @@ public class ExpensesCatSetings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expenses_cat_setings);
 
-        osuAddCat = findViewById(R.id.osuAddCat);
+        osuAddCat = findViewById(R.id.ishuAddCat);
         db = new WalletDBhelper(this);
     }
 

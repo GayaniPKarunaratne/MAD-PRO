@@ -19,6 +19,7 @@ import Model.AddExpense;
 import Model.AddIncome;
 import Model.AddIncomeAcountCategory;
 import Model.ExpensesCategory;
+import Model.IncomeCategory;
 import Model.Users;
 
 import static android.content.ContentValues.TAG;
@@ -238,6 +239,24 @@ public class WalletDBhelper extends SQLiteOpenHelper {
         }
 
     }
+    public boolean addincomeCatishu(String name){
+
+        SQLiteDatabase db = getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put(WalletUserMaster.IncomeCategory.COLUMN_NAME_INCOMENAME,name);
+
+
+        long result = db.insert(WalletUserMaster.IncomeCategory.TABLE_NAME_INCOME,null,contentValues);
+
+        if (result > 0){
+            return true;
+        }else {
+            return false;
+        }
+
+    }
 
     public ArrayList<ExpensesCategory> readAllCategoriesOsa() {
         SQLiteDatabase db = getReadableDatabase();
@@ -246,20 +265,39 @@ public class WalletDBhelper extends SQLiteOpenHelper {
         String sortOrder = WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME;
 
         Cursor values = db.query(WalletUserMaster.ExpensesCategory.TABLE_NAME_Expenses ,projection,null,null,null,null,sortOrder);
-
         ArrayList<ExpensesCategory> CATEGORIES = new ArrayList<ExpensesCategory>();
-
         while (values.moveToNext()){
             ExpensesCategory category = new ExpensesCategory();
             String categoryname = values.getString( values.getColumnIndexOrThrow( WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME ));
             category.setUname( categoryname);
             category.setID( values.getInt( values.getColumnIndexOrThrow(WalletUserMaster.ExpensesCategory._ID) )  );
             CATEGORIES.add( category );
-
-
         }
         return CATEGORIES;
     }
+
+    public ArrayList<IncomeCategory> readAllCategoriesIshu() {
+        SQLiteDatabase db = getReadableDatabase();
+        String[] projection2 = {WalletUserMaster.IncomeCategory.COLUMN_NAME_INCOMENAME , WalletUserMaster.IncomeCategory._ID };
+
+        String sortOrder2 = WalletUserMaster.IncomeCategory.COLUMN_NAME_INCOMENAME;
+
+        Cursor values2 = db.query(WalletUserMaster.IncomeCategory.TABLE_NAME_INCOME ,projection2,null,null,null,null,sortOrder2);
+
+        ArrayList<IncomeCategory> CATEGORIES2 = new ArrayList<>();
+
+        while (values2.moveToNext()){
+            IncomeCategory category2 = new IncomeCategory();
+            String categoryname2 = values2.getString( values2.getColumnIndexOrThrow( WalletUserMaster.IncomeCategory.COLUMN_NAME_INCOMENAME ));
+            category2.setUname( categoryname2);
+            category2.setID( values2.getInt( values2.getColumnIndexOrThrow(WalletUserMaster.IncomeCategory._ID) )  );
+            CATEGORIES2.add( category2 );
+
+
+        }
+        return CATEGORIES2;
+    }
+
     public boolean deleteuser(String username){
         SQLiteDatabase db = getReadableDatabase();
         String Selection = WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME + " LIKE ?";

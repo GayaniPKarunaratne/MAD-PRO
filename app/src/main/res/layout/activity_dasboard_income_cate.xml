@@ -289,7 +289,7 @@
             </GridLayout>
 
             <android.support.v7.widget.RecyclerView
-                android:id="@+id/rviewOsa"
+                android:id="@+id/Rview2"
                 android:layout_width="375dp"
                 android:layout_height="482dp"
                 android:layout_marginStart="8dp"

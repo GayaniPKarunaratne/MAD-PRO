@@ -27,7 +27,7 @@ public class DashboardExpensesCate extends AppCompatActivity {
         db = new WalletDBhelper(this);
 
         arrayList = db.readAllCategoriesOsa();
-        rvosa = findViewById(R.id.rviewOsa);
+        rvosa = findViewById(R.id.rviewIshu);
         adapter = new ExpensesCategoryAdapter(arrayList);
         rvosa.setLayoutManager(new LinearLayoutManager(this));
         rvosa.setAdapter(adapter);
