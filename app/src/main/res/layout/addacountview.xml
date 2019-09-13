@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:layout_marginBottom="4dp"
-        android:background="@android:color/background_light"
+        android:background="@drawable/recycalview_curved"
         android:paddingBottom="3dp">
 
         <TextView

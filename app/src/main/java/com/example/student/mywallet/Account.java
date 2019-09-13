@@ -71,7 +71,7 @@ public class Account extends AppCompatActivity implements AddAcountCategoryAdapt
             //adapter.notifyDataSetChanged();
             //adapter.setArrayList(arrayList);
             //adapter.setArrayList(arrayList);
-           Toast.makeText(getApplicationContext(),deleteId+"",Toast.LENGTH_LONG).show();
+           Toast.makeText(getApplicationContext(),"DELETED",Toast.LENGTH_LONG).show();
 
 
         }

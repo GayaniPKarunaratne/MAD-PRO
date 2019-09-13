@@ -487,11 +487,11 @@ public class WalletDBhelper extends SQLiteOpenHelper {
 
     public void deleteExpensesAcount(int id){
         SQLiteDatabase db = getReadableDatabase();
-        //String Selection = WalletUserMaster.AddAcountCategory._ID + " = ?";
-        String selection = WalletUserMaster.AddAcountCategory.COLUME_NAME_ACOUNT_TYPE + " LIKE ?";
+        String Selection = WalletUserMaster.AddAcountCategory._ID + " = ?";
+        //String selection = WalletUserMaster.AddAcountCategory.COLUME_NAME_ACOUNT_TYPE + " LIKE ?";
         String[] SelectionArgs = {String.valueOf(id)};
 
-        db.delete(WalletUserMaster.AddAcountCategory.TABLE_NAME_ACCOUNT,selection,SelectionArgs);
+        db.delete(WalletUserMaster.AddAcountCategory.TABLE_NAME_ACCOUNT,Selection,SelectionArgs);
         Log.i("DB", "Delete :" + id);
     }
 

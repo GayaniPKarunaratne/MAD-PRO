@@ -4,12 +4,17 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
+import Adapters.AddAcountCategoryAdapter;
 import Database.WalletDBhelper;
+import Model.AddAcountCategory;
 
 public class AddAccount extends AppCompatActivity {
 
@@ -20,6 +25,9 @@ public class AddAccount extends AppCompatActivity {
     EditText txt_name_acount,txt_name_amount;
     //TextView data_acount;
     private String acount_type, amount;
+
+    private ArrayList<AddAcountCategory> arrayList;
+    AddAcountCategoryAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,17 +57,28 @@ public class AddAccount extends AppCompatActivity {
         }*/
     }
     public void AddAcountCategorye(View view){
-        acount_type = txt_name_acount.getText().toString().trim();
-        amount = txt_name_amount.getText().toString().trim();
-
-        boolean result = db.addAccountCategory(acount_type,amount);
-        if(result == true){
-            Toast.makeText(getApplicationContext(),"Data Added ",Toast.LENGTH_LONG).show();
+        if(TextUtils.isEmpty(cost.getText()) || TextUtils.isEmpty(cost2.getText())){
+            cost.setError("Enter The Account Type!");
+            cost2.setError("Enter The Amount!");
         }
-        else{
-            Toast.makeText(getApplicationContext(),"Data failed",Toast.LENGTH_LONG).show();
-        }
+        else {
 
+
+            acount_type = txt_name_acount.getText().toString().trim();
+            amount = txt_name_amount.getText().toString().trim();
+
+            boolean result = db.addAccountCategory(acount_type, amount);
+            cost.getText().clear();
+            cost2.getText().clear();
+
+            if (result == true) {
+                Toast.makeText(getApplicationContext(), "Data Added ", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(this, Account.class);
+                startActivity(intent);
+            } else {
+                Toast.makeText(getApplicationContext(), "Data failed", Toast.LENGTH_LONG).show();
+            }
+        }
     }
 
 
@@ -90,6 +109,8 @@ public class AddAccount extends AppCompatActivity {
             db.ExpensesCatUpdate(amount);
             displayAddAcountCategorye(view);
         }*/
+
+
 
 
     public void addaccount(View view) {
