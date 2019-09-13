@@ -22,6 +22,7 @@ public class Account extends AppCompatActivity implements AddAcountCategoryAdapt
 
     WalletDBhelper db;
     RecyclerView rv;
+    AddAcountCategory ac;
 
     private ArrayList<AddAcountCategory> arrayList;
     AddAcountCategoryAdapter adapter;
@@ -46,9 +47,10 @@ public class Account extends AppCompatActivity implements AddAcountCategoryAdapt
 
     @Override
     public void onAcountClick(int position){
-        arrayList.get(position);
+        ac = arrayList.get(position);
         Intent intent = new Intent(this,Acoounteditupdate.class);
         startActivity(intent);
+        //Toast.makeText(getApplicationContext(), "Hello", Toast.LENGTH_LONG).show();
     }
 
     ItemTouchHelper.SimpleCallback itemTouchHelpercallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {

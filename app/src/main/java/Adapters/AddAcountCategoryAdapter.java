@@ -23,7 +23,7 @@ public class AddAcountCategoryAdapter extends RecyclerView.Adapter<AddAcountCate
 
     public AddAcountCategoryAdapter(ArrayList<AddAcountCategory> arrayList,OnAcountListener onAcountListener){
         this.arrayList = arrayList;
-        this.noacountListener = noacountListener;
+        this.noacountListener = onAcountListener;
         Log.i( "Adapter","Called");
     }
 
@@ -66,6 +66,7 @@ public class AddAcountCategoryAdapter extends RecyclerView.Adapter<AddAcountCate
             this.onAcountListener = onAcountListener;
 
             itemView.setOnClickListener(this);
+
         }
 
         @Override
