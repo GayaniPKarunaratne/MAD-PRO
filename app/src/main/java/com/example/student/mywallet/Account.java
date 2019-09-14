@@ -7,12 +7,16 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import Adapters.AddAcountCategoryAdapter;
+import Adapters.AddIncomeAcountCategoryAdapter;
 import Database.WalletDBhelper;
 import Model.AddAcountCategory;
 
@@ -27,6 +31,7 @@ public class Account extends AppCompatActivity implements AddAcountCategoryAdapt
 
     private ArrayList<AddAcountCategory> arrayList;
     AddAcountCategoryAdapter adapter;
+    AddAcountCategory  addAcountCategory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +61,35 @@ public class Account extends AppCompatActivity implements AddAcountCategoryAdapt
         intent.putExtra("Amount", ac.getAmount() );
         startActivity(intent);
         //Toast.makeText(getApplicationContext(), "Hello", Toast.LENGTH_LONG).show();
+
+        EditText editText = findViewById(R.id.edittext);
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                filter(editable.toString());
+            }
+        });
+    }
+
+    private void filter(String text){
+        ArrayList<AddAcountCategory> filteredList = new ArrayList<>();
+
+        for(AddAcountCategory item :  arrayList){
+            if(item.getAcount().toLowerCase().contains(text.toLowerCase())){
+                filteredList.add(item);
+            }
+        }
+        adapter.filteredList(filteredList);
     }
 
     ItemTouchHelper.SimpleCallback itemTouchHelpercallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {

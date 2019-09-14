@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import android.text.InputType;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
@@ -37,6 +38,7 @@ public class AddAccount extends AppCompatActivity {
         txt_name_acount = findViewById(R.id.editText19);
         txt_name_amount = findViewById(R.id.editText20);
         //data_acount = findViewById(R.id.textView10);
+        txt_name_amount.setInputType(InputType.TYPE_CLASS_NUMBER);
         db = new WalletDBhelper(this);
 
 

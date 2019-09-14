@@ -3,6 +3,7 @@ package com.example.student.mywallet;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -28,11 +29,13 @@ public class ExpensesEditAcount extends AppCompatActivity {
         db = new WalletDBhelper(this);
         cost = findViewById(R.id.editText19);
         cost2 = findViewById(R.id.editText20);
+        cost2.setInputType(InputType.TYPE_CLASS_NUMBER);
 
         Intent intent = getIntent();
         ID = intent.getStringExtra("id");
         acount_type = intent.getStringExtra("AccountType");
         amount = intent.getStringExtra("Amount");
+
 
         cost.setText(acount_type);
         cost2.setText(amount);

@@ -50,6 +50,11 @@ public class Acoounteditupdate extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void addData8(View view) {
+        Intent intent = new Intent(Acoounteditupdate.this, ExpensesEditAcount.class);
+        startActivity(intent);
+    }
+
     /*@Override
     public void onEditClick(int position){
         AddAcountCategory editexpenses = arrayList.get(position);

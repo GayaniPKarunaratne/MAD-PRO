@@ -6,11 +6,13 @@ public class AddAcountCategory {
     int ID;
     String acount;
     String amount;
+    String text;
 
-    public AddAcountCategory(int ID, String acount, String amount) {
+    public AddAcountCategory(int ID, String acount, String amount, String text) {
         this.ID = ID;
         this.acount = acount;
         this.amount = amount;
+        this.text = text;
     }
 
     public AddAcountCategory() {
@@ -40,6 +42,11 @@ public class AddAcountCategory {
         this.amount = amount;
     }
 
-    //public void setArrayList(ArrayList<AddIncome> arrayList) {
-    //}
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
 }

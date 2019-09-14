@@ -80,4 +80,9 @@ public class AddAcountCategoryAdapter extends RecyclerView.Adapter<AddAcountCate
 
         void onEditClick(int position);
     }
+
+    public void filteredList(ArrayList<AddAcountCategory> filteredList){
+        arrayList = filteredList;
+        notifyDataSetChanged();
+    }
 }
