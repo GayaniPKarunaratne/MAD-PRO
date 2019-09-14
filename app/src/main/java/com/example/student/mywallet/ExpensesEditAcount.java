@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -14,38 +15,51 @@ public class ExpensesEditAcount extends AppCompatActivity {
 
     EditText cost,cost2;
     WalletDBhelper db;
-    EditText txt_name_acount,txt_name_amount;
+    //EditText txt_name_acount,txt_name_amount;
 
     private String acount_type, amount;
+    String ID;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expenses_edit_acount);
 
-        cost = (EditText) findViewById(R.id.editText19);
-        cost2 = (EditText) findViewById(R.id.editText20);
+        db = new WalletDBhelper(this);
+        cost = findViewById(R.id.editText19);
+        cost2 = findViewById(R.id.editText20);
+
+        Intent intent = getIntent();
+        ID = intent.getStringExtra("id");
+        acount_type = intent.getStringExtra("AccountType");
+        amount = intent.getStringExtra("Amount");
+
+        cost.setText(acount_type);
+        cost2.setText(amount);
     }
-    public void AddAcountCategorye(View view){
+    public void Edit(View view){
         if(TextUtils.isEmpty(cost.getText()) || TextUtils.isEmpty(cost2.getText())){
             cost.setError("Enter The Account Type!");
             cost2.setError("Enter The Amount!");
         }
         else {
-
-
-            acount_type = txt_name_acount.getText().toString().trim();
-            amount = txt_name_amount.getText().toString().trim();
-
-            boolean result = db.addAccountCategory(acount_type, amount);
-            cost.getText().clear();
-            cost2.getText().clear();
-
+//
+//
+            acount_type = cost.getText().toString().trim();
+            amount = cost2.getText().toString().trim();
+//
+            Log.i("ID :   ", ID);
+            boolean result = db.expensesEditAcount(ID, acount_type, amount);
+//            //cost.getText().clear();
+//            //cost2.getText().clear();
+////
             if (result == true) {
-                Toast.makeText(getApplicationContext(), "Data Added ", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(this, Account.class);
-                startActivity(intent);
+                Toast.makeText(getApplicationContext(), "Updated", Toast.LENGTH_LONG).show();
+                Intent in = new Intent(this, Account.class);
+                startActivity(in);
+//
             } else {
-                Toast.makeText(getApplicationContext(), "Data failed", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Not Updated", Toast.LENGTH_LONG).show();
             }
         }
     }

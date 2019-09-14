@@ -23,6 +23,7 @@ public class Account extends AppCompatActivity implements AddAcountCategoryAdapt
     WalletDBhelper db;
     RecyclerView rv;
     AddAcountCategory ac;
+    AddAcountCategory editexpenses;
 
     private ArrayList<AddAcountCategory> arrayList;
     AddAcountCategoryAdapter adapter;
@@ -48,7 +49,11 @@ public class Account extends AppCompatActivity implements AddAcountCategoryAdapt
     @Override
     public void onAcountClick(int position){
         ac = arrayList.get(position);
-        Intent intent = new Intent(this,Acoounteditupdate.class);
+        //editexpenses = arrayList.get(position);
+        Intent intent = new Intent(Account.this,ExpensesEditAcount.class);
+        intent.putExtra("id", ac.getID()+"");
+        intent.putExtra("AccountType", ac.getAcount() );
+        intent.putExtra("Amount", ac.getAmount() );
         startActivity(intent);
         //Toast.makeText(getApplicationContext(), "Hello", Toast.LENGTH_LONG).show();
     }
@@ -79,15 +84,22 @@ public class Account extends AppCompatActivity implements AddAcountCategoryAdapt
         }
     };
 
+    @Override
+    public void onEditClick(int position){
+
+
+
+    }
+
     public void account(View view) {
         Intent intent = new Intent(Account.this, AddAccount.class);
         startActivity(intent);
     }
 
-    public void accountaddupdatedelete(View view) {
+    /*public void accountaddupdatedelete(View view) {
         Intent intent = new Intent(Account.this, Acoounteditupdate.class);
         startActivity(intent);
-    }
+    }*/
 
     public void addData1(View view) {
         Intent intent = new Intent(Account.this, Daily.class);

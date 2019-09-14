@@ -77,5 +77,7 @@ public class AddAcountCategoryAdapter extends RecyclerView.Adapter<AddAcountCate
 
     public interface OnAcountListener{
         void onAcountClick(int position);
+
+        void onEditClick(int position);
     }
 }

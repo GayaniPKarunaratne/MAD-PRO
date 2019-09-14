@@ -485,6 +485,25 @@ public class WalletDBhelper extends SQLiteOpenHelper {
         return acount;
     }
 
+    public boolean expensesEditAcount(String id, String acounttype, String amount ){
+        SQLiteDatabase db = getReadableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(WalletUserMaster.AddAcountCategory.COLUME_NAME_ACOUNT_TYPE,acounttype);
+        contentValues.put(WalletUserMaster.AddAcountCategory.COLUME_NAME_AMOUNT,amount);
+
+        String Selection = WalletUserMaster.AddAcountCategory._ID + " = ? " ;
+        String SelectionArge[] = { id };
+
+        int r = db.update(WalletUserMaster.AddAcountCategory.TABLE_NAME_ACCOUNT, contentValues , Selection , SelectionArge);
+
+        if(r>0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     public void deleteExpensesAcount(int id){
         SQLiteDatabase db = getReadableDatabase();
         String Selection = WalletUserMaster.AddAcountCategory._ID + " = ?";

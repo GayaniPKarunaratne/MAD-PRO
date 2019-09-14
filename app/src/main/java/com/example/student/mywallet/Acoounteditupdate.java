@@ -10,11 +10,12 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import Database.WalletDBhelper;
+import Model.AddAcountCategory;
 import Model.Users;
 
 public class Acoounteditupdate extends AppCompatActivity {
 
-
+    private ArrayList<AddAcountCategory> arrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,4 +49,15 @@ public class Acoounteditupdate extends AppCompatActivity {
         Intent intent = new Intent(Acoounteditupdate.this, My_Wallet_Repot.class);
         startActivity(intent);
     }
+
+    /*@Override
+    public void onEditClick(int position){
+        AddAcountCategory editexpenses = arrayList.get(position);
+        Intent intent = new Intent(Acoounteditupdate.this,ExpensesEditAcount.class);
+        intent.putExtra("Acount type", intent.getAcount() );
+        intent.putExtra("Amount", intent.getAmount() );
+        startActivity(intent);
+
+
+    }*/
 }
