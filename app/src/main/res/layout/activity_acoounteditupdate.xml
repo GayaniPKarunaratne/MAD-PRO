@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/wood"
+    android:background="@drawable/newwood"
     tools:context=".Acoounteditupdate">
 
     <TextView
@@ -34,7 +34,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@android:color/background_light"
+        android:background="#ADD8E6"
         android:text="Wallet wich has money in your hand to spending at day to day  expenseces and incomes"
         android:textAlignment="center"
         android:textColor="@android:color/black"
@@ -52,7 +52,6 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@android:color/background_light"
         android:text="Wallet"
         android:textAlignment="center"
         android:textColor="@android:color/black"

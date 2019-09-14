@@ -4,13 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/wood"
+    android:background="@drawable/newwood"
     tools:context=".Account">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/wood"
         tools:context=".Account"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="37dp">
