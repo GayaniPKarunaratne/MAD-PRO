@@ -32,7 +32,7 @@ public class Income_details extends AppCompatActivity implements IncomeAdapter.o
 
         rv = findViewById(R.id.recycleV);
         rv.setLayoutManager( new LinearLayoutManager(this));
-       arrayList = db.readAllIncome();
+        arrayList = db.readAllIncome();
 
         adapter = new IncomeAdapter(arrayList , this );
         rv.setAdapter(adapter);

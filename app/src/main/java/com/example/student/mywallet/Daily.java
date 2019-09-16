@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import Model.AddExpense;
+
 public class Daily extends AppCompatActivity {
 
     @Override
@@ -48,6 +50,16 @@ public class Daily extends AppCompatActivity {
 
     public void addData8(View view){
         Intent intent = new Intent(Daily.this,Income_details.class);
+        startActivity(intent);
+    }
+
+    public void addData9(View view){
+        Intent intent = new Intent(Daily.this,Add.class);
+        startActivity(intent);
+    }
+
+    public void addData10(View view){
+        Intent intent = new Intent(Daily.this,AddExpenses.class);
         startActivity(intent);
     }
 

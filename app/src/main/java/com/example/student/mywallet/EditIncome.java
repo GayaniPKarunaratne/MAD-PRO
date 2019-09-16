@@ -21,6 +21,7 @@ public class EditIncome extends AppCompatActivity {
     TextView category ;
     private String AddIncome ,Note , Category ;
     String ID;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +33,7 @@ public class EditIncome extends AppCompatActivity {
         category = findViewById( R.id.textView70);
 
         Intent intent = getIntent();
-         ID = intent.getIntExtra( "ID" , 0 ) + "";
+        ID = intent.getIntExtra( "ID" , 0 ) + "";
         String Note = intent.getStringExtra("Note");
         String Amount = intent.getStringExtra("Amount");
 

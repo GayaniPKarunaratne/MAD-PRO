@@ -60,10 +60,10 @@ public class Expensses_details extends AppCompatActivity implements ExpenseAdapt
         @Override
         public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
             int deleteid = arrayList.get(viewHolder.getAdapterPosition()).getID();
-            db.deleteExpense(deleteid);
+            //db.deleteExpense(deleteid);
             arrayList.remove(deleteid);
             //adapter.notifyDataSetChanged();
-            adapter.setArrayList(arrayList);
+            //adapter.setArrayList(arrayList);
             Toast.makeText(getApplicationContext(),"DELETED!" +  deleteid  ,Toast.LENGTH_LONG).show();
 
         }
@@ -91,7 +91,13 @@ public class Expensses_details extends AppCompatActivity implements ExpenseAdapt
 
     @Override
     public void OnExpenseClick(int position) {
-        Toast.makeText( this , "OK" ,Toast.LENGTH_LONG ).show();
+       // Toast.makeText( this , "OK" ,Toast.LENGTH_LONG ).show();
+        AddExpense expense = arrayList.get(position);
+        Intent intent = new Intent(Expensses_details.this,EditExpense.class);
+        intent.putExtra("ID",expense.getID());
+        intent.putExtra( "Amount" , expense.getExpenseAmount() );
+        intent.putExtra( "Note" , expense.getNote()   );
+        startActivity(intent);
 
     }
 }

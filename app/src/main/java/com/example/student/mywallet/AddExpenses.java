@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -12,6 +13,9 @@ import Database.WalletDBhelper;
 import Model.AddExpense;
 
 public class AddExpenses extends AppCompatActivity {
+
+    EditText cost;
+    ImageButton imaBtn;
 
     WalletDBhelper db;
     EditText addexpences ,note ;
@@ -29,6 +33,8 @@ public class AddExpenses extends AppCompatActivity {
         note = findViewById( R.id.editText13);
         category = findViewById( R.id.textView71);
 
+        cost = (EditText)findViewById(R.id.editText3);
+        imaBtn = (ImageButton)findViewById(R.id.imageButton1);
 
     }
 

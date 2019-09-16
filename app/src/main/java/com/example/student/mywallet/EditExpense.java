@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -12,11 +13,14 @@ import Database.WalletDBhelper;
 
 public class EditExpense extends AppCompatActivity {
 
+    EditText cost;
+    ImageButton imaBtn;
+
     WalletDBhelper db;
     EditText addexpences ,note ;
     TextView category ;
     private String AddExpenses ,Note , Category ;
-
+    String ID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,21 +31,29 @@ public class EditExpense extends AppCompatActivity {
         addexpences = findViewById( R.id.editText3);
         note = findViewById( R.id.editText13);
         category = findViewById( R.id.textView71);
+
+        Intent intent = getIntent();
+        ID = intent.getIntExtra( "ID" , 0 ) + "";
+        String Note = intent.getStringExtra("Note");
+        String Amount = intent.getStringExtra("Amount");
+
+        addexpences.setText(Amount);
+        note.setText(Note);
     }
 
-    public  void addExpense(View view){
+    public  void editExpense(View view){
         AddExpenses = addexpences.getText().toString().trim();
         Note = note.getText().toString().trim();
-        Category = category.getText().toString().trim();
 
-        boolean result = db.addExpences( AddExpenses , Note , Category );
-        if(result == true){
-            Toast.makeText(getApplicationContext(),"Data Added ",Toast.LENGTH_LONG).show();
-        }
-        else{
-            Toast.makeText(getApplicationContext(),"Data failed",Toast.LENGTH_LONG).show();
-        }
 
+        if(AddExpenses.length() == 0){
+            Toast.makeText(getApplicationContext(),"Amount should be filled",Toast.LENGTH_LONG).show();
+        }else if (  Note.length() == 0 ) {
+            Toast.makeText(getApplicationContext(), "Note Should be filled", Toast.LENGTH_LONG).show();
+        } else {
+            db.editExpense(ID, AddExpenses, Note);
+            Toast.makeText(getApplicationContext(), "Data Edited ", Toast.LENGTH_LONG).show();
+        }
     }
 
     public void addData1(View view){
