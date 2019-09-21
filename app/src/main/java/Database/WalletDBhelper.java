@@ -549,21 +549,23 @@ public class WalletDBhelper extends SQLiteOpenHelper {
 
     public ArrayList<AddIncomeAcountCategory> readAllIncomeAcount(){
         SQLiteDatabase db = getReadableDatabase();
-        String[] projection = {WalletUserMaster.AddIncomeAcountCategory.COLUME_NAME_INCOME_ACOUNT_TYPE,WalletUserMaster.AddIncomeAcountCategory.COLUME_NAME_INCOME_AMOUNT};
-        String sortOrder1 = WalletUserMaster.AddIncomeAcountCategory.COLUME_NAME_INCOME_ACOUNT_TYPE;
-        String sortOrder2 = WalletUserMaster.AddIncomeAcountCategory.COLUME_NAME_INCOME_AMOUNT;
-        Cursor values = db.query(WalletUserMaster.AddIncomeAcountCategory.TABLE_NAME_INCOME_ACCOUNT,projection,null,null,null,null,null);
+        String[] projection = {WalletUserMaster.AddIncomeAcountCategory.COLUME_NAME_INCOME_ACOUNT_TYPE,WalletUserMaster.AddIncomeAcountCategory.COLUME_NAME_INCOME_AMOUNT,WalletUserMaster.AddIncomeAcountCategory._ID};
+        String sortOrder = WalletUserMaster.AddIncomeAcountCategory.COLUME_NAME_INCOME_ACOUNT_TYPE;
+        Cursor values = db.query(WalletUserMaster.AddIncomeAcountCategory.TABLE_NAME_INCOME_ACCOUNT,projection,null,null,null,null,sortOrder);
 
         ArrayList<AddIncomeAcountCategory> Incomeacount = new ArrayList<>();
 
         while (values.moveToNext()) {
+            AddIncomeAcountCategory ac = new AddIncomeAcountCategory();
+
             String incomeacounttype = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.AddIncomeAcountCategory.COLUME_NAME_INCOME_ACOUNT_TYPE));
             String incomeamount = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.AddIncomeAcountCategory.COLUME_NAME_INCOME_AMOUNT));
-            AddIncomeAcountCategory iac = new AddIncomeAcountCategory();
 
-            iac.setIncomeacount(incomeacounttype);
-            iac.setIncomeamount(incomeamount);
-            Incomeacount.add(iac);
+
+            ac.setIncomeacount(incomeacounttype);
+            ac.setIncomeamount(incomeamount);
+            ac.setID(values.getInt(values.getColumnIndexOrThrow(WalletUserMaster.AddIncomeAcountCategory._ID)));
+            Incomeacount.add(ac);
 
         }
         return Incomeacount;
@@ -582,7 +584,7 @@ public class WalletDBhelper extends SQLiteOpenHelper {
 
 
 
-    public void AddAcountCateroyUpdate(String acounttype,String amount){
+   /* public void AddAcountCateroyUpdate(String acounttype,String amount){
         SQLiteDatabase db = getReadableDatabase();
 
         ContentValues contentValues = new ContentValues();
@@ -597,7 +599,7 @@ public class WalletDBhelper extends SQLiteOpenHelper {
 
         db.update(WalletUserMaster.AddAcountCategory.TABLE_NAME_ACCOUNT, contentValues, Selection , SelectionArg);
 
-    }
+    }*/
 
     /*---------------------------end thenuka------------------------------------------*/
 }

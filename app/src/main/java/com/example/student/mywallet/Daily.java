@@ -59,7 +59,12 @@ public class Daily extends AppCompatActivity {
     }
 
     public void addData10(View view){
-        Intent intent = new Intent(Daily.this,AddExpenses.class);
+        Intent intent = new Intent(Daily.this,splashmywallet.class);
+        startActivity(intent);
+    }
+
+    public void addData11(View view){
+        Intent intent = new Intent(Daily.this,Account.class);
         startActivity(intent);
     }
 

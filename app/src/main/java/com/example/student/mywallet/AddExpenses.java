@@ -46,6 +46,8 @@ public class AddExpenses extends AppCompatActivity {
         boolean result = db.addExpences( AddExpenses , Note , Category );
         if(result == true){
             Toast.makeText(getApplicationContext(),"Data Added ",Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(AddExpenses.this,My_Wallet_Repot.class);
+            startActivity(intent);
         }
         else{
             Toast.makeText(getApplicationContext(),"Data failed",Toast.LENGTH_LONG).show();

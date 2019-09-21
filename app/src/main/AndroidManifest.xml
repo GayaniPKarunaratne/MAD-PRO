@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ExpensesEditAcount"></activity>
+        <activity android:name=".Income_update_acount"></activity>
+        <activity android:name=".splashmywallet" />
+        <activity android:name=".buttonfragmnet" />
+        <activity android:name=".ExpensesEditAcount" />
         <activity android:name=".EditIncome" />
         <activity android:name=".EditExpense" />
         <activity android:name=".IncomeCatSetting" />

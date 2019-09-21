@@ -34,7 +34,7 @@ public class Income_add_account extends AppCompatActivity {
 
         cost1 = (EditText) findViewById(R.id.editText19);
         cost2 = (EditText) findViewById(R.id.editText20);
-        imaBtn = (ImageButton) findViewById(R.id.button17);
+        //imaBtn = (ImageButton) findViewById(R.id.button17);
 
 
     }

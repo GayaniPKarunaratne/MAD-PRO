@@ -1,17 +1,41 @@
 package Model;
 
-public class AddIncomeAcountCategory {
+import android.support.annotation.NonNull;
+import android.support.v7.widget.RecyclerView;
+import android.view.ViewGroup;
+
+import com.example.student.mywallet.Income_account;
+
+import java.util.ArrayList;
+
+public class AddIncomeAcountCategory extends RecyclerView.Adapter {
     int ID;
     String incomeacount;
     String incomeamount;
 
-    public AddIncomeAcountCategory(int ID, String incomeacount, String incomeamount) {
+    public AddIncomeAcountCategory() {
         this.ID = ID;
         this.incomeacount = incomeacount;
         this.incomeamount = incomeamount;
     }
 
-    public AddIncomeAcountCategory() {
+    @NonNull
+    @Override
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        return null;
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return 0;
+    }
+
+    public AddIncomeAcountCategory(ArrayList<AddIncomeAcountCategory> arrayList, Income_account income_account) {
     }
 
     public int getID() {
@@ -37,4 +61,7 @@ public class AddIncomeAcountCategory {
     public void setIncomeamount(String incomeamount) {
         this.incomeamount = incomeamount;
     }
+
+
 }
+

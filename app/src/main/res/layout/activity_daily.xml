@@ -4,26 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/newwood"
     tools:context=".Daily">
 
     <Button
         android:id="@+id/button6"
-        android:layout_width="171dp"
-        android:layout_height="58dp"
+        android:layout_width="244dp"
+        android:layout_height="69dp"
         android:background="@drawable/curved_button"
         android:onClick="addData2"
         android:text="Expencess"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.218" />
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="171dp"
-        android:layout_height="58dp"
+        android:layout_width="244dp"
+        android:layout_height="69dp"
         android:background="@drawable/curved_button_oraing"
         android:onClick="addData3"
         android:text="Income"
@@ -32,12 +32,12 @@
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.398" />
+        app:layout_constraintVertical_bias="0.416" />
 
     <Button
         android:id="@+id/button11"
-        android:layout_width="175dp"
-        android:layout_height="58dp"
+        android:layout_width="244dp"
+        android:layout_height="69dp"
         android:layout_marginTop="208dp"
         android:background="@drawable/report_curved"
         android:onClick="addData4"
@@ -48,6 +48,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.39" />
+
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="80dp"
+        android:layout_height="49dp"
+        android:background="@android:color/black"
+        android:onClick="addData10"
+        android:text="splash test"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageButton
         android:id="@+id/imageButton7"
@@ -67,51 +82,17 @@
         app:layout_constraintVertical_bias="0.859"
         app:srcCompat="@drawable/add" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="100dp"
-        android:layout_height="228dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+    <Button
+        android:id="@+id/button13"
+        android:layout_width="56dp"
+        android:layout_height="53dp"
+        android:background="@drawable/accounticone"
+        android:onClick="addData11"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.064"
+        app:layout_constraintHorizontal_bias="0.89"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.986"
-        app:srcCompat="@drawable/man6" />
-
-    <Button
-        android:id="@+id/button10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="47dp"
-        android:onClick="addData9"
-        android:text="Add Income"
-        app:layout_constraintBottom_toTopOf="@+id/button6"
-        app:layout_constraintEnd_toStartOf="@+id/button12"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <Button
-        android:id="@+id/button12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="105dp"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="81dp"
-        android:layout_marginBottom="43dp"
-        android:onClick="addData10"
-        android:text="Add Expenses"
-        app:layout_constraintBottom_toTopOf="@+id/button6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button10"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.058" />
 
 </android.support.constraint.ConstraintLayout>

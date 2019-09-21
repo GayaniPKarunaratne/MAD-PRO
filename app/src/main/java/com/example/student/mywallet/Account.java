@@ -7,16 +7,12 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import Adapters.AddAcountCategoryAdapter;
-import Adapters.AddIncomeAcountCategoryAdapter;
 import Database.WalletDBhelper;
 import Model.AddAcountCategory;
 
@@ -39,16 +35,32 @@ public class Account extends AppCompatActivity implements AddAcountCategoryAdapt
         setContentView(R.layout.activity_account);
 
         db = new WalletDBhelper(this);
-//
         arrayList =db.readAllInforAcount();
-//
+
         rv = findViewById(R.id.recyclerview);
-//
         adapter = new AddAcountCategoryAdapter(arrayList,this);
         rv.setLayoutManager(new LinearLayoutManager(this));
         rv.setAdapter(adapter);
 
         new ItemTouchHelper(itemTouchHelpercallback).attachToRecyclerView(rv);
+
+        // EditText editText = findViewById(R.id.edittext);
+        //editText.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable editable) {
+//                filter(editable.toString());
+//            }
+//        });
     }
 
     @Override
@@ -62,23 +74,7 @@ public class Account extends AppCompatActivity implements AddAcountCategoryAdapt
         startActivity(intent);
         //Toast.makeText(getApplicationContext(), "Hello", Toast.LENGTH_LONG).show();
 
-        EditText editText = findViewById(R.id.edittext);
-        editText.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                filter(editable.toString());
-            }
-        });
     }
 
     private void filter(String text){
@@ -152,6 +148,11 @@ public class Account extends AppCompatActivity implements AddAcountCategoryAdapt
 
     public void addData4(View view) {
         Intent intent = new Intent(Account.this, My_Wallet_Repot.class);
+        startActivity(intent);
+    }
+
+    public void addData5(View view) {
+        Intent intent = new Intent(Account.this, AddExpenses.class);
         startActivity(intent);
     }
 }
