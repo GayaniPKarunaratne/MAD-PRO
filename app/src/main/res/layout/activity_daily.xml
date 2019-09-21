@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/newwood"
+    android:background="@drawable/background"
     tools:context=".Daily">
 
     <Button
@@ -64,6 +64,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
+    <Button
+        android:id="@+id/button13"
+        android:layout_width="56dp"
+        android:layout_height="53dp"
+        android:background="@drawable/accounticone"
+        android:onClick="addData11"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.89"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.058" />
+
     <ImageButton
         android:id="@+id/imageButton7"
         android:layout_width="85dp"
@@ -81,18 +94,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.859"
         app:srcCompat="@drawable/add" />
-
-    <Button
-        android:id="@+id/button13"
-        android:layout_width="56dp"
-        android:layout_height="53dp"
-        android:background="@drawable/accounticone"
-        android:onClick="addData11"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.89"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.058" />
 
 </android.support.constraint.ConstraintLayout>
