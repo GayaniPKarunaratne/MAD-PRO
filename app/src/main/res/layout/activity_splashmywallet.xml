@@ -10,8 +10,8 @@
 
     <ImageView
         android:id="@+id/splashimgview"
-        android:layout_width="125dp"
-        android:layout_height="120dp"
+        android:layout_width="190dp"
+        android:layout_height="175dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,16 +21,16 @@
 
     <TextView
         android:id="@+id/splashtextview"
-        android:layout_width="214dp"
-        android:layout_height="61dp"
-        android:text="Welcome to My Wallet"
+        android:layout_width="185dp"
+        android:layout_height="67dp"
+        android:text="Welcome to       My Wallet"
         android:textAlignment="center"
         android:textColor="@android:color/background_dark"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.597" />
+        app:layout_constraintVertical_bias="0.593" />
 </android.support.constraint.ConstraintLayout>

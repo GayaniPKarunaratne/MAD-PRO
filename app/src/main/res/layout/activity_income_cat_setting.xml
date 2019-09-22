@@ -27,19 +27,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
+                android:layout_marginRight="50dp"
                 android:text="Income Modify"
-                android:layout_marginRight="50dp"
-                android:textColor="#55473d"
+                android:textColor="@android:color/background_dark"
                 android:textSize="24sp" />
+
             <TextView
-                android:layout_below="@+id/txtdashbord"
-                android:layout_marginTop="6dp"
-                android:layout_marginRight="50dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/txtdashbord"
                 android:layout_alignParentRight="true"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="50dp"
                 android:text="You can modify Categories also"
-                android:textColor="#55473d"
+                android:textColor="@android:color/background_dark"
                 android:textSize="14sp" />
 
             <ImageView
@@ -49,7 +50,6 @@
 
                 android:onClick="goBack"
                 android:src="@drawable/backarrow" />
-
 
 
             <EditText
@@ -62,7 +62,8 @@
                 android:layout_marginRight="50dp"
                 android:ems="10"
                 android:hint="Enter Category Name"
-                android:inputType="textPersonName"/>
+                android:inputType="textPersonName"
+                android:textColor="@android:color/background_dark" />
 
 
         </RelativeLayout>
