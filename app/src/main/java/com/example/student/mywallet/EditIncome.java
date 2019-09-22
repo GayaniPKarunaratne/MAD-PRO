@@ -47,8 +47,7 @@ public class EditIncome extends AppCompatActivity {
 
 
             if ( AddIncome.length() == 0  ) {
-                Toast.makeText( this, "Amount should be filled", Toast.LENGTH_LONG).show();
-
+                Toast.makeText(getApplicationContext(),"Amount should be filled",Toast.LENGTH_LONG).show();
             }else if (  Note.length() == 0 ) {
                 Toast.makeText(getApplicationContext(), "Note Should be filled", Toast.LENGTH_LONG).show();
             } else {

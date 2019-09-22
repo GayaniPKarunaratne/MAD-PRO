@@ -37,8 +37,8 @@ public class EditExpense extends AppCompatActivity {
         String Note = intent.getStringExtra("Note");
         String Amount = intent.getStringExtra("Amount");
 
-        addexpences.setText(Amount);
-        note.setText(Note);
+        addexpences.setText( Amount );
+        note.setText( Note );
     }
 
     public  void editExpense(View view){
@@ -46,14 +46,14 @@ public class EditExpense extends AppCompatActivity {
         Note = note.getText().toString().trim();
 
 
-        if(AddExpenses.length() == 0){
-            Toast.makeText(getApplicationContext(),"Amount should be filled",Toast.LENGTH_LONG).show();
-        }else if (  Note.length() == 0 ) {
-            Toast.makeText(getApplicationContext(), "Note Should be filled", Toast.LENGTH_LONG).show();
-        } else {
-            db.editExpense(ID, AddExpenses, Note);
-            Toast.makeText(getApplicationContext(), "Data Edited ", Toast.LENGTH_LONG).show();
-        }
+            if(AddExpenses.length() == 0){
+                Toast.makeText(getApplicationContext(),"Amount should be filled",Toast.LENGTH_LONG).show();
+            }else if (  Note.length() == 0 ) {
+                Toast.makeText(getApplicationContext(), "Note Should be filled", Toast.LENGTH_LONG).show();
+            } else {
+                db.editExpense(ID, AddExpenses, Note);
+                Toast.makeText(getApplicationContext(), "Data Edited ", Toast.LENGTH_LONG).show();
+            }
     }
 
     public void addData1(View view){

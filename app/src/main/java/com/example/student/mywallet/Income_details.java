@@ -50,9 +50,9 @@ public class Income_details extends AppCompatActivity implements IncomeAdapter.o
         @Override
         public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
             int deleteid = arrayList.get(viewHolder.getAdapterPosition()).getID();
-            //db.deleteIncome(deleteid);
-            arrayList.remove(deleteid);
-            //adapter.notifyDataSetChanged();
+            db.deleteIncome(deleteid);
+            arrayList.remove(viewHolder.getAdapterPosition());
+            adapter.notifyDataSetChanged();
            // adapter.setArrayList(arrayList);
             Toast.makeText(getApplicationContext(),"DELETED!" +  deleteid  ,Toast.LENGTH_LONG).show();
 

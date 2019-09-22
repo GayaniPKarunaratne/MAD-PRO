@@ -47,9 +47,9 @@ public class WalletDBhelper extends SQLiteOpenHelper {
 
         /***********************************************************   Gayani   *******************************************************************/
 
-        String create_table_addexpences = "CREATE TABLE " + WalletUserMaster.Addexpences.TABLE_NAME_ADDEXPENCES + " ( "+
+        String create_table_addexpences = "CREATE TABLE " + WalletUserMaster.Addexpences.TABLE_NAME_ADDEXPENCES + " ( " +
                 WalletUserMaster.Addexpences.COLUMN_NAME_ID + " INTEGER PRIMARY KEY AUTOINCREMENT , " +
-                WalletUserMaster.Addexpences.COLUMN_NAME_EXPENCE + " TEXT," +
+                WalletUserMaster.Addexpences.COLUMN_NAME_EXPENCE + " REAL," +
                 WalletUserMaster.Addexpences.COLUMN_NAME_CATEGORI + " TEXT," +
                 WalletUserMaster.Addexpences.COLUMN_NAME_DATE + " TEXT," +
                 WalletUserMaster.Addexpences.COLUMN_NAME_NOTE + " TEXT);";
@@ -135,7 +135,7 @@ public class WalletDBhelper extends SQLiteOpenHelper {
     public void deleteExpense(int id){
         SQLiteDatabase db = getReadableDatabase();
 
-        String Selection = WalletUserMaster.Addexpences._ID + " = ?";
+        String Selection = WalletUserMaster.Addexpences.COLUMN_NAME_ID + " = ?";
         String[] SelectionArgs = { String.valueOf(id)};
 
         db.delete(WalletUserMaster.Addexpences.TABLE_NAME_ADDEXPENCES,Selection,SelectionArgs);
@@ -206,7 +206,7 @@ public class WalletDBhelper extends SQLiteOpenHelper {
     public void deleteIncome(int id){
         SQLiteDatabase db = getReadableDatabase();
 
-        String Selection = WalletUserMaster.Addincome._ID + " = ?";
+        String Selection = WalletUserMaster.Addincome.COLUMN_NAME_ID + " = ?";
         String[] SelectionArgs = { String.valueOf(id)};
 
         db.delete(WalletUserMaster.Addincome.TABLE_NAME_ADDINCOME,Selection,SelectionArgs);
