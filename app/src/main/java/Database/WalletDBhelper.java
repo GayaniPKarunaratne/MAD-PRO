@@ -132,14 +132,14 @@ public class WalletDBhelper extends SQLiteOpenHelper {
         return arrayList;
     }
 
-    public void deleteExpense(int ide){
+    public void deleteExpense(int id){
         SQLiteDatabase db = getReadableDatabase();
 
         String Selection = WalletUserMaster.Addexpences.COLUMN_NAME_ID + " = ?";
-        String[] SelectionArgs = { String.valueOf(ide)};
+        String[] SelectionArgs = { String.valueOf(id)};
 
         db.delete(WalletUserMaster.Addexpences.TABLE_NAME_ADDEXPENCES,Selection,SelectionArgs);
-        Log.i("DB","Delete :" + ide);
+        Log.i("DB","Delete :" + id);
     }
 
     public void editExpense( String id , String expense,String note ){
