@@ -57,6 +57,9 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ExpenseA
 
 
 
+
+    
+
     public class ExpenseAdapterViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         TextView date , amount , category;
