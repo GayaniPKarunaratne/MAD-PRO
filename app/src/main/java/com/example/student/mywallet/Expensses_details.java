@@ -34,21 +34,12 @@ public class Expensses_details extends AppCompatActivity implements ExpenseAdapt
         rv.setLayoutManager( new LinearLayoutManager(this));
         arrayList = db.readAllExpense();
 
-        adapter = new ExpenseAdapter(arrayList,this);
+        adapter = new ExpenseAdapter(arrayList ,this);
         rv.setAdapter(adapter);
 
         new ItemTouchHelper(itemTouchHelpercallback).attachToRecyclerView(rv);
 
 
-    }
-
-    public void addData1(View view){
-        Intent intent = new Intent(Expensses_details.this,Daily.class);
-        startActivity(intent);
-    }
-    public void addData2(View view){
-        Intent intent = new Intent(Expensses_details.this,DashboardExpensesCate.class);
-        startActivity(intent);
     }
 
     ItemTouchHelper.SimpleCallback itemTouchHelpercallback = new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
@@ -68,6 +59,16 @@ public class Expensses_details extends AppCompatActivity implements ExpenseAdapt
 
         }
     };
+
+
+    public void addData1(View view){
+        Intent intent = new Intent(Expensses_details.this,Daily.class);
+        startActivity(intent);
+    }
+    public void addData2(View view){
+        Intent intent = new Intent(Expensses_details.this,DashboardExpensesCate.class);
+        startActivity(intent);
+    }
 
     public void addData3(View view){
         Intent intent = new Intent(Expensses_details.this,DasboardIncomeCate.class);

@@ -55,7 +55,6 @@ public class Income_details extends AppCompatActivity implements IncomeAdapter.o
             adapter.notifyDataSetChanged();
            // adapter.setArrayList(arrayList);
             Toast.makeText(getApplicationContext(),"DELETED!" +  deleteid  ,Toast.LENGTH_LONG).show();
-
         }
     };
 

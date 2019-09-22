@@ -34,8 +34,7 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ExpenseA
         notifyDataSetChanged();
     }
 
-
-
+    @NonNull
     @Override
     public ExpenseAdapter.ExpenseAdapterViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from( viewGroup.getContext() ).inflate(R.layout.expenseview , viewGroup , false);
