@@ -11,6 +11,7 @@ import com.example.student.mywallet.R;
 
 import java.util.ArrayList;
 
+import Model.AddAcountCategory;
 import Model.ExpensesCategory;
 
 public class ExpensesCategoryAdapter extends RecyclerView.Adapter<ExpensesCategoryAdapter.CategoryAdapterViewHolder> {
@@ -51,5 +52,9 @@ public class ExpensesCategoryAdapter extends RecyclerView.Adapter<ExpensesCatego
 
             //itemView.setOnClickListener(this);
         }
+    } public void filteredList(ArrayList<ExpensesCategory> filteredList){
+        arrayList = filteredList;
+        notifyDataSetChanged();
     }
+
 }

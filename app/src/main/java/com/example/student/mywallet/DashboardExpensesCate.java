@@ -5,7 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.EditText;
 
 import java.util.ArrayList;
 
@@ -19,6 +22,7 @@ public class DashboardExpensesCate extends AppCompatActivity {
     WalletDBhelper db;
     RecyclerView rvosa;
     ExpensesCategoryAdapter adapter;
+    EditText editText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +36,34 @@ public class DashboardExpensesCate extends AppCompatActivity {
         rvosa.setLayoutManager(new LinearLayoutManager(this));
         rvosa.setAdapter(adapter);
 
+        editText = findViewById(R.id.search);
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                filter(editable.toString());
+            }
+        });
+
+    }
+    private void filter(String text){
+        ArrayList<ExpensesCategory> filteredList = new ArrayList<>();
+
+        for(ExpensesCategory item :  arrayList){
+            if(item.getUname().toLowerCase().contains(text.toLowerCase())){
+                filteredList.add(item);
+            }
+        }
+        adapter.filteredList(filteredList);
     }
     public void gosettings(View view){
         Intent intent =new Intent(DashboardExpensesCate.this,ExpensesCatSetings.class);
