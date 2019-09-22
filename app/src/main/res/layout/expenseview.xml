@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/colorAccent"
+            android:background="#FF5072BC"
             android:padding="4dp"
             android:text="Expense Transaction"
             android:textColor="@android:color/background_dark"

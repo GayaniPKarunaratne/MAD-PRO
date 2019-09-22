@@ -18,6 +18,7 @@ import Model.AddIncome;
 
 
 public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ExpenseAdapterViewHolder>{
+
     private ArrayList<AddExpense> arrayList;
     private onExpenceListner onExpenceListner;
 
@@ -36,14 +37,13 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ExpenseA
 
 
     @Override
-    public ExpenseAdapter.ExpenseAdapterViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
+    public ExpenseAdapter.ExpenseAdapterViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from( viewGroup.getContext() ).inflate(R.layout.expenseview , viewGroup , false);
-        return new ExpenseAdapter.ExpenseAdapterViewHolder(view,onExpenceListner);
+        return new ExpenseAdapterViewHolder(view , onExpenceListner);
     }
 
     @Override
-    public void onBindViewHolder(ExpenseAdapterViewHolder holder, int i) {
-
+    public void onBindViewHolder(@NonNull ExpenseAdapterViewHolder holder, int i) {
         AddExpense expense = arrayList.get(i);
         holder.amount.setText( expense.getExpenseAmount() );
         holder.date.setText( expense.getDate() );
@@ -53,12 +53,6 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ExpenseA
 
     @Override
     public int getItemCount() { return arrayList.size(); }
-
-
-
-
-
-
 
     public class ExpenseAdapterViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
