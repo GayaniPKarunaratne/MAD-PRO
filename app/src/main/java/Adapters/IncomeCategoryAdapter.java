@@ -55,7 +55,7 @@ public class IncomeCategoryAdapter extends RecyclerView.Adapter<IncomeCategoryAd
         }
     }
     public void filteredList(ArrayList<IncomeCategory> filteredList){
-        arrayList = filteredList;
+        arrayList2 = filteredList;
         notifyDataSetChanged();
     }
 }

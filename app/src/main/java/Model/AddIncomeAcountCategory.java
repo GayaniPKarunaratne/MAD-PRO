@@ -63,5 +63,7 @@ public class AddIncomeAcountCategory extends RecyclerView.Adapter {
     }
 
 
+    public void filteredList(ArrayList<AddIncomeAcountCategory> filteredList) {
+    }
 }
 

@@ -23,7 +23,7 @@ public class DasboardIncomeCate extends AppCompatActivity {
     RecyclerView rvishu;
     IncomeCategoryAdapter ishuadapter;
     EditText editText;
-    IncomeCategoryAdapter adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +63,7 @@ public class DasboardIncomeCate extends AppCompatActivity {
                 filteredList.add(item);
             }
         }
-        adapter.filteredList(filteredList);
+        ishuadapter.filteredList(filteredList);
     }
     public void gosettings(View view){
         Intent intent =new Intent(DasboardIncomeCate.this,IncomeCatSetting.class);

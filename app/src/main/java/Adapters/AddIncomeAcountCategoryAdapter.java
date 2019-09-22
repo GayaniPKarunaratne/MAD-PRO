@@ -18,19 +18,27 @@ import Model.AddIncomeAcountCategory;
 
 public class AddIncomeAcountCategoryAdapter extends RecyclerView.Adapter<AddIncomeAcountCategoryAdapter.AddIncomeAcountCategoryAdapterViewHolder> {
 
+
     private ArrayList<AddIncomeAcountCategory> arrayList;
+    private OnincomeAcountListener noincomeacountListener;
 
     public AddIncomeAcountCategoryAdapter(ArrayList<AddIncomeAcountCategory> arrayList){
         this.arrayList = arrayList;
+        this.noincomeacountListener = noincomeacountListener;
         Log.i( "Adapter","Called");
 
+    }
+
+    public void setArrayList(ArrayList<AddIncomeAcountCategory> arrayList){
+        this.arrayList = arrayList;
+        notifyDataSetChanged();
     }
 
     @NonNull
     @Override
     public AddIncomeAcountCategoryAdapter.AddIncomeAcountCategoryAdapterViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.addincomeacountview,viewGroup, false);
-        return null;
+        return new AddIncomeAcountCategoryAdapterViewHolder(view,noincomeacountListener);
     }
 
     @Override
@@ -46,14 +54,38 @@ public class AddIncomeAcountCategoryAdapter extends RecyclerView.Adapter<AddInco
 
     }
 
-    public class AddIncomeAcountCategoryAdapterViewHolder extends RecyclerView.ViewHolder {
+    public class AddIncomeAcountCategoryAdapterViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView incomeacount,incomeamount;
-        public AddIncomeAcountCategoryAdapterViewHolder(View itemView){
+        OnincomeAcountListener onAcountListener;
+
+        public AddIncomeAcountCategoryAdapterViewHolder(View itemView, OnincomeAcountListener onAcountListener){
             super(itemView);
             incomeacount = itemView.findViewById(R.id.textView9);
             incomeamount = itemView.findViewById(R.id.textView18);
+            this.onAcountListener = onAcountListener;
+
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            onAcountListener.onAcountClick(getAdapterPosition());
         }
     }
+    public interface OnincomeAcountListener{
+        void onAcountClick(int position);
+
+        void onEditClick(int position);
+    }
+
+    public void filteredList(ArrayList<AddIncomeAcountCategory> filteredList){
+        arrayList = filteredList;
+        notifyDataSetChanged();
+    }
+
+
+
+
 }
 
