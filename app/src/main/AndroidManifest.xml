@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.student.mywallet">
 
     <application
@@ -9,9 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Income_update_acount"></activity>
-        <activity android:name=".splashmywallet" />
-        <activity android:name=".buttonfragmnet" />
+        <activity android:name=".Botton_bottum"></activity>
+        <activity android:name=".Income_update_acount" />
         <activity android:name=".ExpensesEditAcount" />
         <activity android:name=".EditIncome" />
         <activity android:name=".EditExpense" />
@@ -28,7 +28,10 @@
         <activity android:name=".Income_details" />
         <activity android:name=".Expensses_details" />
         <activity android:name=".My_Wallet_Repot" />
-        <activity android:name=".Daily">
+        <activity android:name=".Daily" />
+        <activity
+            android:name=".splashmywallet"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

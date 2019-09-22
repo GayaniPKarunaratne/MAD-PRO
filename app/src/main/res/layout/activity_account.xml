@@ -25,7 +25,6 @@
             android:layout_marginBottom="8dp"
             android:background="@drawable/add"
             android:onClick="account"
-            android:text="Button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.876"
@@ -35,8 +34,8 @@
 
         <Button
             android:id="@+id/button3"
-            android:layout_width="102dp"
-            android:layout_height="17dp"
+            android:layout_width="105dp"
+            android:layout_height="18dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:background="@color/colorPrimary"
@@ -55,9 +54,9 @@
             android:layout_height="17dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:background="#FF3B2403"
+            android:background="@color/colorPrimary"
             android:text="@string/tbtn3"
-            android:textColor="@android:color/black"
+            android:textColor="@color/colorPrimaryDark"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.335"
@@ -96,17 +95,17 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0" />
 
-        <!--        <EditText-->
-        <!--            android:id="@+id/edittext"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_margin="15dp"-->
-        <!--            app:layout_constraintBottom_toTopOf="@+id/recyclerview"-->
-        <!--            app:layout_constraintEnd_toEndOf="parent"-->
-        <!--            app:layout_constraintHorizontal_bias="0.482"-->
-        <!--            app:layout_constraintStart_toStartOf="parent"-->
-        <!--            app:layout_constraintTop_toTopOf="parent"-->
-        <!--            app:layout_constraintVertical_bias="1.0" />-->
+     <!--           <EditText
+                    android:id="@+id/edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    app:layout_constraintBottom_toTopOf="@+id/recyclerview"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.482"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0" />-->
 
         <ImageButton
             android:id="@+id/imageButton6"
@@ -129,7 +128,7 @@
             android:layout_height="54dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:background="#FF3B2403"
+            android:background="@color/colorPrimary"
             android:onClick="addData2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -137,7 +136,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.992"
-            app:srcCompat="@drawable/expense" />
+            app:srcCompat="@drawable/icons8donate" />
 
         <ImageButton
             android:id="@+id/imageButton"

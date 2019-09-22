@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/home2"
+        android:title="HOME" />
+
+    <item
+        android:id="@+id/nav_expens"
+        android:icon="@drawable/ic_remove_circle_outline_black_24dp"
+        android:title="EXPENSSES" />
+
+    <item
+        android:id="@+id/nav_income"
+        android:icon="@drawable/ic_move_to_inbox_black_24dp"
+        android:title="INCOME" />
+
+    <item
+        android:id="@+id/nav_report"
+        android:icon="@drawable/ic_report_black_24dp"
+        android:title="REPORT" />
+
+</menu>
