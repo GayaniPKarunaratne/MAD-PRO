@@ -15,7 +15,9 @@ import Model.IncomeCategory;
 
 public class IncomeCategoryAdapter extends RecyclerView.Adapter<IncomeCategoryAdapter.CategoryAdapterViewHolder2> {
     private ArrayList<IncomeCategory> arrayList2;
+    private ArrayList<IncomeCategory> arrayList;
     //private OnReadingListener OsaOnReadingListner;
+
 
     public IncomeCategoryAdapter(ArrayList<IncomeCategory> arrayList2) {
         this.arrayList2 = arrayList2;
@@ -51,5 +53,9 @@ public class IncomeCategoryAdapter extends RecyclerView.Adapter<IncomeCategoryAd
 
             //itemView.setOnClickListener(this);
         }
+    }
+    public void filteredList(ArrayList<IncomeCategory> filteredList){
+        arrayList = filteredList;
+        notifyDataSetChanged();
     }
 }

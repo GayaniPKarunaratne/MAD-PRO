@@ -5,7 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.EditText;
 
 import java.util.ArrayList;
 
@@ -19,6 +22,8 @@ public class DasboardIncomeCate extends AppCompatActivity {
     WalletDBhelper db;
     RecyclerView rvishu;
     IncomeCategoryAdapter ishuadapter;
+    EditText editText;
+    IncomeCategoryAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +37,33 @@ public class DasboardIncomeCate extends AppCompatActivity {
         rvishu.setLayoutManager(new LinearLayoutManager(this));
         rvishu.setAdapter(ishuadapter);
 
+        editText = findViewById(R.id.search);
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                filter(editable.toString());
+            }
+        });
+    }
+    private void filter(String text){
+        ArrayList<IncomeCategory> filteredList = new ArrayList<>();
+
+        for(IncomeCategory item :  arrayListishu){
+            if(item.getUname().toLowerCase().contains(text.toLowerCase())){
+                filteredList.add(item);
+            }
+        }
+        adapter.filteredList(filteredList);
     }
     public void gosettings(View view){
         Intent intent =new Intent(DasboardIncomeCate.this,IncomeCatSetting.class);
