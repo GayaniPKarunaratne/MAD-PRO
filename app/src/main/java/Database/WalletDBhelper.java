@@ -116,7 +116,9 @@ public class WalletDBhelper extends SQLiteOpenHelper {
 
     public ArrayList<AddExpense> readAllExpense() {
         SQLiteDatabase db = getReadableDatabase();
-        String[] projection = {WalletUserMaster.Addexpences.COLUMN_NAME_EXPENCE, WalletUserMaster.Addexpences.COLUMN_NAME_CATEGORI, WalletUserMaster.Addexpences.COLUMN_NAME_DATE};
+        String[] projection = { WalletUserMaster.Addexpences.COLUMN_NAME_ID ,WalletUserMaster.Addexpences.COLUMN_NAME_EXPENCE,
+                WalletUserMaster.Addexpences.COLUMN_NAME_CATEGORI, WalletUserMaster.Addexpences.COLUMN_NAME_DATE ,
+                WalletUserMaster.Addexpences.COLUMN_NAME_NOTE };
 
         String sortOrder = WalletUserMaster.Addexpences.COLUMN_NAME_DATE;
         Cursor values = db.query(WalletUserMaster.Addexpences.TABLE_NAME_ADDEXPENCES, projection, null, null, null, null, sortOrder);
@@ -124,10 +126,12 @@ public class WalletDBhelper extends SQLiteOpenHelper {
         ArrayList<AddExpense> arrayList = new ArrayList<>();
 
         while (values.moveToNext()) {
+            int ID = values.getInt( values.getColumnIndexOrThrow(WalletUserMaster.Addexpences.COLUMN_NAME_ID ));
             String Amount = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.Addexpences.COLUMN_NAME_EXPENCE));
             String Category = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.Addexpences.COLUMN_NAME_CATEGORI));
             String Date = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.Addexpences.COLUMN_NAME_DATE));
-            arrayList.add(new AddExpense(Amount, Date, Category));
+            String Note = values.getString( values.getColumnIndexOrThrow(WalletUserMaster.Addexpences.COLUMN_NAME_NOTE ));
+            arrayList.add(new AddExpense( ID , Amount, Date, Category , Note));
         }
         return arrayList;
     }

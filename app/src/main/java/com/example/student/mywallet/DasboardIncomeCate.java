@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -74,6 +75,7 @@ public class DasboardIncomeCate extends AppCompatActivity {
         startActivity(intent);
     }
     public void addData5(View view) {
+       // Log.i( "DB" , view.getId()+"" );
         Intent intent = new Intent(DasboardIncomeCate.this, Income_account.class);
         startActivity(intent);
     }
