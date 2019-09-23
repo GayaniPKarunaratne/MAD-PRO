@@ -6,7 +6,10 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -28,6 +31,23 @@ public class Expensses_details extends AppCompatActivity implements ExpenseAdapt
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expensses_details);
 
+        EditText editText = findViewById(R.id.edittext2);
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) { filter(editable.toString()); }
+        });
+
+
         db = new WalletDBhelper(this);
 
         rv = findViewById(R.id.recycleV2);
@@ -40,6 +60,17 @@ public class Expensses_details extends AppCompatActivity implements ExpenseAdapt
         new ItemTouchHelper(itemTouchHelpercallback).attachToRecyclerView(rv);
 
 
+    }
+
+    private void filter(String text){
+        ArrayList<AddExpense> filteredList = new ArrayList<>();
+
+        for (AddExpense item : arrayList){
+            if (item.getDate().toLowerCase().contains(text.toLowerCase())){
+                filteredList.add(item);
+            }
+        }
+        adapter.filterList(filteredList);
     }
 
     ItemTouchHelper.SimpleCallback itemTouchHelpercallback = new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {

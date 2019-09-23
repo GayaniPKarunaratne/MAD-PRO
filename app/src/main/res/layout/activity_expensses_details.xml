@@ -7,6 +7,23 @@
     android:background="@drawable/background"
     tools:context=".Expensses_details">
 
+    <EditText
+        android:id="@+id/edittext2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="80dp"
+        android:hint="Search by  Date"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.92"
+        tools:ignore="MissingConstraints" />
+
     <Button
         android:id="@+id/button3"
         android:layout_width="102dp"
@@ -198,8 +215,8 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycleV2"
-        android:layout_width="0dp"
-        android:layout_height="467dp"
+        android:layout_width="414dp"
+        android:layout_height="411dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.489"

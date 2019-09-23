@@ -77,4 +77,9 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ExpenseA
     public interface onExpenceListner{
         void OnExpenseClick(int position);
     }
+
+    public void filterList(ArrayList<AddExpense> filteredList){
+        arrayList = filteredList;
+        notifyDataSetChanged();
+    }
 }
