@@ -6,7 +6,10 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -20,11 +23,31 @@ public class Income_details extends AppCompatActivity implements IncomeAdapter.o
     WalletDBhelper db;
     RecyclerView rv;
 
+
     private ArrayList<AddIncome> arrayList;
     IncomeAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+//        EditText editText = findViewById(R.id.edittext1);
+//        editText.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable editable) {
+//               // filter(editable.toString());
+//            }
+//        });
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_income_details);
 
@@ -40,6 +63,16 @@ public class Income_details extends AppCompatActivity implements IncomeAdapter.o
         new ItemTouchHelper(itemTouchHelpercallback).attachToRecyclerView(rv);
 
     }
+//    private void filter(String text){
+//        ArrayList<AddIncome> filteredList = new ArrayList<>();
+
+//        for (AddIncome item : arrayList){
+//            if (item.getDate().toLowerCase().contains(text.toLowerCase())){
+//                filteredList.add(item);
+//            }
+//        }
+        //adapter.filteredList(filteredList);
+  //  }
 
     ItemTouchHelper.SimpleCallback itemTouchHelpercallback = new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
         @Override

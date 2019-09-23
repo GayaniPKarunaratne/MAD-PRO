@@ -25,6 +25,7 @@ public class IncomeAdapter extends RecyclerView.Adapter<IncomeAdapter.IncomeAdap
         Log.i("Adapter" , "Called");
     }
 
+
     public void setArrayList(ArrayList<AddIncome> arrayList  ) {
         this.arrayList = arrayList;
         notifyDataSetChanged();
@@ -75,4 +76,8 @@ public class IncomeAdapter extends RecyclerView.Adapter<IncomeAdapter.IncomeAdap
     public interface onIncomeListner{
         void OnIncomeClick(int position);
     }
+//    public void filteredList(ArrayList<AddIncome> filteredList){
+//        arrayList = filteredList;
+//        notifyDataSetChanged();
+//    }
 }
