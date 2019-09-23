@@ -26,46 +26,46 @@ public class ExpensesEditAcount extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expenses_edit_acount);
 
-//        db = new WalletDBhelper(this);
-//        cost = findViewById(R.id.editText19);
-//        cost2 = findViewById(R.id.editText20);
-//        cost2.setInputType(InputType.TYPE_CLASS_NUMBER);
-//
-//        Intent intent = getIntent();
-//        ID = intent.getStringExtra("id");
-//        acount_type = intent.getStringExtra("AccountType");
-//        amount = intent.getStringExtra("Amount");
-//
-//
-//        cost.setText(acount_type);
-//        cost2.setText(amount);
+        db = new WalletDBhelper(this);
+        cost = findViewById(R.id.editText19);
+        cost2 = findViewById(R.id.editText20);
+        cost2.setInputType(InputType.TYPE_CLASS_NUMBER);
+
+       Intent intent = getIntent();
+       ID = intent.getStringExtra("id");
+        acount_type = intent.getStringExtra("AccountType");
+        amount = intent.getStringExtra("Amount");
+
+
+        cost.setText(acount_type);
+        cost2.setText(amount);
     }
-//    public void Edit(View view){
-//        if(TextUtils.isEmpty(cost.getText()) || TextUtils.isEmpty(cost2.getText())){
-//            cost.setError("Enter The Account Type!");
-//            cost2.setError("Enter The Amount!");
-//        }
-//        else {
-////
-////
-//            acount_type = cost.getText().toString().trim();
-//            amount = cost2.getText().toString().trim();
-////
-//            Log.i("ID :   ", ID);
-//            boolean result = db.expensesEditAcount(ID, acount_type, amount);
-////            //cost.getText().clear();
-////            //cost2.getText().clear();
-//////
-//            if (result == true) {
-//                Toast.makeText(getApplicationContext(), "Updated", Toast.LENGTH_LONG).show();
-//                Intent in = new Intent(this, Account.class);
-//                startActivity(in);
-////
-//            } else {
-//                Toast.makeText(getApplicationContext(), "Not Updated", Toast.LENGTH_LONG).show();
-//            }
-//        }
-//    }
+    public void Edit(View view){
+        if(TextUtils.isEmpty(cost.getText()) || TextUtils.isEmpty(cost2.getText())){
+            cost.setError("Enter The Account Type!");
+           cost2.setError("Enter The Amount!");
+        }
+        else {
+
+
+           acount_type = cost.getText().toString().trim();
+           amount = cost2.getText().toString().trim();
+
+           Log.i("ID :   ", ID);
+           boolean result = db.expensesEditAcount(ID, acount_type, amount);
+           //cost.getText().clear();
+            //cost2.getText().clear();
+
+            if (result == true) {
+               Toast.makeText(getApplicationContext(), "Updated", Toast.LENGTH_LONG).show();
+               Intent in = new Intent(this, Account.class);
+                startActivity(in);
+
+           } else {
+                Toast.makeText(getApplicationContext(), "Not Updated", Toast.LENGTH_LONG).show();
+           }
+       }
+    }
 
     public void addaccount(View view) {
         Intent intent = new Intent(ExpensesEditAcount.this, Account.class);
