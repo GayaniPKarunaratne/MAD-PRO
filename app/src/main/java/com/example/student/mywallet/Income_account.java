@@ -102,7 +102,7 @@ public class Income_account extends AppCompatActivity {
 
 
     public void account(View view) {
-        Intent intent = new Intent(Income_account.this, Income_add_account.class);
+        Intent intent = new Intent(Income_account.this, AddAccount.class);
         startActivity(intent);
     }
 

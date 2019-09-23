@@ -301,20 +301,20 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="35dp"
-            android:layout_height="29dp"
+            android:layout_width="45dp"
+            android:layout_height="41dp"
             app:layout_constraintBottom_toBottomOf="@+id/button3"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.148"
+            app:layout_constraintHorizontal_bias="0.095"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.165"
+            app:layout_constraintVertical_bias="0.16"
             app:srcCompat="@drawable/ic_search" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerview"
-            android:layout_width="379dp"
-            android:layout_height="72dp"
+            android:layout_width="386dp"
+            android:layout_height="189dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.444"
