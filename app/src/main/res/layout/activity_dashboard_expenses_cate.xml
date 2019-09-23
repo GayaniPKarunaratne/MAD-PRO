@@ -47,24 +47,7 @@
                     android:textColor="@android:color/background_dark"
                     android:textSize="14sp" />
 
-                <EditText
-                    android:id="@+id/search"
-                    android:layout_width="298dp"
-                    android:layout_height="65dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="59dp"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginEnd="14dp"
-                    android:layout_marginBottom="0dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.752"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/textView63"
-                    app:layout_constraintVertical_bias="0.061" />
+
 
                 <ImageView
                     android:layout_width="42dp"
@@ -83,19 +66,6 @@
                     android:onClick="gosettings"
                     android:src="@drawable/dots" />
 
-                <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="69dp"
-                    android:layout_height="59dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="0dp"
-                    android:layout_marginTop="58dp"
-                    android:layout_marginEnd="302dp"
-                    android:layout_marginBottom="14dp"
-                    app:srcCompat="@drawable/ic_search_category" />
 
             </RelativeLayout>
 
@@ -527,6 +497,39 @@
                     android:text="Your favourite categories"
                     android:textColor="#55473d"
                     android:textSize="14sp" />
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="69dp"
+                    android:layout_height="59dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginTop="72dp"
+                    android:layout_marginEnd="299dp"
+                    android:layout_marginBottom="0dp"
+                    app:srcCompat="@drawable/ic_search_category" />
+
+
+                <EditText
+                    android:id="@+id/search"
+                    android:layout_width="298dp"
+                    android:layout_height="65dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="59dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="14dp"
+                    android:layout_marginBottom="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.752"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textView63"
+                    app:layout_constraintVertical_bias="0.061" />
             </RelativeLayout>
 
             <android.support.v7.widget.RecyclerView

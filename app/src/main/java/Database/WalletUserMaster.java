@@ -37,10 +37,7 @@ public final class WalletUserMaster {
         protected  static  final String COLUMN_NAME_INCOMENAME = "name";
     }
 
-    protected static  class ExpensesCategory implements  BaseColumns{
-        protected  static  final String TABLE_NAME_Expenses = "income";
-        protected  static  final String COLUMN_NAME_EXPENSESNAME = "name";
-    }
+
 
     /*----------------------------Thenuak-----------------------*/
 
@@ -60,6 +57,9 @@ public final class WalletUserMaster {
     }
 
     /*----------------------------end Thenuak-----------------------*/
-
+    protected static  class ExpensesCategory implements  BaseColumns{
+        protected  static  final String TABLE_NAME_Expenses = "income";
+        protected  static  final String COLUMN_NAME_EXPENSESNAME = "name";
+    }
 
 }

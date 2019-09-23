@@ -25,11 +25,13 @@ public class ExpensesCatSetings extends AppCompatActivity {
     }
 
     public void addCatBook(View view){
+        //validation part//
         if(TextUtils.isEmpty(osuAddCat.getText()) ){
             osuAddCat.setError("Enter an Value!");
             osuAddCat.requestFocus();
 
         }else {
+
             name = osuAddCat.getText().toString();
 
 
