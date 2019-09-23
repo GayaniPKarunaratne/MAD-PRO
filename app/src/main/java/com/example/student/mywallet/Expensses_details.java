@@ -22,7 +22,6 @@ public class Expensses_details extends AppCompatActivity implements ExpenseAdapt
 
     WalletDBhelper db;
     RecyclerView rv;
-
     private ArrayList<AddExpense> arrayList;
     ExpenseAdapter adapter;
 
@@ -35,18 +34,14 @@ public class Expensses_details extends AppCompatActivity implements ExpenseAdapt
         editText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
             }
-
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
             }
 
             @Override
             public void afterTextChanged(Editable editable) { filter(editable.toString()); }
         });
-
 
         db = new WalletDBhelper(this);
 
@@ -73,7 +68,8 @@ public class Expensses_details extends AppCompatActivity implements ExpenseAdapt
         adapter.filterList(filteredList);
     }
 
-    ItemTouchHelper.SimpleCallback itemTouchHelpercallback = new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+    ItemTouchHelper.SimpleCallback itemTouchHelpercallback = new ItemTouchHelper.SimpleCallback(0,
+            ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
         @Override
         public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
             return false;

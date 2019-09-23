@@ -121,7 +121,8 @@ public class WalletDBhelper extends SQLiteOpenHelper {
                 WalletUserMaster.Addexpences.COLUMN_NAME_NOTE };
 
         String sortOrder = WalletUserMaster.Addexpences.COLUMN_NAME_DATE;
-        Cursor values = db.query(WalletUserMaster.Addexpences.TABLE_NAME_ADDEXPENCES, projection, null, null, null, null, sortOrder);
+        Cursor values = db.query(WalletUserMaster.Addexpences.TABLE_NAME_ADDEXPENCES, projection, null, null,
+                null, null, sortOrder);
 
         ArrayList<AddExpense> arrayList = new ArrayList<>();
 
@@ -158,8 +159,6 @@ public class WalletDBhelper extends SQLiteOpenHelper {
         String SelectionArgs[] = {id};
 
         db.update(WalletUserMaster.Addexpences.TABLE_NAME_ADDEXPENCES, contentValues, Selection, SelectionArgs);
-
-
     }
 
     public boolean addIncome(String income, String note, String category) {
@@ -234,10 +233,12 @@ public class WalletDBhelper extends SQLiteOpenHelper {
     }
 
 
-    /***********************************************************  End Of Gayani  *******************************************************************/
+    /***********************************************************  End  Gayani  *******************************************************************/
 
 
     //prabhashi's methods=========================================================================
+
+    //add expenses categoory
     public boolean addCategoryOsu(String name) {
 
         SQLiteDatabase db = getWritableDatabase();
@@ -316,6 +317,7 @@ public class WalletDBhelper extends SQLiteOpenHelper {
         return CATEGORIES2;
     }
 
+    //expensess category delee part
     public boolean deleteuser(String username) {
         SQLiteDatabase db = getReadableDatabase();
         String Selection = WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME + " LIKE ?";
@@ -328,7 +330,7 @@ public class WalletDBhelper extends SQLiteOpenHelper {
             return false;
         }
     }
-
+    //expensess category update part
     public boolean userUpdate(String username) {
         SQLiteDatabase db = getReadableDatabase();
 
@@ -348,115 +350,25 @@ public class WalletDBhelper extends SQLiteOpenHelper {
         }
     }
 
-    public boolean addIncomeCategory(String name) {
-        SQLiteDatabase db = getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(WalletUserMaster.IncomeCategory.COLUMN_NAME_INCOMENAME, name);
-        long result = db.insert(WalletUserMaster.IncomeCategory.TABLE_NAME_INCOME, null, contentValues);
-        if (result > 0) {
-            return true;
-
-        } else {
-            return false;
-        }
-    }
-
-    public ArrayList<Users> readAllInfor() {
-        SQLiteDatabase db = getReadableDatabase();
-        String[] projection = {WalletUserMaster.IncomeCategory._ID, WalletUserMaster.IncomeCategory.COLUMN_NAME_INCOMENAME};
-
-        String sortOrder = WalletUserMaster.IncomeCategory.COLUMN_NAME_INCOMENAME;
-        Cursor values = db.query(WalletUserMaster.IncomeCategory.TABLE_NAME_INCOME, projection, null, null, null, null, sortOrder);
-
-        ArrayList<Users> users = new ArrayList<>();
-
-        while (values.moveToNext()) {
-            String userName = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.IncomeCategory.COLUMN_NAME_INCOMENAME));
-            users.add(new Users(userName));
-        }
-        return users;
-    }
 
 
-    public void incomecatDelete(String userName) {
-        SQLiteDatabase db = getReadableDatabase();
-        String selection = WalletUserMaster.IncomeCategory.COLUMN_NAME_INCOMENAME + " LIKE ?";
-        String[] SelectionArgs = {userName};
-
-        db.delete(WalletUserMaster.IncomeCategory.TABLE_NAME_INCOME, selection, SelectionArgs);
-    }
-
-    public void incomeCatUpdate(String username) {
-        SQLiteDatabase db = getReadableDatabase();
-
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(WalletUserMaster.IncomeCategory.COLUMN_NAME_INCOMENAME, username);
-
-        String Selection = WalletUserMaster.IncomeCategory.COLUMN_NAME_INCOMENAME + " LIKE ? ";
-        Log.i("DB", Selection);
-
-        String[] SelectionArgs = {username};
-
-        db.update(WalletUserMaster.IncomeCategory.TABLE_NAME_INCOME, contentValues, Selection, SelectionArgs);
 
 
-    }
 
 
-    public boolean addeXPENSESCategory(String name) {
-        SQLiteDatabase db = getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME, name);
-        long result = db.insert(WalletUserMaster.ExpensesCategory.TABLE_NAME_Expenses, null, contentValues);
-        if (result > 0) {
-            return true;
-
-        } else {
-            return false;
-        }
-    }
-
-    public ArrayList<Users> readAllInfor2() {
-        SQLiteDatabase db = getReadableDatabase();
-        String[] projection = {WalletUserMaster.ExpensesCategory._ID, WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME};
-
-        String sortOrder = WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME;
-        Cursor values = db.query(WalletUserMaster.ExpensesCategory.TABLE_NAME_Expenses, projection, null, null, null, null, sortOrder);
-
-        ArrayList<Users> users2 = new ArrayList<>();
-
-        while (values.moveToNext()) {
-            String userName = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME));
-            users2.add(new Users(userName));
-        }
-        return users2;
-    }
-
-    public void ExpensescatDelete(String userName) {
-        SQLiteDatabase db = getReadableDatabase();
-        String selection = WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME + " LIKE ?";
-        String[] SelectionArgs = {userName};
-
-        db.delete(WalletUserMaster.ExpensesCategory.TABLE_NAME_Expenses, selection, SelectionArgs);
-    }
-
-    public void ExpensesCatUpdate(String username) {
-        SQLiteDatabase db = getReadableDatabase();
-
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME, username);
-
-        String Selection = WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME + " LIKE ? ";
-        Log.i("DB", Selection);
-
-        String[] SelectionArgs = {username};
-
-        db.update(WalletUserMaster.ExpensesCategory.TABLE_NAME_Expenses, contentValues, Selection, SelectionArgs);
 
 
-    }
 
-    //=========================end prabashi's methods=============================================
+
+
+
+
+
+
+
+
+
+
 
 
     /*---------------------------thenuka------------------------------------------*/
@@ -630,4 +542,116 @@ public class WalletDBhelper extends SQLiteOpenHelper {
     }*/
 
     /*---------------------------end thenuka------------------------------------------*/
+
+
+    public boolean addIncomeCategory(String name) {
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(WalletUserMaster.IncomeCategory.COLUMN_NAME_INCOMENAME, name);
+        long result = db.insert(WalletUserMaster.IncomeCategory.TABLE_NAME_INCOME, null, contentValues);
+        if (result > 0) {
+            return true;
+
+        } else {
+            return false;
+        }
+    }
+
+    public ArrayList<Users> readAllInfor() {
+        SQLiteDatabase db = getReadableDatabase();
+        String[] projection = {WalletUserMaster.IncomeCategory._ID, WalletUserMaster.IncomeCategory.COLUMN_NAME_INCOMENAME};
+
+        String sortOrder = WalletUserMaster.IncomeCategory.COLUMN_NAME_INCOMENAME;
+        Cursor values = db.query(WalletUserMaster.IncomeCategory.TABLE_NAME_INCOME, projection, null, null, null, null, sortOrder);
+
+        ArrayList<Users> users = new ArrayList<>();
+
+        while (values.moveToNext()) {
+            String userName = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.IncomeCategory.COLUMN_NAME_INCOMENAME));
+            users.add(new Users(userName));
+        }
+        return users;
+    }
+
+
+    public void incomecatDelete(String userName) {
+        SQLiteDatabase db = getReadableDatabase();
+        String selection = WalletUserMaster.IncomeCategory.COLUMN_NAME_INCOMENAME + " LIKE ?";
+        String[] SelectionArgs = {userName};
+
+        db.delete(WalletUserMaster.IncomeCategory.TABLE_NAME_INCOME, selection, SelectionArgs);
+    }
+
+    public void incomeCatUpdate(String username) {
+        SQLiteDatabase db = getReadableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(WalletUserMaster.IncomeCategory.COLUMN_NAME_INCOMENAME, username);
+
+        String Selection = WalletUserMaster.IncomeCategory.COLUMN_NAME_INCOMENAME + " LIKE ? ";
+        Log.i("DB", Selection);
+
+        String[] SelectionArgs = {username};
+
+        db.update(WalletUserMaster.IncomeCategory.TABLE_NAME_INCOME, contentValues, Selection, SelectionArgs);
+
+
+    }
+
+
+    public boolean addeXPENSESCategory(String name) {
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME, name);
+        long result = db.insert(WalletUserMaster.ExpensesCategory.TABLE_NAME_Expenses, null, contentValues);
+        if (result > 0) {
+            return true;
+
+        } else {
+            return false;
+        }
+    }
+
+    public ArrayList<Users> readAllInfor2() {
+        SQLiteDatabase db = getReadableDatabase();
+        String[] projection = {WalletUserMaster.ExpensesCategory._ID, WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME};
+
+        String sortOrder = WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME;
+        Cursor values = db.query(WalletUserMaster.ExpensesCategory.TABLE_NAME_Expenses, projection, null, null, null, null, sortOrder);
+
+        ArrayList<Users> users2 = new ArrayList<>();
+
+        while (values.moveToNext()) {
+            String userName = values.getString(values.getColumnIndexOrThrow(WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME));
+            users2.add(new Users(userName));
+        }
+        return users2;
+    }
+
+    public void ExpensescatDelete(String userName) {
+        SQLiteDatabase db = getReadableDatabase();
+        String selection = WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME + " LIKE ?";
+        String[] SelectionArgs = {userName};
+
+        db.delete(WalletUserMaster.ExpensesCategory.TABLE_NAME_Expenses, selection, SelectionArgs);
+    }
+
+    public void ExpensesCatUpdate(String username) {
+        SQLiteDatabase db = getReadableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME, username);
+
+        String Selection = WalletUserMaster.ExpensesCategory.COLUMN_NAME_EXPENSESNAME + " LIKE ? ";
+        Log.i("DB", Selection);
+
+        String[] SelectionArgs = {username};
+
+        db.update(WalletUserMaster.ExpensesCategory.TABLE_NAME_Expenses, contentValues, Selection, SelectionArgs);
+
+
+    }
+
+    //=========================end prabashi's methods=============================================
+
 }

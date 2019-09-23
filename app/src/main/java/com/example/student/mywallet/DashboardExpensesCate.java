@@ -55,6 +55,8 @@ public class DashboardExpensesCate extends AppCompatActivity {
         });
 
     }
+
+    //search //
     private void filter(String text){
         ArrayList<ExpensesCategory> filteredList = new ArrayList<>();
 

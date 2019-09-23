@@ -16,13 +16,10 @@ import Model.ExpensesCategory;
 
 public class ExpensesCategoryAdapter extends RecyclerView.Adapter<ExpensesCategoryAdapter.CategoryAdapterViewHolder> {
     private ArrayList<ExpensesCategory> arrayList;
-    //private OnReadingListener OsaOnReadingListner;
 
     public ExpensesCategoryAdapter(ArrayList<ExpensesCategory> arrayList) {
         this.arrayList = arrayList;
-        //this.OsaOnReadingListner = OsaOnReadingListner;
     }
-
     @NonNull
     @Override
     public ExpensesCategoryAdapter.CategoryAdapterViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -33,7 +30,6 @@ public class ExpensesCategoryAdapter extends RecyclerView.Adapter<ExpensesCatego
     public void onBindViewHolder(@NonNull CategoryAdapterViewHolder categoryAdapterViewHolder, int i) {
         ExpensesCategory object = arrayList.get(i);
         categoryAdapterViewHolder.name.setText(object.getUname() );
-
     }
 
     @Override
@@ -44,13 +40,10 @@ public class ExpensesCategoryAdapter extends RecyclerView.Adapter<ExpensesCatego
     public class CategoryAdapterViewHolder extends RecyclerView.ViewHolder {
         TextView name;
 
-        //OnReadingListener OsaOnReadingListner;
         public CategoryAdapterViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.tv_nameOSA);
-            //this.OsaOnReadingListner = OsaOnReadingListner;
 
-            //itemView.setOnClickListener(this);
         }
     } public void filteredList(ArrayList<ExpensesCategory> filteredList){
         arrayList = filteredList;
