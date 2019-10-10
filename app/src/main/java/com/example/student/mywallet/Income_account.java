@@ -34,8 +34,8 @@ public class Income_account extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_income_account);
 
-//        db = new WalletDBhelper(this);
-//        arrayList = db.readAllIncomeAcount();
+//          db = new WalletDBhelper(this);
+//          arrayList = db.readAllIncomeAcount();
 //
 //        rv = findViewById(R.id.recyclerview);
 //        adapter = new AddIncomeAcountCategory(arrayList,this);

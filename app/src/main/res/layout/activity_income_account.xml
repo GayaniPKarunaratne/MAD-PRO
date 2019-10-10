@@ -292,6 +292,7 @@
             android:layout_width="298dp"
             android:layout_height="65dp"
             android:layout_margin="15dp"
+            android:hint="Search By Name"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.778"

@@ -25,7 +25,7 @@ public class splashmywallet extends AppCompatActivity {
         Thread timer = new Thread(){
             public void run(){
                 try{
-                    sleep(4000);
+                    sleep(2000);
                 }catch (InterruptedException e){
                     e.printStackTrace();
                 }finally {

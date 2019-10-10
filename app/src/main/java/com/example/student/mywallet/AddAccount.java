@@ -41,22 +41,10 @@ public class AddAccount extends AppCompatActivity {
         txt_name_amount.setInputType(InputType.TYPE_CLASS_NUMBER);
         db = new WalletDBhelper(this);
 
-
-
         cost = (EditText) findViewById(R.id.editText19);
         cost2 = (EditText) findViewById(R.id.editText20);
         imaBtn = (ImageButton)findViewById(R.id.imageButton4);
 
-        /*data_acount.setText("");
-        int count = 1;
-
-
-
-        ArrayList<AddAcountCategory> u = db.readAllInforAcount();
-        for (AddAcountCategory users : u) {
-            txt_name_amount.append(txt_name_amount + " " + users.getAmount() + "\n");
-            EditText editText = txt_name_amount++;
-        }*/
     }
     public void AddAcountCategorye(View view){
         if(TextUtils.isEmpty(cost.getText()) || TextUtils.isEmpty(cost2.getText())){

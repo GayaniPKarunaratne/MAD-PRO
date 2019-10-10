@@ -37,7 +37,7 @@ public class AddIncomeAcountCategoryAdapter extends RecyclerView.Adapter<AddInco
     @NonNull
     @Override
     public AddIncomeAcountCategoryAdapter.AddIncomeAcountCategoryAdapterViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.addincomeacountview,viewGroup, false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.addacountview,viewGroup, false);
         return new AddIncomeAcountCategoryAdapterViewHolder(view,noincomeacountListener);
     }
 
